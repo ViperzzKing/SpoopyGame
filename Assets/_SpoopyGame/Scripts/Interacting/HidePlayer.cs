@@ -57,8 +57,8 @@ public class HidePlayer : MonoBehaviour
             transform.position = currentHidingSpot.position;
             cam.transform.localRotation = currentHidingSpot.localRotation;
 
-            cam.transform.position = new Vector3(transform.position.x,
-                                                 camControls.standingEyeOffset,
+            cam.transform.position = new Vector3(transform.position.x, 
+                                                 transform.position.y + camControls.standingEyeOffset, 
                                                  transform.position.z);
 
             Debug.Log("Hide");
