@@ -7560,7 +7560,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5047081287706512567, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.688
+      value: -7.73
       objectReference: {fileID: 0}
     - target: {fileID: 5047081287706512567, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15150,7 +15150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 0.01, y: 0.01, z: 0.01}
+  size: {x: 3, y: 3, z: 3}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
