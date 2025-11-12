@@ -5,21 +5,93 @@ public class InspectObject : MonoBehaviour
 {
     public Camera cam;
     public CameraControls camControls;
-    public HighlightObjects highlight;
     public BasicMovement movement;
+    public HighlightObjects highlight;
 
-    public Transform rune;
-    
+    public bool playerIsInspecting;
+    public Transform currentItemInspecting;
+    private Vector3 itemPosition;
+    private Quaternion itemRotation;
+
     private void Update()
     {
-        if (highlight.interactable == true && highlight.currentObject.CompareTag("Inspectable") && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
+            TryToggleInspect();
+
+    }
+
+    private void TryToggleInspect()
+    {
+        // Check if its a interactable
+        bool canInspect = highlight.interactable && highlight.currentObject.CompareTag("Inspectable");
+
+        if (canInspect)
+            ToggleInspect();
+    }
+    
+    private void ToggleInspect()
+    {
+        if (playerIsInspecting)
+            StopInspecting();
+        else
         {
-            Debug.Log("Inspecting");
-
-            movement.enabled = false;
-            camControls.enabled = false;
-
-            rune.position = cam.transform.position + cam.transform.forward * 1f;
+            Debug.Log("Inspect");
+            InspectItem();
         }
+    }
+
+    private void InspectItem()
+    {
+
+        currentItemInspecting = GetItemToInspectFromHighlight();
+        SaveItemPosition(currentItemInspecting);
+        
+        
+        if (currentItemInspecting != null)
+        {
+            currentItemInspecting.position = cam.transform.position + cam.transform.forward * 2;
+
+            Debug.Log("Inspecting");
+            WhenPlayerInspects(inspecting: true);
+        }
+    }
+
+    private void StopInspecting()
+    {
+        ReturnItem(currentItemInspecting);
+        Debug.Log("Stop Inspecting");
+        WhenPlayerInspects(inspecting: false);
+    }
+    
+    private void WhenPlayerInspects(bool inspecting)
+    {
+        camControls.enabled = !inspecting;
+        movement.enabled = !inspecting;
+        playerIsInspecting = inspecting;
+    }
+    
+    private Transform GetItemToInspectFromHighlight()
+    {
+        if (highlight.currentObject == null)
+            return null;
+
+        return FindItemsParent(highlight.currentObject);
+    }
+    
+    private Transform FindItemsParent(GameObject item)
+    {
+        return item.transform.parent;
+    }
+
+    private void SaveItemPosition(Transform item)
+    {
+        itemRotation = item.rotation;
+        itemPosition = item.position;
+    }
+
+    private void ReturnItem(Transform item)
+    {
+        item.rotation = itemRotation;
+        item.position = itemPosition;
     }
 }

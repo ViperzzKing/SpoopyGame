@@ -7562,13 +7562,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Inspectable
       objectReference: {fileID: 0}
+    - target: {fileID: 657234810272510005, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 657234810272510005, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.206
+      objectReference: {fileID: 0}
+    - target: {fileID: 657234810272510005, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.016
+      objectReference: {fileID: 0}
     - target: {fileID: 5047081287706512567, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.73
+      value: -7.609
       objectReference: {fileID: 0}
     - target: {fileID: 5047081287706512567, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.264
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: 5047081287706512567, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7606,6 +7618,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable Template
       objectReference: {fileID: 0}
+    - target: {fileID: 6786607307813423940, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+      propertyPath: m_RendererPriority
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786607307813423940, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0acdbe532baa6c340abc706f78ef48c6, type: 2}
     - target: {fileID: 8257923195945077171, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -7618,16 +7638,23 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 237263725}
+    - target: {fileID: 8662181316240967220, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662181316240967220, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.206
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662181316240967220, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.016
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
---- !u!4 &651270385 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5047081287706512567, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
-  m_PrefabInstance: {fileID: 651270384}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &687177845
 GameObject:
   m_ObjectHideFlags: 0
@@ -14844,6 +14871,7 @@ GameObject:
   - component: {fileID: 1665866373}
   - component: {fileID: 1665866374}
   - component: {fileID: 1665866375}
+  - component: {fileID: 1665866376}
   - component: {fileID: 1665866370}
   m_Layer: 0
   m_Name: Player
@@ -14972,9 +15000,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1823688466}
   camControls: {fileID: 1823688470}
-  highlight: {fileID: 1665866373}
   movement: {fileID: 1665866371}
-  rune: {fileID: 651270385}
+  highlight: {fileID: 1665866373}
+  playerIsInspecting: 0
+  currentItemInspecting: {fileID: 0}
+--- !u!114 &1665866376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665866369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b142979f079f9841b88cd7ea60018bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspect: {fileID: 1665866375}
 --- !u!1 &1679452770
 GameObject:
   m_ObjectHideFlags: 0
@@ -15515,6 +15557,10 @@ PrefabInstance:
     - target: {fileID: 9120547848157713616, guid: 629a46ca2ffa4b343b334e7fbe801895, type: 3}
       propertyPath: m_Name
       value: Hiding Spot Template
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120547848157713616, guid: 629a46ca2ffa4b343b334e7fbe801895, type: 3}
+      propertyPath: m_TagString
+      value: Inspectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
