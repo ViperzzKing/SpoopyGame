@@ -7558,13 +7558,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 402194982900862914, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+      propertyPath: m_TagString
+      value: Inspectable
+      objectReference: {fileID: 0}
     - target: {fileID: 5047081287706512567, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.73
       objectReference: {fileID: 0}
     - target: {fileID: 5047081287706512567, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.213
+      value: 0.264
       objectReference: {fileID: 0}
     - target: {fileID: 5047081287706512567, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7619,6 +7623,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+--- !u!4 &651270385 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5047081287706512567, guid: 64d3ddff0cf7eb3418020d3667010341, type: 3}
+  m_PrefabInstance: {fileID: 651270384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &687177845
 GameObject:
   m_ObjectHideFlags: 0
@@ -14834,6 +14843,7 @@ GameObject:
   - component: {fileID: 1665866371}
   - component: {fileID: 1665866373}
   - component: {fileID: 1665866374}
+  - component: {fileID: 1665866375}
   - component: {fileID: 1665866370}
   m_Layer: 0
   m_Name: Player
@@ -14948,6 +14958,23 @@ MonoBehaviour:
   movement: {fileID: 1665866371}
   rb: {fileID: 1665866370}
   playerIsHiding: 0
+--- !u!114 &1665866375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665866369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78f0cfd45d3da44b8f129ef175a4d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1823688466}
+  camControls: {fileID: 1823688470}
+  highlight: {fileID: 1665866373}
+  movement: {fileID: 1665866371}
+  rune: {fileID: 651270385}
 --- !u!1 &1679452770
 GameObject:
   m_ObjectHideFlags: 0

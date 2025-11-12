@@ -25,6 +25,8 @@ public class CameraControls : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        
         // Sets current rotation to starting rotation
         currentHorizontalRotation = transform.localEulerAngles.y;
         currentVerticalRotation = transform.localEulerAngles.x;
