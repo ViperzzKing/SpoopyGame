@@ -16,7 +16,9 @@ public class InspectObject : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        bool leftMouse = Input.GetMouseButtonDown(0);
+        
+        if (leftMouse)
             TryToggleInspect();
 
     }
