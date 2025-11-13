@@ -13,8 +13,10 @@ public class RotateObject : MonoBehaviour
         float mouseY = Input.GetAxis("Vertical");
 
         Transform item = inspect.currentItemInspecting;
+        Transform itemMesh = item.GetChild(0);
         
-        item.Rotate(-mouseY, -mouseX, 0, Space.World);
+        itemMesh.Rotate(0, -mouseX, 0, Space.World);
+        item.Rotate(-mouseY, 0, 0, Space.Self);
 
     }
 }

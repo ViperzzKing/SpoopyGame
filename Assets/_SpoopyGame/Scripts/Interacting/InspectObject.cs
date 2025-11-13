@@ -7,6 +7,7 @@ public class InspectObject : MonoBehaviour
     public CameraControls camControls;
     public BasicMovement movement;
     public HighlightObjects highlight;
+    public GameObject onTopVolume;
 
     public bool playerIsInspecting;
     public Transform currentItemInspecting;
@@ -65,6 +66,9 @@ public class InspectObject : MonoBehaviour
     
     private void WhenPlayerInspects(bool inspecting)
     {
+        currentItemInspecting.LookAt(Camera.main.transform);
+
+        onTopVolume.SetActive(inspecting);
         camControls.enabled = !inspecting;
         movement.enabled = !inspecting;
         playerIsInspecting = inspecting;
