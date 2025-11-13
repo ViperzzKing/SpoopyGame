@@ -1,0 +1,9 @@
+{
+	"projectId": 1,
+	"projectName": "SpoopyGame",
+	"scene": "TESTOutdoorsScene",
+	"creator": "Jordyn Price",
+	"version": "2.0.3",
+	"port": 8000,
+	"application": "Unity 6000.0.31f1"
+}
