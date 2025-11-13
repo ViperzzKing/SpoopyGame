@@ -66,8 +66,10 @@ public class InspectObject : MonoBehaviour
     
     private void WhenPlayerInspects(bool inspecting)
     {
+        Transform highlightFolder = highlight.currentObject.transform.GetChild(0);
         currentItemInspecting.LookAt(Camera.main.transform);
 
+        highlightFolder.gameObject.SetActive(!inspecting);
         onTopVolume.SetActive(inspecting);
         camControls.enabled = !inspecting;
         movement.enabled = !inspecting;
