@@ -3,7 +3,6 @@ using UnityEngine;
 public class HidePlayer : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Camera cam;
     [SerializeField] CameraControls camControls;
     [SerializeField] HighlightObjects highlight;
     [SerializeField] BasicMovement movement;
@@ -30,7 +29,7 @@ public class HidePlayer : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, currentHidingSpot.position, 0.1f);
             
-            cam.transform.position = new Vector3(transform.position.x, 
+            Camera.main.transform.position = new Vector3(transform.position.x, 
                 transform.position.y + camControls.standingEyeOffset, 
                 transform.position.z);
         }
@@ -87,7 +86,11 @@ public class HidePlayer : MonoBehaviour
     private void WhenPlayerHides(bool hidden)
     {
         caughtHiding = hidden;
-        Invoke("SafeFromHiding", 0.8f);
+
+        if (hidden)
+        {
+            Invoke("SafeFromHiding", 0.3f);
+        }
 
         camControls.enabled = !hidden;
         movement.enabled = !hidden;
@@ -116,7 +119,7 @@ public class HidePlayer : MonoBehaviour
 
     private void SafeFromHiding()
     {
-        cam.transform.localRotation = currentHidingSpot.localRotation;
+        Camera.main.transform.rotation = currentHidingSpot.localRotation;
         caughtHiding = false;
     }
 }
