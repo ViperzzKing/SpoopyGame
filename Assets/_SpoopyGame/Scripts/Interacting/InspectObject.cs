@@ -107,8 +107,8 @@ public class InspectObject : MonoBehaviour
         item.rotation = itemRotation;
         item.position = itemPosition;
         
+        itemMesh.rotation = Quaternion.Euler(0, 0, 0);
         itemHighlight.rotation = quaternion.identity;
-        itemMesh.rotation = quaternion.identity;
         
     }
 }
