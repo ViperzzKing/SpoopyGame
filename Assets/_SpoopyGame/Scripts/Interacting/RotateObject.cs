@@ -21,7 +21,7 @@ public class RotateObject : MonoBehaviour
         item.Rotate(-inputX, 0, 0, Space.Self); 
         itemMesh.Rotate(0, -inputY, 0, Space.World);
         
-        // Mouse Inputs
+        // Mouse Inputst
         float mouseY = Input.GetAxis("Mouse Y") * 3;
         float mouseX = Input.GetAxis("Mouse X") * 3;
         

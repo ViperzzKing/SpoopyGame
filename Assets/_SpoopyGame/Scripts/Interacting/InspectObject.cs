@@ -50,6 +50,7 @@ public class InspectObject : MonoBehaviour
         currentItemInspecting = GetItemToInspectFromHighlight();
         SaveItemPosition(currentItemInspecting);
         currentItemInspecting.localScale = new Vector3(1, 1, 1);
+        currentItemInspecting.LookAt(Camera.main.transform);
         
         if (currentItemInspecting != null)
         {
@@ -71,7 +72,6 @@ public class InspectObject : MonoBehaviour
     private void WhenPlayerInspects(bool inspecting)
     {
         Transform highlightFolder = highlight.currentObject.transform.GetChild(0);
-        currentItemInspecting.LookAt(Camera.main.transform);
 
         highlightFolder.gameObject.SetActive(!inspecting);
         onTopVolume.SetActive(inspecting);
@@ -101,14 +101,13 @@ public class InspectObject : MonoBehaviour
 
     private void ReturnItem(Transform item)
     {
-        Transform itemHighlight = item.GetChild(0);
         Transform itemMesh = currentItemInspecting.GetChild(0);
         
         item.rotation = itemRotation;
         item.position = itemPosition;
         
-        itemMesh.rotation = Quaternion.Euler(0, 0, 0);
-        itemHighlight.rotation = quaternion.identity;
-        
+        itemMesh.localRotation = new Quaternion(0, 0, 0, 1);
+        itemMesh.position = item.position;
+
     }
 }
