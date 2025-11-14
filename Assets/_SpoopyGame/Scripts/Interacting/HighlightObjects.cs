@@ -4,6 +4,7 @@ public class HighlightObjects : MonoBehaviour
 {
     [SerializeField] private Camera cam;
     [SerializeField] private float playerReach = 5f;
+    [SerializeField] private InspectObject inspect;
 
     public bool interactable;
     public GameObject currentObject;
@@ -28,6 +29,8 @@ public class HighlightObjects : MonoBehaviour
         Vector3 lookDirection = cam.transform.forward;
         RaycastHit objectToHighlight;
 
+        if (inspect.playerIsInspecting) return;
+        
         if (Physics.Raycast(origin, lookDirection, out objectToHighlight, playerReach))
         {
             GameObject hitObject = objectToHighlight.collider.gameObject;

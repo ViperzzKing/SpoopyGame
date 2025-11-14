@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class InspectObject : MonoBehaviour
@@ -48,7 +49,7 @@ public class InspectObject : MonoBehaviour
 
         currentItemInspecting = GetItemToInspectFromHighlight();
         SaveItemPosition(currentItemInspecting);
-        
+        currentItemInspecting.localScale = new Vector3(1, 1, 1);
         
         if (currentItemInspecting != null)
         {
@@ -61,9 +62,10 @@ public class InspectObject : MonoBehaviour
 
     private void StopInspecting()
     {
-        ReturnItem(currentItemInspecting);
+        currentItemInspecting.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         Debug.Log("Stop Inspecting");
         WhenPlayerInspects(inspecting: false);
+        ReturnItem(currentItemInspecting);
     }
     
     private void WhenPlayerInspects(bool inspecting)
@@ -99,7 +101,14 @@ public class InspectObject : MonoBehaviour
 
     private void ReturnItem(Transform item)
     {
+        Transform itemHighlight = item.GetChild(0);
+        Transform itemMesh = currentItemInspecting.GetChild(0);
+        
         item.rotation = itemRotation;
         item.position = itemPosition;
+        
+        itemHighlight.rotation = quaternion.identity;
+        itemMesh.rotation = quaternion.identity;
+        
     }
 }

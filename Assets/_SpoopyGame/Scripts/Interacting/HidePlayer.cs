@@ -11,6 +11,7 @@ public class HidePlayer : MonoBehaviour
 
     [Header("Hiding")]
     [SerializeField] private bool playerIsHiding = false;
+    [SerializeField] private bool caughtHiding;
     private Vector3 outsidePosition;
     private Transform currentHidingSpot;
     
@@ -24,6 +25,15 @@ public class HidePlayer : MonoBehaviour
         
         if (leftMouse)
             TryToggleHiding();
+
+        if (caughtHiding)
+        {
+            transform.position = Vector3.Lerp(transform.position, currentHidingSpot.position, 0.1f);
+            
+            cam.transform.position = new Vector3(transform.position.x, 
+                transform.position.y + camControls.standingEyeOffset, 
+                transform.position.z);
+        }
     }
 
 
@@ -56,12 +66,9 @@ public class HidePlayer : MonoBehaviour
         if (currentHidingSpot != null)
         {
             // Teleport player to hiding spot
-            transform.position = currentHidingSpot.position;
-            cam.transform.localRotation = currentHidingSpot.localRotation;
-
-            cam.transform.position = new Vector3(transform.position.x, 
-                                                 transform.position.y + camControls.standingEyeOffset, 
-                                                 transform.position.z);
+            //transform.position = currentHidingSpot.position;
+            //transform.position = Vector3.MoveTowards(transform.position, currentHidingSpot.position, 2 * Time.deltaTime);
+            //cam.transform.localRotation = currentHidingSpot.localRotation;
 
             Debug.Log("Hide");
             WhenPlayerHides(hidden: true);
@@ -79,6 +86,9 @@ public class HidePlayer : MonoBehaviour
 
     private void WhenPlayerHides(bool hidden)
     {
+        caughtHiding = hidden;
+        Invoke("SafeFromHiding", 0.8f);
+
         camControls.enabled = !hidden;
         movement.enabled = !hidden;
         rb.isKinematic = hidden;
@@ -102,5 +112,11 @@ public class HidePlayer : MonoBehaviour
                 return child;
         }
         return null;
+    }
+
+    private void SafeFromHiding()
+    {
+        cam.transform.localRotation = currentHidingSpot.localRotation;
+        caughtHiding = false;
     }
 }
