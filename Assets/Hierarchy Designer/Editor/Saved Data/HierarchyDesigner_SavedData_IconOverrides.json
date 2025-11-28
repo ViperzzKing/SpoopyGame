@@ -9,6 +9,11 @@
             "globalId": "GlobalObjectId_V1-2-8124e5870f4fd4c779e7a5f994e84ad1-389884580-0",
             "source": "builtin",
             "value": "d_DecorativeLight"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-54acdcc5169676741b7f72ac4da7ac58-808227979-0",
+            "source": "builtin",
+            "value": "d_NavMeshAgent Icon"
         }
     ]
 }

@@ -1,12 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    // TODO -- Speed Control Varibles
-    // TODO -- Extra Varibles For States
-
+    [SerializeField] private float requiredDistance;
+    
+    [SerializeField] private GameObject enemyTarget;
     private EnemyStates enemyState;
+    [SerializeField] private NavMeshAgent enemy;
 
     public enum EnemyStates
     {
@@ -30,7 +32,7 @@ public class EnemyAI : MonoBehaviour
                 RoamingState();
                 break;
             case EnemyStates.Chasing:
-                ChasingState(target: gameObject.transform); // TODO -- have a way to change target to different things
+                ChasingState(target: enemyTarget.transform);
                 break;
             case EnemyStates.Searching:
                 SearchingState();
@@ -77,6 +79,13 @@ public class EnemyAI : MonoBehaviour
 
     private void ChasingState(Transform target)
     {
+        float distanceFromTarget = Vector3.Distance(transform.position, target.position);
+
+        if (distanceFromTarget == requiredDistance)
+        {
+            enemy.destination = target.transform.position;
+        }
+        
         // TODO -- once in sight (AND, OR) distance has been reached, NavMesh target becomes the player
         // TODO -- when hears sound in specific distance Navmesh target becomes sound source
     }
