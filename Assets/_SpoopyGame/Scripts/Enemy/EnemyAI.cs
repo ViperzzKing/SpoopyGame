@@ -5,9 +5,12 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float requiredDistance;
+    public float currentDistance;
+    
+    [Space]
     
     [SerializeField] private GameObject enemyTarget;
-    private EnemyStates enemyState;
+    [SerializeField] private EnemyStates enemyState;
     [SerializeField] private NavMeshAgent enemy;
 
     public enum EnemyStates
@@ -45,26 +48,17 @@ public class EnemyAI : MonoBehaviour
 
     private void StateSwitcher()
     {
+        float distanceFromTarget = Vector3.Distance(transform.position, enemyTarget.transform.position);
+        currentDistance = distanceFromTarget;
+        
         // TODO -- Change conditon names & True statements to match what needs to happen
-        bool tempName1 = true;
-        bool tempName2 = true;
-        bool tempName3 = true;
-        bool tempName4 = true;
+        bool closeEnough = distanceFromTarget <= requiredDistance;
 
 
 
-
-        if (tempName1)
-            enemyState = EnemyStates.Roaming;
-
-        else if (tempName2)
+        if (closeEnough)
             enemyState = EnemyStates.Chasing;
-        
-        else if (tempName3)
-            enemyState = EnemyStates.Searching;
-        
-        else if (tempName4)
-            enemyState = EnemyStates.Attacking;
+
     }
 
 
@@ -73,18 +67,16 @@ public class EnemyAI : MonoBehaviour
 
     private void RoamingState()
     {
+        
+        
         // TODO -- choose random spot on map OR nearby and change NavMesh target to that spot
         // TODO -- Once spot has been reached repeat
     }
 
     private void ChasingState(Transform target)
     {
-        float distanceFromTarget = Vector3.Distance(transform.position, target.position);
+        enemy.destination = target.transform.position;
 
-        if (distanceFromTarget == requiredDistance)
-        {
-            enemy.destination = target.transform.position;
-        }
         
         // TODO -- once in sight (AND, OR) distance has been reached, NavMesh target becomes the player
         // TODO -- when hears sound in specific distance Navmesh target becomes sound source
