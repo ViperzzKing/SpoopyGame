@@ -6,12 +6,13 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float requiredDistance;
     public float currentDistance;
-    
-    [Space]
-    
+    public bool destinationReached = true;
+
+    [Space] [SerializeField] private Collider[] validAreas;
     [SerializeField] private GameObject enemyTarget;
     [SerializeField] private EnemyStates enemyState;
     [SerializeField] private NavMeshAgent enemy;
+    [SerializeField] private Transform searcher;
 
     public enum EnemyStates
     {
@@ -24,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         StateHandler();
-        StateSwitcher();
+        //StateSwitcher();
     }
 
     private void StateHandler()
@@ -32,7 +33,7 @@ public class EnemyAI : MonoBehaviour
         switch (enemyState)
         {
             case EnemyStates.Roaming:
-                RoamingState();
+                RoamingState(searcher);
                 break;
             case EnemyStates.Chasing:
                 ChasingState(target: enemyTarget.transform);
@@ -65,12 +66,34 @@ public class EnemyAI : MonoBehaviour
     //----------------- STATES -----------------\\
 
 
-    private void RoamingState()
+    private void RoamingState(Transform target)
     {
         
+        if (destinationReached)
+        {
+            int maxTries = 1000;
+
+            for (int i = 0; i < maxTries; i++)
+            {
+                Vector3 newPosition = RandomPosition();
+                Debug.Log(newPosition);
+
+                if (IsInsideValidArea(newPosition))
+                {
+                    searcher.position = newPosition;
+                    enemy.destination = newPosition;
+                    destinationReached = false;
+                }
+            }
+        }
+        else
+        {
+            if (Vector3.Distance(enemy.transform.position, target.position) < 0.2f) // Change to ignore y later
+            {
+                destinationReached = true;
+            }
+        }
         
-        // TODO -- choose random spot on map OR nearby and change NavMesh target to that spot
-        // TODO -- Once spot has been reached repeat
     }
 
     private void ChasingState(Transform target)
@@ -106,5 +129,23 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(searchTime);
 
         // TODO -- Change a searching varible to false
+    }
+
+    private Vector3 RandomPosition()
+    {
+        return new Vector3(Random.Range(-50, 50), 0, Random.Range(-50, 50));
+    }
+
+    bool IsInsideValidArea(Vector3 checkerPosition)
+    {
+        foreach (var area in validAreas)
+        {
+            if (area.bounds.Contains(checkerPosition))
+            {
+                return true;
+            }
+        }
+
+        return false;  
     }
 }
