@@ -29,7 +29,7 @@ public class BasicMovement : MonoBehaviour
     private RaycastHit slopeHit;
 
     [Header("States")]
-    [SerializeField] private State currentPlayerState;
+    public State currentPlayerState;
     
     public enum State
     {

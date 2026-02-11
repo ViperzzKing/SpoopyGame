@@ -1,17 +1,20 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float requiredDistance;
     public float currentDistance;
     public bool destinationReached = true;
+    public bool playerDetected = false;
 
     [Space] [SerializeField] private Collider[] validAreas;
-    [SerializeField] private GameObject enemyTarget;
     [SerializeField] private EnemyStates enemyState;
     [SerializeField] private NavMeshAgent enemy;
+    [SerializeField] private Transform player;
     [SerializeField] private Transform searcher;
 
     public enum EnemyStates
@@ -22,10 +25,15 @@ public class EnemyAI : MonoBehaviour
         Attacking,
     }
 
+    private void Start()
+    {
+        destinationReached = true;
+    }
+
     private void Update()
     {
         StateHandler();
-        //StateSwitcher();
+        StateSwitcher();
     }
 
     private void StateHandler()
@@ -36,7 +44,7 @@ public class EnemyAI : MonoBehaviour
                 RoamingState(searcher);
                 break;
             case EnemyStates.Chasing:
-                ChasingState(target: enemyTarget.transform);
+                ChasingState(player);
                 break;
             case EnemyStates.Searching:
                 SearchingState();
@@ -49,15 +57,10 @@ public class EnemyAI : MonoBehaviour
 
     private void StateSwitcher()
     {
-        float distanceFromTarget = Vector3.Distance(transform.position, enemyTarget.transform.position);
-        currentDistance = distanceFromTarget;
-        
         // TODO -- Change conditon names & True statements to match what needs to happen
-        bool closeEnough = distanceFromTarget <= requiredDistance;
+        
 
-
-
-        if (closeEnough)
+        if (playerDetected)
             enemyState = EnemyStates.Chasing;
 
     }
@@ -68,40 +71,19 @@ public class EnemyAI : MonoBehaviour
 
     private void RoamingState(Transform target)
     {
-        
         if (destinationReached)
         {
-            int maxTries = 1000;
-
-            for (int i = 0; i < maxTries; i++)
-            {
-                Vector3 newPosition = RandomPosition();
-                Debug.Log(newPosition);
-
-                if (IsInsideValidArea(newPosition))
-                {
-                    searcher.position = newPosition;
-                    enemy.destination = newPosition;
-                    destinationReached = false;
-                }
-            }
+            Vector3 newPos = GetValidRandomPosition();
+            searcher.position = newPos;
+            enemy.SetDestination(newPos);
+            destinationReached = false;
         }
-        else
-        {
-            if (Vector3.Distance(enemy.transform.position, target.position) < 0.2f) // Change to ignore y later
-            {
-                destinationReached = true;
-            }
-        }
-        
     }
+    
 
     private void ChasingState(Transform target)
     {
         enemy.destination = target.transform.position;
-
-        
-        // TODO -- once in sight (AND, OR) distance has been reached, NavMesh target becomes the player
         // TODO -- when hears sound in specific distance Navmesh target becomes sound source
     }
 
@@ -133,9 +115,20 @@ public class EnemyAI : MonoBehaviour
 
     private Vector3 RandomPosition()
     {
-        return new Vector3(Random.Range(-50, 50), 0, Random.Range(-50, 50));
+        return new Vector3(Random.Range(-150, 150), 0, Random.Range(-150, 150));
     }
 
+    private Vector3 GetValidRandomPosition()
+    {
+        int maxTries = 50;
+        for (int i = 0; i < maxTries; i++)
+        {
+            Vector3 pos = RandomPosition();
+            if (IsInsideValidArea(pos)) return pos;
+        }
+        return transform.position;
+    }
+    
     bool IsInsideValidArea(Vector3 checkerPosition)
     {
         foreach (var area in validAreas)
@@ -146,6 +139,6 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        return false;  
+        return false;
     }
 }
