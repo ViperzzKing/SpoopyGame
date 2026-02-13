@@ -78,6 +78,13 @@ public class EnemyAI : MonoBehaviour
             enemy.SetDestination(newPos);
             destinationReached = false;
         }
+        else
+        {
+            if (enemy.remainingDistance <= enemy.stoppingDistance && !enemy.pathPending)
+            {
+                destinationReached = true;
+            }
+        }
     }
     
 

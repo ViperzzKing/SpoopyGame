@@ -1,6 +1,7 @@
 using System;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InspectObject : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class InspectObject : MonoBehaviour
     public BasicMovement movement;
     public HighlightObjects highlight;
     public GameObject onTopVolume;
+    public Image crosshair;
+    public Image inspectBorder;
 
     public bool playerIsInspecting;
     public Transform currentItemInspecting;
@@ -77,6 +80,8 @@ public class InspectObject : MonoBehaviour
         onTopVolume.SetActive(inspecting);
         camControls.enabled = !inspecting;
         movement.enabled = !inspecting;
+        crosshair.gameObject.SetActive(!inspecting);
+        inspectBorder.gameObject.SetActive(inspecting);
         playerIsInspecting = inspecting;
     }
     
