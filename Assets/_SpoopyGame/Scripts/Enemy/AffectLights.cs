@@ -52,6 +52,6 @@ public class AffectLights : MonoBehaviour
             yield return null;
         }
         light.intensity = 397.887377182f;
-        fire.SetActive(false);
+        fire.SetActive(true);
     }
 }

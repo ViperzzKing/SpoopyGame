@@ -19,7 +19,7 @@ TagManager:
   - Ground
   - Step
   - Hiding Spot
-  - InspectableItem
+  - Interactable
   - Enemy
   - Player
   - 

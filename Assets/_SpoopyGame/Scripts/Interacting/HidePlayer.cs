@@ -4,7 +4,7 @@ public class HidePlayer : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] CameraControls camControls;
-    [SerializeField] HighlightObjects highlight;
+    [SerializeField] Highlight highlight;
     [SerializeField] BasicMovement movement;
     [SerializeField] Rigidbody rb;
 

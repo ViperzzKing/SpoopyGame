@@ -1,6 +1,7 @@
 using System;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.UI;
 
 public class InspectObject : MonoBehaviour
@@ -8,7 +9,7 @@ public class InspectObject : MonoBehaviour
     public Camera cam;
     public CameraControls camControls;
     public BasicMovement movement;
-    public HighlightObjects highlight;
+    public Highlight highlight;
     public GameObject onTopVolume;
     public Image crosshair;
     public Image inspectBorder;
@@ -53,15 +54,12 @@ public class InspectObject : MonoBehaviour
         currentItemInspecting = GetItemToInspectFromHighlight();
         SaveItemPosition(currentItemInspecting);
         currentItemInspecting.localScale = new Vector3(1, 1, 1);
+        currentItemInspecting.position = cam.transform.position + cam.transform.forward * 2;
         currentItemInspecting.LookAt(Camera.main.transform);
-        
-        if (currentItemInspecting != null)
-        {
-            currentItemInspecting.position = cam.transform.position + cam.transform.forward * 2;
 
             Debug.Log("Inspecting");
             WhenPlayerInspects(inspecting: true);
-        }
+        
     }
 
     private void StopInspecting()
@@ -74,14 +72,15 @@ public class InspectObject : MonoBehaviour
     
     private void WhenPlayerInspects(bool inspecting)
     {
-        Transform highlightFolder = highlight.currentObject.transform.GetChild(0);
+        CustomPassVolume highlightOutline = highlight.currentHighlight;
 
-        highlightFolder.gameObject.SetActive(!inspecting);
+        highlightOutline.enabled = !inspecting;
         onTopVolume.SetActive(inspecting);
         camControls.enabled = !inspecting;
         movement.enabled = !inspecting;
         crosshair.gameObject.SetActive(!inspecting);
         inspectBorder.gameObject.SetActive(inspecting);
+        
         playerIsInspecting = inspecting;
     }
     
@@ -90,14 +89,9 @@ public class InspectObject : MonoBehaviour
         if (highlight.currentObject == null)
             return null;
 
-        return FindItemsParent(highlight.currentObject);
+        return highlight.currentObject.transform;
     }
     
-    private Transform FindItemsParent(GameObject item)
-    {
-        return item.transform.parent;
-    }
-
     private void SaveItemPosition(Transform item)
     {
         itemRotation = item.rotation;
