@@ -6,7 +6,7 @@ public class Highlight : MonoBehaviour
     [Header("Highlighted Object")]
     public GameObject currentObject;
     public bool interactable;
-    public CustomPassVolume currentHighlight;
+    public OutlineMesh currentHighlight;
     
     [Header("Player")]
     [SerializeField] private float playerReach = 3f;
@@ -59,16 +59,16 @@ public class Highlight : MonoBehaviour
         interactable = true;
 
         // Grab the highlight from the new object
-        currentHighlight = newObject.GetComponent<CustomPassVolume>();
+        currentHighlight = newObject.GetComponent<OutlineMesh>();
 
         if (currentHighlight != null)
         {
-            currentHighlight.enabled = true;
+            currentHighlight.ToggleOutline();
             Debug.Log("Enable highlight on " + newObject.name);
         }
         else
         {
-            Debug.LogWarning("No CustomPassVolume found on " + newObject.name);
+            Debug.LogWarning("No Outline Scrpt found on " + newObject.name);
         }
     }
 
@@ -76,7 +76,7 @@ public class Highlight : MonoBehaviour
     {
         if (currentHighlight != null)
         {
-            currentHighlight.enabled = false;
+            currentHighlight.ToggleOutline();
         }
 
         currentObject = null;

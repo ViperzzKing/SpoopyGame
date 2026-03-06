@@ -72,9 +72,9 @@ public class InspectObject : MonoBehaviour
     
     private void WhenPlayerInspects(bool inspecting)
     {
-        CustomPassVolume highlightOutline = highlight.currentHighlight;
+        OutlineMesh highlightOutline = highlight.currentHighlight;
 
-        highlightOutline.enabled = !inspecting;
+        highlightOutline.ToggleOutline();
         onTopVolume.SetActive(inspecting);
         camControls.enabled = !inspecting;
         movement.enabled = !inspecting;
