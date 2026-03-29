@@ -19,6 +19,31 @@
             "globalId": "GlobalObjectId_V1-2-54acdcc5169676741b7f72ac4da7ac58-4162634696582902935-63568141",
             "source": "builtin",
             "value": "d_CapsuleCollider Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-dcaa736ce8024394ebfc2212496554e0-4162634696582902935-929313006",
+            "source": "builtin",
+            "value": "d_TrackAvatarButtonEnabled@2x"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-dcaa736ce8024394ebfc2212496554e0-5878304407274739158-229971531",
+            "source": "builtin",
+            "value": "d_NavMeshAgent Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-dcaa736ce8024394ebfc2212496554e0-1766119747-0",
+            "source": "builtin",
+            "value": "d_Terrain Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-dcaa736ce8024394ebfc2212496554e0-5994999336441090766-540410856",
+            "source": "builtin",
+            "value": "d_BoxCollider Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-dcaa736ce8024394ebfc2212496554e0-1405462596-0",
+            "source": "asset",
+            "value": "a58fea03b14b2be4295b11f21a57a6f7"
         }
     ]
 }

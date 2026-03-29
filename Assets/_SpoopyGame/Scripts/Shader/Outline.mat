@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3277682637193257479
+--- !u!114 &-968362498112865223
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24,7 +24,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Outline
-  m_Shader: {fileID: -6465566751694194690, guid: 5b597de9977737a42b4776da1b4665a6, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 966bf59d246522a458c1e1ec2fa7b464, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -62,11 +62,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 0
+    - _Alpha: 0.21
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
-    - _BlendMode: 4
+    - _BlendMode: 0
     - _Brightness: 0
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
@@ -108,6 +108,6 @@ Material:
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Outline_Colour: {r: 11.984314, g: 11.132499, b: 0, a: 1}
+    - _Outline_Colour: {r: 0.99034953, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
