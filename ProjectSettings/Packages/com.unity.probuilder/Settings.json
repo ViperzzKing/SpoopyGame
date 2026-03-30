@@ -99,7 +99,7 @@
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize.Prism",
-                "value": "{\"m_Value\":{\"x\":-6.0489182472229,\"y\":3.5785112380981447,\"z\":6.603182792663574}}"
+                "value": "{\"m_Value\":{\"x\":12.33312702178955,\"y\":7.6238112449646,\"z\":-13.120048522949219}}"
             },
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -114,12 +114,12 @@
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize.Cube",
-                "value": "{\"m_Value\":{\"x\":7.125816345214844,\"y\":0.1120535209774971,\"z\":3.851278781890869}}"
+                "value": "{\"m_Value\":{\"x\":-14.515575408935547,\"y\":4.542383670806885,\"z\":19.594711303710939}}"
             },
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize.Pipe",
-                "value": "{\"m_Value\":{\"x\":18.106307983398439,\"y\":14.545318603515625,\"z\":21.016063690185548}}"
+                "value": "{\"m_Value\":{\"x\":-24.613889694213868,\"y\":0.6465065479278565,\"z\":21.91042709350586}}"
             },
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
