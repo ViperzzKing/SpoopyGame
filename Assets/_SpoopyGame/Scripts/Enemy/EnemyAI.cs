@@ -17,6 +17,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform searcher;
 
+    [SerializeField] private bool audioCheck = true;
+
     public enum EnemyStates
     {
         Roaming, 
