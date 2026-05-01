@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 13541746530928473}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hiding Spot
   m_TagString: HidingSpot
   m_Icon: {fileID: 0}
@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351394430242828742}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.38699996, z: -0.34199724}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000027939674}
+  m_LocalPosition: {x: -0.00000028312206, y: -0.38700002, z: -0.3419972}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5639386476689827420}
   m_Father: {fileID: 1909044993248828124}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1606414949207335644
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2000228717208198650}
   - component: {fileID: 1134448833410527535}
   - component: {fileID: 1867093102779724930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 5190
+  m_VersionIndex: 5217
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 2855713957599208766}
   - component: {fileID: 128321954553740673}
   - component: {fileID: 7908578017179831261}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TEMP PLAYER EYES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,9 +725,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1909044993248828124}
   - component: {fileID: 4583196116916625350}
-  m_Layer: 0
+  - component: {fileID: 4743902594274181428}
+  m_Layer: 9
   m_Name: Hiding Spot Template
-  m_TagString: Untagged
+  m_TagString: HidingSpot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -768,5 +769,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.0581794, z: 1}
-  m_Center: {x: -0, y: 1.0515449, z: 0}
+  m_Size: {x: 1, y: 2.0581794, z: 1.0176481}
+  m_Center: {x: 3.9435222e-11, y: 1.0515449, z: 0.008823156}
+--- !u!114 &4743902594274181428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120547848157713616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d90dd25ed1b7b488825593093dc6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineMesh
+  materials:
+  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 796ae01d10d9d1b4c99837fdb024435c, type: 2}
+  outlineScale: 35

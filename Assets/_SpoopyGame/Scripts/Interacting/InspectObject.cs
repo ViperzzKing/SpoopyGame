@@ -1,5 +1,6 @@
 using System;
 using Unity.Mathematics;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class InspectObject : MonoBehaviour
 {
     public Camera cam;
+    public Rigidbody rb;
     public CameraControls camControls;
     public BasicMovement movement;
     public Highlight highlight;
@@ -15,17 +17,33 @@ public class InspectObject : MonoBehaviour
     public Image inspectBorder;
 
     public bool playerIsInspecting;
+    public bool playerHoldingSomething;
     public Transform currentItemInspecting;
+    public Transform currentItemHolding;
     private Vector3 itemPosition;
     private Quaternion itemRotation;
 
     private void Update()
     {
         bool leftMouse = Input.GetMouseButtonDown(0);
+        bool eButton = Input.GetKeyDown(KeyCode.E);
         
         if (leftMouse)
             TryToggleInspect();
+        
+        if (eButton)
+            TogglePickup();
 
+    }
+
+    private void TogglePickup()
+    {
+        bool canPickup = !playerHoldingSomething;
+
+        if (canPickup && playerIsInspecting)
+            PickUpItem();
+        else if (playerHoldingSomething && !playerIsInspecting)
+            DropItem();
     }
 
     private void TryToggleInspect()
@@ -48,6 +66,41 @@ public class InspectObject : MonoBehaviour
         }
     }
 
+    private void PickUpItem()
+    {
+        currentItemInspecting.transform.parent = cam.transform;
+        currentItemInspecting.localPosition = new Vector3(-0.27f, -0.1f, 0.36f);
+        
+        currentItemInspecting.localRotation = new Quaternion(0, 0, 0, 0);
+        SaveItemPosition(currentItemInspecting);
+        ReturnItem(currentItemInspecting);
+        
+        currentItemInspecting.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        currentItemInspecting.GetComponent<BoxCollider>().isTrigger = true;
+        currentItemHolding = currentItemInspecting;
+        WhenPlayerInspects(false);
+        rb.isKinematic = true;
+        
+        
+        playerHoldingSomething = true;
+    }
+
+    private void DropItem()
+    {
+        currentItemHolding.localPosition = new Vector3(0f, 0, 0.3f);
+        currentItemInspecting.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        currentItemHolding.GetComponent<BoxCollider>().isTrigger = false;
+
+        SaveItemPosition(currentItemHolding);
+        ReturnItem(currentItemHolding);
+        
+        currentItemHolding.transform.parent = null;
+        rb.isKinematic = false;
+        
+        playerHoldingSomething = false;
+        currentItemHolding = null;
+    }
+    
     private void InspectItem()
     {
 
@@ -80,7 +133,7 @@ public class InspectObject : MonoBehaviour
         movement.enabled = !inspecting;
         crosshair.gameObject.SetActive(!inspecting);
         inspectBorder.gameObject.SetActive(inspecting);
-        
+        rb.isKinematic = inspecting;
         playerIsInspecting = inspecting;
     }
     
