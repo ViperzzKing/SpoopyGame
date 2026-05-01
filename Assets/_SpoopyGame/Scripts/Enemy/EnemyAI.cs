@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour
     public bool destinationReached = true;
     public bool playerDetected = false;
 
+    public bool enemyStunned = false;
+
     [Space] [SerializeField] private Collider[] validAreas;
     [SerializeField] private EnemyStates enemyState;
     [SerializeField] private NavMeshAgent enemy;
@@ -25,6 +27,7 @@ public class EnemyAI : MonoBehaviour
         Chasing,
         Searching,
         Attacking,
+        Stunned
     }
 
     private void Start()
@@ -54,6 +57,9 @@ public class EnemyAI : MonoBehaviour
             case EnemyStates.Attacking:
                 AttackingState();
                 break;
+            case EnemyStates.Stunned:
+                StunnedState();
+                break;
         }
     }
 
@@ -64,6 +70,9 @@ public class EnemyAI : MonoBehaviour
 
         if (playerDetected)
             enemyState = EnemyStates.Chasing;
+
+        if (enemyStunned)
+            enemyState = EnemyStates.Stunned;
 
     }
 
@@ -102,13 +111,18 @@ public class EnemyAI : MonoBehaviour
 
         // TODO -- when enemy loses sight (AND, OR) player is hiding, NavMesh target becomes Roaming but closer, AND sound detection is increased
 
-        StartCoroutine(SearchingTime(0)); // Replace 0 with searching time or add a varible
+        StartCoroutine(SearchingTime(10f)); // Replace 10f with searching time or add a varible
     }
 
     private void AttackingState()
     {
         // TODO -- Whatever happends when the monster attacks the player idk, damage, instant death something like that?
         // TODO -- just make a condition that enables a bool for now
+    }
+    private void StunnedState()
+    {
+        //TODO -- Set up code to make the enemy in a certain animation
+        StartCoroutine(StunTime(10f)); // Replace 10f with the rune's stun time or add a variable
     }
 
 
@@ -120,6 +134,13 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(searchTime);
 
         // TODO -- Change a searching varible to false
+    }
+
+
+    private IEnumerator StunTime(float searchTime)
+    {
+        yield return new WaitForSeconds(searchTime);
+        enemyStunned = false;
     }
 
     private Vector3 RandomPosition()
