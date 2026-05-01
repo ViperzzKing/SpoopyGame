@@ -65,8 +65,8 @@ public class HidePlayer : MonoBehaviour
         if (currentHidingSpot != null)
         {
             // Teleport player to hiding spot
-            transform.position = currentHidingSpot.position;
-            transform.position = Vector3.MoveTowards(transform.position, currentHidingSpot.position, 2 * Time.deltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position, currentHidingSpot.position, 2 * Time.deltaTime);
+            //transform.position = currentHidingSpot.position;
             Camera.main.transform.localRotation = currentHidingSpot.localRotation;
 
             Debug.Log("Hide");
@@ -89,7 +89,7 @@ public class HidePlayer : MonoBehaviour
 
         if (hidden)
         {
-            Invoke("SafeFromHiding", 0.3f);
+            Invoke("SafeFromHiding", 1f);
         }
 
         camControls.enabled = !hidden;
