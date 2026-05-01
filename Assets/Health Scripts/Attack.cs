@@ -8,22 +8,12 @@ public class Attack : MonoBehaviour
         Overtime
     }
 
-    public enum Type
-    {
-        Standard,
-        Bleed,
-        Electric,
-        Fire,
-        Ice,
-        Explosion,
-        Fall
-    }
     [SerializeField] private float damageAmount;
     [SerializeField] private Apply apply;
-    [SerializeField] private Type type;
     
     private void DealDamage(GameObject victim)
     {
+        //Prevents attacking an object that is of the same type
         if(victim.GetComponent<Health>() && victim.layer != gameObject.layer)
         {
             victim.GetComponent<Health>().TakeDamage(damageAmount);

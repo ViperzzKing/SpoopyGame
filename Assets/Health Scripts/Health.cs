@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
         healthCurrent = healthMax;    
     }
 
+    //Debug Loop, for texting UI
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Numlock))
@@ -27,9 +28,10 @@ public class Health : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+
     public void TakeDamage (float damage)
     {
+        //Take the current health and subtract it by damage while making sure it doesn't exeed Max or Min health
         healthCurrent = Mathf.Clamp(healthCurrent - damage, 0, healthMax);
         if(healthCurrent <= 0)
         {
@@ -39,12 +41,14 @@ public class Health : MonoBehaviour
 
     public void Heal(float amount)
     {
+        //Take the current health and subtract it by damage while making sure it doesn't exeed Max or Min health
         healthCurrent = Mathf.Clamp(healthCurrent + amount , 0, healthMax);
     }
 
     private void NoHealth()
     {
         Debug.Log(name + " has met a cruel end.");
+        //Sets up an event in Unity that other scripts can use
         onNoHealth.Invoke();
     }
     public float GetDamagePercent()
