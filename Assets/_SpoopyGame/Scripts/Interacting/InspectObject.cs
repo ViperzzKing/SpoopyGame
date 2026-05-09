@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class InspectObject : MonoBehaviour
 {
     public Camera cam;
-    public Rigidbody rb;
+    public Rigidbody runeRB;
     public CameraControls camControls;
     public BasicMovement movement;
     public Highlight highlight;
@@ -68,43 +68,41 @@ public class InspectObject : MonoBehaviour
 
     private void PickUpItem()
     {
-        currentItemInspecting.transform.parent = cam.transform;
+        currentItemInspecting.parent = cam.transform;
         currentItemInspecting.localPosition = new Vector3(-0.27f, -0.1f, 0.36f);
-        
-        currentItemInspecting.localRotation = new Quaternion(0, 0, 0, 0);
+        currentItemInspecting.localRotation = Quaternion.identity;
+
         SaveItemPosition(currentItemInspecting);
         ReturnItem(currentItemInspecting);
-        
+
         currentItemInspecting.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         currentItemInspecting.GetComponent<BoxCollider>().isTrigger = true;
+
         currentItemHolding = currentItemInspecting;
         WhenPlayerInspects(false);
-        rb.isKinematic = true;
-        
-        
+        runeRB.isKinematic = true;
+
         playerHoldingSomething = true;
     }
 
     private void DropItem()
     {
-        currentItemHolding.localPosition = new Vector3(0f, 0, 0.3f);
-        currentItemInspecting.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        Vector3 location = DropLocation.dropLocation.DropAtLocation();
+
+        currentItemHolding.parent = null;
+        currentItemHolding.position = location;
+        currentItemHolding.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         currentItemHolding.GetComponent<BoxCollider>().isTrigger = false;
 
-        SaveItemPosition(currentItemHolding);
-        ReturnItem(currentItemHolding);
-        
-        currentItemHolding.transform.parent = null;
-        rb.isKinematic = false;
-        
+        runeRB.isKinematic = false;
         playerHoldingSomething = false;
         currentItemHolding = null;
     }
     
     private void InspectItem()
     {
-
         currentItemInspecting = GetItemToInspectFromHighlight();
+        runeRB = currentItemInspecting.GetComponent<Rigidbody>();
         SaveItemPosition(currentItemInspecting);
         currentItemInspecting.localScale = new Vector3(1, 1, 1);
         currentItemInspecting.position = cam.transform.position + cam.transform.forward * 2;
@@ -133,7 +131,7 @@ public class InspectObject : MonoBehaviour
         movement.enabled = !inspecting;
         crosshair.gameObject.SetActive(!inspecting);
         inspectBorder.gameObject.SetActive(inspecting);
-        rb.isKinematic = inspecting;
+        runeRB.isKinematic = inspecting;
         playerIsInspecting = inspecting;
     }
     
@@ -145,21 +143,20 @@ public class InspectObject : MonoBehaviour
         return highlight.currentObject.transform;
     }
     
-    private void SaveItemPosition(Transform item)
+    public void SaveItemPosition(Transform item)
     {
         itemRotation = item.rotation;
         itemPosition = item.position;
     }
 
-    private void ReturnItem(Transform item)
+    public void ReturnItem(Transform item)
     {
-        Transform itemMesh = currentItemInspecting.GetChild(0);
-        
+        Transform itemMesh = item.GetChild(0);
+
         item.rotation = itemRotation;
         item.position = itemPosition;
-        
-        itemMesh.localRotation = new Quaternion(0, 0, 0, 1);
-        itemMesh.position = item.position;
 
+        itemMesh.localRotation = Quaternion.identity;
+        itemMesh.position = item.position;
     }
 }

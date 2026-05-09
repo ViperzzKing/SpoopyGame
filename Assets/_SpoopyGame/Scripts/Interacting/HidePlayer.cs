@@ -119,7 +119,6 @@ public class HidePlayer : MonoBehaviour
 
     private void SafeFromHiding()
     {
-        Camera.main.transform.rotation = currentHidingSpot.localRotation;
         caughtHiding = false;
     }
 }

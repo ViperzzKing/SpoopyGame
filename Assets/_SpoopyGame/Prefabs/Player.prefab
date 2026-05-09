@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 2101181770714309364}
   - component: {fileID: 5133674846833202481}
   - component: {fileID: 1917833368541206596}
+  - component: {fileID: 9030229935665357659}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -142,7 +143,7 @@ MonoBehaviour:
   currentObject: {fileID: 0}
   interactable: 0
   currentHighlight: {fileID: 0}
-  playerReach: 5
+  playerReach: 2
   interactableMask:
     serializedVersion: 2
     m_Bits: 512
@@ -201,6 +202,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateObject
   inspect: {fileID: 5133674846833202481}
+--- !u!114 &9030229935665357659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4162634696582902935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc4c9c44b21e7c45a8e11bfdfd6d4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropLocation
+  dropDistance: 2
 --- !u!1 &4514012534103555841
 GameObject:
   m_ObjectHideFlags: 0
