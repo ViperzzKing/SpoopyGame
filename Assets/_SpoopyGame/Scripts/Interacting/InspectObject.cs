@@ -15,6 +15,7 @@ public class InspectObject : MonoBehaviour
     public GameObject onTopVolume;
     public Image crosshair;
     public Image inspectBorder;
+    public RuneSlot runeSlot;
 
     public bool playerIsInspecting;
     public bool playerHoldingSomething;
@@ -68,6 +69,7 @@ public class InspectObject : MonoBehaviour
 
     private void PickUpItem()
     {
+        WhenPlayerInspects(false);
         currentItemInspecting.parent = cam.transform;
         currentItemInspecting.localPosition = new Vector3(-0.27f, -0.1f, 0.36f);
         currentItemInspecting.localRotation = Quaternion.identity;
@@ -79,7 +81,6 @@ public class InspectObject : MonoBehaviour
         currentItemInspecting.GetComponent<BoxCollider>().isTrigger = true;
 
         currentItemHolding = currentItemInspecting;
-        WhenPlayerInspects(false);
         runeRB.isKinematic = true;
 
         playerHoldingSomething = true;
@@ -124,7 +125,8 @@ public class InspectObject : MonoBehaviour
     private void WhenPlayerInspects(bool inspecting)
     {
         OutlineMesh highlightOutline = highlight.currentHighlight;
-
+        runeSlot = currentItemInspecting.GetComponent<RuneSlot>();
+        
         highlightOutline.ToggleOutline();
         onTopVolume.SetActive(inspecting);
         camControls.enabled = !inspecting;
@@ -133,6 +135,7 @@ public class InspectObject : MonoBehaviour
         inspectBorder.gameObject.SetActive(inspecting);
         runeRB.isKinematic = inspecting;
         playerIsInspecting = inspecting;
+        runeSlot.enabled = !inspecting;
     }
     
     private Transform GetItemToInspectFromHighlight()
