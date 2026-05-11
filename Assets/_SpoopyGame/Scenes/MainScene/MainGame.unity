@@ -5576,7 +5576,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3e1c714343c99b4582fa32afe9ad25b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2fce7af7cb14684c8e8242feb109aab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5603,13 +5603,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 361202315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f0f4c30f23e58f4090e56fb3a9bc44a, type: 3}
+  m_Script: {fileID: 11500000, guid: 81537fe135d917d4db7a57555b11090d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EyeOverlayImage
-  enemyAI: {fileID: 0}
+  enemyAI: {fileID: 1603292079}
   alphaCurrent: 0
   alphaMax: 1
-  fadeTime: 0.1
+  fadeTime: 0.5
 --- !u!1001 &363328253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12739,7 +12739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b1c42aec2a95bc94cbfad6c2c0e1e87d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94355dfd40835e34d896c613d17e7059, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36744,7 +36744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35685ff874ed5dc4e8b53a2b8fc7266b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3fccaad9ca68b854584a4f9ca0a1e5f0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36771,10 +36771,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2064761301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f016be171ca0bca498fd982c193f3ea3, type: 3}
+  m_Script: {fileID: 11500000, guid: 07e64f5b46b35ab4eb5f95d1833d053a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SneakImage
-  basicMovement: {fileID: 0}
+  basicMovement: {fileID: 1765779948}
   alphaCurrent: 0
   alphaMax: 1
   fadeTime: 0.05
@@ -37037,14 +37037,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InspectObject
   cam: {fileID: 1964850535}
+  runeRB: {fileID: 0}
   camControls: {fileID: 1964850532}
   movement: {fileID: 1765779948}
   highlight: {fileID: 2095590849}
   onTopVolume: {fileID: 2063660174}
   crosshair: {fileID: 522045000}
   inspectBorder: {fileID: 61950833}
+  runeSlot: {fileID: 0}
   playerIsInspecting: 0
+  playerHoldingSomething: 0
   currentItemInspecting: {fileID: 0}
+  currentItemHolding: {fileID: 0}
 --- !u!114 &2095590852
 MonoBehaviour:
   m_ObjectHideFlags: 0
