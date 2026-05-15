@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc6ffa4bc42952741b19f3b223e52b3c
+guid: c589eda79c8ee1a4d8444de6d1917fb7
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -31,7 +31,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Ghost_Roaming_Anim
+      name: Ghost_Roaming
       takeName: Take 001
       internalID: 1827226128182048838
       firstFrame: 1
