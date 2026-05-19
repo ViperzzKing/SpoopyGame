@@ -32,8 +32,7 @@ public class BasicMovement : MonoBehaviour
     public State currentPlayerState;
 
 
-    [Header("bool for Oscar due to mediocre code")]
-    public bool isCrouching;
+
     public enum State
     {
         Walk,
