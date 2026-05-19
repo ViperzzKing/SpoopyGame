@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class RuneDisable : MonoBehaviour
+public class FlashlightsToggles : MonoBehaviour
 {
-    [SerializeField] private float stunTime;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
