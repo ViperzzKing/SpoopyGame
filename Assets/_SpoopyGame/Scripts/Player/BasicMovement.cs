@@ -1,9 +1,12 @@
+using System;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class BasicMovement : MonoBehaviour
 {
+    public static BasicMovement playerController;
+    
     [Header("References")]
     [SerializeField] private CameraControls camControls;
     [SerializeField] private Rigidbody rb;
@@ -44,6 +47,10 @@ public class BasicMovement : MonoBehaviour
 
     //---------------------------------------------------------\\
 
+    private void Awake()
+    {
+        playerController = this;
+    }
 
     private void Update()
     {

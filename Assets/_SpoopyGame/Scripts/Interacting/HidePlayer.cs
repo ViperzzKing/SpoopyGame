@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class HidePlayer : MonoBehaviour
 {
+    public static HidePlayer playerHider;
+    
     [Header("References")]
     [SerializeField] CameraControls camControls;
     [SerializeField] Highlight highlight;
@@ -9,7 +12,7 @@ public class HidePlayer : MonoBehaviour
     [SerializeField] Rigidbody rb;
 
     [Header("Hiding")]
-    [SerializeField] private bool playerIsHiding = false;
+    public bool playerIsHiding = false;
     [SerializeField] private bool caughtHiding;
     private Vector3 outsidePosition;
     private Transform currentHidingSpot;
@@ -17,6 +20,10 @@ public class HidePlayer : MonoBehaviour
 
     //---------------------------------------------------------\\
 
+    private void Awake()
+    {
+        playerHider = this;
+    }
 
     private void Update()
     {

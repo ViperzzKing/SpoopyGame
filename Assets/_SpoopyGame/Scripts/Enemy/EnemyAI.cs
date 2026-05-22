@@ -66,11 +66,14 @@ public class EnemyAI : MonoBehaviour
     private void StateSwitcher()
     {
         // TODO -- Change conditon names & True statements to match what needs to happen
-        
+        bool playerHidesFromChase = HidePlayer.playerHider.playerIsHiding && enemyState == EnemyStates.Chasing;
 
         if (playerDetected)
             enemyState = EnemyStates.Chasing;
 
+        if (playerHidesFromChase)
+            enemyState = EnemyStates.Searching;
+        
         if (enemyStunned)
             enemyState = EnemyStates.Stunned;
 
@@ -85,8 +88,14 @@ public class EnemyAI : MonoBehaviour
         if (destinationReached)
         {
             Vector3 newPos = GetValidRandomPosition();
+            Debug.Log(newPos);
+            
             searcher.position = newPos;
+            Debug.Log(searcher.position);
+            
             enemy.SetDestination(newPos);
+            Debug.Log("set enemy destination");
+            
             destinationReached = false;
         }
         else
@@ -107,11 +116,29 @@ public class EnemyAI : MonoBehaviour
 
     private void SearchingState()
     {
-        // TODO -- change a searching varible to true
-
+        if (destinationReached)
+        {
+            Vector3 newPos = GetValidRandomPosition();
+            Debug.Log(newPos);
+            
+            searcher.position = newPos;
+            Debug.Log(searcher.position);
+            
+            enemy.SetDestination(newPos);
+            Debug.Log("set enemy searching destination");
+            
+            destinationReached = false;
+            StartCoroutine(SearchingTime(10f)); // Replace 10f with searching time or add a varible
+        }
+        else
+        {
+            if (enemy.remainingDistance <= enemy.stoppingDistance && !enemy.pathPending)
+            {
+                destinationReached = true;
+            }
+        }
+        
         // TODO -- when enemy loses sight (AND, OR) player is hiding, NavMesh target becomes Roaming but closer, AND sound detection is increased
-
-        StartCoroutine(SearchingTime(10f)); // Replace 10f with searching time or add a varible
     }
 
     private void AttackingState()
@@ -132,8 +159,13 @@ public class EnemyAI : MonoBehaviour
     private IEnumerator SearchingTime(float searchTime)
     {
         yield return new WaitForSeconds(searchTime);
-
-        // TODO -- Change a searching varible to false
+        Debug.Log("finished searching");
+        // If Couldn't Find Player
+        enemyState = EnemyStates.Roaming;
+        // If Found Player Hiding
+        // Attacking State
+        // If Found Player Sneaking
+        // Chasing State
     }
 
 
@@ -145,18 +177,36 @@ public class EnemyAI : MonoBehaviour
 
     private Vector3 RandomPosition()
     {
-        return new Vector3(Random.Range(-150, 150), 0, Random.Range(-150, 150));
+        return new Vector3(Random.Range(-150, 150), Random.Range(0, 50), Random.Range(-150, 150));
+    }
+
+    private Vector3 RandomLocalPostion()
+    {
+        return new Vector3(transform.position.x + Random.Range(-20, 20), 
+                            0,
+                            transform.position.z + Random.Range(-20, 20));
     }
 
     private Vector3 GetValidRandomPosition()
     {
-        int maxTries = 50;
+        int maxTries = 1000;
         for (int i = 0; i < maxTries; i++)
         {
             Vector3 pos = RandomPosition();
-            if (IsInsideValidArea(pos)) return pos;
+            Vector3 localPos = RandomLocalPostion();
+            //Debug.Log(RandomPosition());
+            if (IsInsideValidArea(pos) && enemyState == EnemyStates.Roaming) return pos;
+            if (IsInsideValidArea(localPos) && enemyState == EnemyStates.Searching) return localPos;
+
         }
+        //Debug.Log("failed");
         return transform.position;
+    }
+
+    [ContextMenu("test")]
+    private void TestLocalPos()
+    {
+        Debug.Log(RandomLocalPostion());
     }
     
     bool IsInsideValidArea(Vector3 checkerPosition)
