@@ -6,17 +6,22 @@ using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
 {
+    public static EnemyAI enemyAI;
+
+    [SerializeField] private float searchingTime = 10;
     [SerializeField] private float requiredDistance;
     public float currentDistance;
     public bool destinationReached = true;
     public bool playerDetected = false;
-
+    
     public bool enemyStunned = false;
 
+    public float noiseVolume;
+    
     [Space] [SerializeField] private Collider[] validAreas;
-    [SerializeField] private EnemyStates enemyState;
+    public EnemyStates enemyState;
     [SerializeField] private NavMeshAgent enemy;
-    [SerializeField] private Transform player;
+    public Transform chasingTarget;
     [SerializeField] private Transform searcher;
 
     [SerializeField] private bool audioCheck = true;
@@ -28,6 +33,11 @@ public class EnemyAI : MonoBehaviour
         Searching,
         Attacking,
         Stunned
+    }
+
+    private void Awake()
+    {
+        enemyAI = this;
     }
 
     private void Start()
@@ -49,13 +59,13 @@ public class EnemyAI : MonoBehaviour
                 RoamingState(searcher);
                 break;
             case EnemyStates.Chasing:
-                ChasingState(player);
+                ChasingState(chasingTarget);
                 break;
             case EnemyStates.Searching:
                 SearchingState();
                 break;
             case EnemyStates.Attacking:
-                AttackingState();
+                StartCoroutine(AttackingState());
                 break;
             case EnemyStates.Stunned:
                 StunnedState();
@@ -65,8 +75,8 @@ public class EnemyAI : MonoBehaviour
 
     private void StateSwitcher()
     {
-        // TODO -- Change conditon names & True statements to match what needs to happen
         bool playerHidesFromChase = HidePlayer.playerHider.playerIsHiding && enemyState == EnemyStates.Chasing;
+        bool hearsNoise = noiseVolume >= 30;
 
         if (playerDetected)
             enemyState = EnemyStates.Chasing;
@@ -76,6 +86,13 @@ public class EnemyAI : MonoBehaviour
         
         if (enemyStunned)
             enemyState = EnemyStates.Stunned;
+
+        if (hearsNoise)
+        {
+            enemyState = EnemyStates.Chasing;
+            Debug.Log("I HEARD THAT");
+            noiseVolume = 0;
+        }
 
     }
 
@@ -110,8 +127,24 @@ public class EnemyAI : MonoBehaviour
 
     private void ChasingState(Transform target)
     {
+        bool enemyReachedSound = enemy.remainingDistance <= enemy.stoppingDistance && !enemy.pathPending &&
+                                 !target.CompareTag("Player");
+        
+        bool enemyReachedPlayer = enemy.remainingDistance <= 5 && !enemy.pathPending &&
+                                  target.CompareTag("Player");
+        
+        
         enemy.destination = target.transform.position;
-        // TODO -- when hears sound in specific distance Navmesh target becomes sound source
+        
+        if (enemyReachedSound)
+        {
+            destinationReached = true;
+            enemyState = EnemyStates.Searching; // Chased Sound
+        }
+        else if (enemyReachedPlayer)
+        {
+            enemyState = EnemyStates.Attacking;
+        }
     }
 
     private void SearchingState()
@@ -128,7 +161,7 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("set enemy searching destination");
             
             destinationReached = false;
-            StartCoroutine(SearchingTime(10f)); // Replace 10f with searching time or add a varible
+            StartCoroutine(SearchingTime(searchingTime));
         }
         else
         {
@@ -138,12 +171,19 @@ public class EnemyAI : MonoBehaviour
             }
         }
         
-        // TODO -- when enemy loses sight (AND, OR) player is hiding, NavMesh target becomes Roaming but closer, AND sound detection is increased
+        // TODO -- when enemy loses sight and player is hiding
     }
 
-    private void AttackingState()
+    private IEnumerator AttackingState()
     {
         // TODO -- Whatever happends when the monster attacks the player idk, damage, instant death something like that?
+        Debug.Log("Attacking Player");
+        // Damage Taken?
+        // Finisher?
+        yield return new WaitForSeconds(2f); // Attacking Animiation Time
+        Debug.Log("Continuing To Chase");
+        enemyState = EnemyStates.Chasing;
+
         // TODO -- just make a condition that enables a bool for now
     }
     private void StunnedState()

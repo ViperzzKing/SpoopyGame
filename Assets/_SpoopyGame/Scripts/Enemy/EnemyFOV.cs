@@ -12,6 +12,5 @@ public class EnemyFOV : MonoBehaviour
 
         Debug.Log("detected");
         ai.playerDetected = true;
-        gameObject.SetActive(false);
     }
 }
