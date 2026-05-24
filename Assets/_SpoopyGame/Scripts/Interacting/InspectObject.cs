@@ -140,7 +140,7 @@ public class InspectObject : MonoBehaviour
         currentItemInspecting = GetItemToInspectFromHighlight();
         runeRB = currentItemInspecting.GetComponent<Rigidbody>();
         SaveItemPosition(currentItemInspecting);
-        currentItemInspecting.localScale = new Vector3(1, 1, 1);
+        currentItemInspecting.localScale = new Vector3(0.85f, 0.85f, 0.85f);
         currentItemInspecting.position = cam.transform.position + cam.transform.forward * 2;
         currentItemInspecting.LookAt(Camera.main.transform);
 
@@ -159,6 +159,7 @@ public class InspectObject : MonoBehaviour
     
     private void WhenPlayerInspects(bool inspecting)
     {
+        runeRB.isKinematic = inspecting;
         OutlineMesh highlightOutline = highlight.currentHighlight;
         runeSlot = currentItemInspecting.GetComponent<RuneSlot>();
         
@@ -168,7 +169,6 @@ public class InspectObject : MonoBehaviour
         movement.enabled = !inspecting;
         crosshair.gameObject.SetActive(!inspecting);
         inspectBorder.gameObject.SetActive(inspecting);
-        runeRB.isKinematic = inspecting;
         playerIsInspecting = inspecting;
         runeSlot.enabled = !inspecting;
     }
