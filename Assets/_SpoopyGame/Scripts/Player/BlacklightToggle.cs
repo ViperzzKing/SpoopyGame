@@ -24,7 +24,7 @@ public class BlacklightToggle : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            blToggle = !flashToggle;
+            flashToggle = !flashToggle;
             flashlight.SetActive(flashToggle);
         }
     }
