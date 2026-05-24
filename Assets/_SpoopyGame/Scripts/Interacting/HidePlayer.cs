@@ -13,7 +13,7 @@ public class HidePlayer : MonoBehaviour
 
     [Header("Hiding")]
     public bool playerIsHiding = false;
-    [SerializeField] private bool caughtHiding;
+    public bool caughtHiding;
     private Vector3 outsidePosition;
     private Transform currentHidingSpot;
     

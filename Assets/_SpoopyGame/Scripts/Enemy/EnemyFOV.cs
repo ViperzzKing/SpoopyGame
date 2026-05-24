@@ -8,9 +8,12 @@ public class EnemyFOV : MonoBehaviour
     
     private void OnParticleCollision(GameObject other)
     {
-        if(player.currentPlayerState == BasicMovement.State.Crouch) return;
+        if(player.currentPlayerState == BasicMovement.State.Crouch && EnemyAI.enemyAI.enemyState == EnemyAI.EnemyStates.Stunned) return;
 
-        Debug.Log("detected");
-        ai.playerDetected = true;
+
+        if (other.transform.CompareTag("Player"))
+            ai.playerDetected = true;
+        else
+            ai.playerDetected = false;
     }
 }

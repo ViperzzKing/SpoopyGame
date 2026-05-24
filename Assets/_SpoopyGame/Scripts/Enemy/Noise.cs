@@ -37,6 +37,7 @@ public class Noise : MonoBehaviour
         {
             GenerateSound(newSoundVolume);
             EnemyAI.enemyAI.chasingTarget = transform;
+            EnemyAI.enemyAI.soundDetected = true;
         }
     }
 }

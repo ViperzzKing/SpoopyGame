@@ -1,13 +1,17 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private float healthMax;
+    [SerializeField] private float shieldMax;
 
     public UnityEvent onNoHealth;
 
     [SerializeField] private float healthCurrent;
+    [SerializeField] private float shieldCurrent; // shield for later
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,13 +22,13 @@ public class Health : MonoBehaviour
     //Debug Loop, for texting UI
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Numlock))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            TakeDamage(20f);
+            TakeDamage(50f);
         }
-        if (Input.GetKeyDown(KeyCode.Insert))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            Heal(20f);
+            Heal(50f);
         }
     }
 

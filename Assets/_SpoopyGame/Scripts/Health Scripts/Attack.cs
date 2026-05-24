@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Attack : MonoBehaviour
@@ -17,7 +18,13 @@ public class Attack : MonoBehaviour
         if(victim.GetComponent<Health>() && victim.layer != gameObject.layer)
         {
             victim.GetComponent<Health>().TakeDamage(damageAmount);
+            Debug.Log("Attacked with 1 damage");
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        DealDamage(other.gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)

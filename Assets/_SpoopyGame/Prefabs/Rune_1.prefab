@@ -112,6 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a6d964817397f498559684ccc210ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RuneSlot
+  runeSlot:
+    serializedVersion: 2
+    m_Bits: 4096
   itemPosition: {fileID: 0}
   rb: {fileID: 8390988966501773147}
 --- !u!1001 &3864572767406468888
