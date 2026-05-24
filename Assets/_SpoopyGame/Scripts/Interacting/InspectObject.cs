@@ -24,33 +24,17 @@ public class InspectObject : MonoBehaviour
     private Vector3 itemPosition;
     private Quaternion itemRotation;
 
-    private bool itemDropInput;
-    [Header("Input Config")]
-    [Tooltip("The key needed to drop or throw an obejct.")]
-    [SerializeField] private KeyCode dropKey = KeyCode.E;
-    [Tooltip("The amount of seconds needed to hold the input to throw instead of drop.")]
-    [SerializeField] private float inputThrowTime = 1f;
-
-    [HideInInspector] public float timePressingDropkey;
-    
-    [Header("Throwing Config")]
-    [Tooltip("A multiplier for the force of which the obejct is thrown.")]
-    [SerializeField] private float throwForce = 12f;
-    [Tooltip("An added ofset to the force for height. The higher the value, the higher the object will be initially thrown.")]
-    [SerializeField] private float throwArc = 2f;
-
     private void Update()
     {
         bool leftMouse = Input.GetMouseButtonDown(0);
-        bool eButton = Input.GetKeyDown(dropKey);
+        bool eButton = Input.GetKeyDown(KeyCode.E);
         
         if (leftMouse)
             TryToggleInspect();
         
         if (eButton)
             TogglePickup();
-        if (itemDropInput)
-            throwInputManagment();
+
     }
 
     private void TogglePickup()
@@ -60,22 +44,9 @@ public class InspectObject : MonoBehaviour
         if (canPickup && playerIsInspecting)
             PickUpItem();
         else if (playerHoldingSomething && !playerIsInspecting)
-            itemDropInput = true;
+            DropItem();
     }
 
-    private void throwInputManagment()
-    {
-        timePressingDropkey += Time.deltaTime;
-        if (Input.GetKeyUp(dropKey))
-        {
-            if(timePressingDropkey < inputThrowTime)
-                DropItem(false);
-            else
-                DropItem(true);
-            itemDropInput = false;
-            timePressingDropkey = 0;
-        }
-    }
     private void TryToggleInspect()
     {
         // Check if its a interactable
@@ -115,7 +86,7 @@ public class InspectObject : MonoBehaviour
         playerHoldingSomething = true;
     }
 
-    private void DropItem(bool isThrowing)
+    private void DropItem()
     {
         Vector3 location = DropLocation.dropLocation.DropAtLocation();
 
@@ -127,12 +98,6 @@ public class InspectObject : MonoBehaviour
         runeRB.isKinematic = false;
         playerHoldingSomething = false;
         currentItemHolding = null;
-
-        //Uses Unitys RigidBody system to add a force to the object if it is being thrown.
-        if (isThrowing)
-        {
-            runeRB.AddForce(cam.transform.forward * throwForce + new Vector3(0, throwArc, 0), ForceMode.VelocityChange);
-        }
     }
     
     private void InspectItem()

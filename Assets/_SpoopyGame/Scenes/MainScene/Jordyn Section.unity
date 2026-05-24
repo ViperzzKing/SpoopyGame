@@ -3715,10 +3715,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1222861924}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp
@@ -3785,16 +3781,12 @@ PrefabInstance:
       objectReference: {fileID: 1526329079}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1526329079}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4518,10 +4510,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 45205761}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (19)
@@ -4588,16 +4576,12 @@ PrefabInstance:
       objectReference: {fileID: 537004311}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 537004311}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4976,10 +4960,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 545754724}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (70)
@@ -5054,16 +5034,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 887372835}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5620,10 +5596,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1706852771}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (74)
@@ -5698,16 +5670,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2008221505}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5908,10 +5876,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1422843227}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (25)
@@ -5978,16 +5942,12 @@ PrefabInstance:
       objectReference: {fileID: 1173115107}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1173115107}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6431,10 +6391,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 677293925}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (80)
@@ -6509,16 +6465,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 699805719}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6655,10 +6607,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1322369015}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (82)
@@ -6733,16 +6681,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1134683555}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6965,7 +6909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -1.6000366, y: 7.9000244}
+  m_AnchoredPosition: {x: -1.6000366, y: 7.899994}
   m_SizeDelta: {x: 56.5861, y: 41.1998}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &193479836
@@ -11339,10 +11283,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2134132673}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (83)
@@ -11417,16 +11357,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1433981349}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11489,7 +11425,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 50
+  m_InnerSpotPercent: 56.25
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -11504,7 +11440,7 @@ MonoBehaviour:
   m_ShapeRadius: 0.01
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 7
+  m_CustomSpotLightShadowCone: 30
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 1
   m_DisplayAreaLightEmissiveMesh: 0
@@ -11623,10 +11559,10 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.24842751, g: 0.31997886, b: 1, a: 1}
-  m_Intensity: 262144
+  m_Intensity: 4194304
   m_Range: 10
-  m_SpotAngle: 70
-  m_InnerSpotAngle: 7
+  m_SpotAngle: 80
+  m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -11654,7 +11590,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 2800000, guid: 8f0dfba10f0c62b4389976ba38550686, type: 3}
+  m_Cookie: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -11689,10 +11625,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1294077089}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (30)
@@ -11759,16 +11691,12 @@ PrefabInstance:
       objectReference: {fileID: 665381177}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 665381177}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11791,10 +11719,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1786745031}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (86)
@@ -11869,16 +11793,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 208527872}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12015,10 +11935,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 270178604}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (31)
@@ -12085,16 +12001,12 @@ PrefabInstance:
       objectReference: {fileID: 1883271985}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1883271985}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12409,10 +12321,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1529921374}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (36)
@@ -12479,16 +12387,12 @@ PrefabInstance:
       objectReference: {fileID: 1846496061}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1846496061}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12944,10 +12848,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1074773578}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (38)
@@ -13014,16 +12914,12 @@ PrefabInstance:
       objectReference: {fileID: 70172649}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 70172649}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13164,10 +13060,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 115733864}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (39)
@@ -13234,16 +13126,12 @@ PrefabInstance:
       objectReference: {fileID: 1325751255}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1325751255}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20535,10 +20423,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 139463917}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (7)
@@ -20605,16 +20489,12 @@ PrefabInstance:
       objectReference: {fileID: 1323954984}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1323954984}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21423,10 +21303,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1743548456}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (9)
@@ -21493,16 +21369,12 @@ PrefabInstance:
       objectReference: {fileID: 679705464}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 679705464}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21513,198 +21385,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6379190268834250760, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
   m_PrefabInstance: {fileID: 442556412}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-=======
---- !u!1 &442682716
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 442682720}
-  - component: {fileID: 442682719}
-  - component: {fileID: 442682718}
-  - component: {fileID: 442682717}
-  m_Layer: 0
-  m_Name: w
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &442682717
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442682716}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &442682718
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442682716}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &442682719
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442682716}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &442682720
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442682716}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.29, y: 63.79, z: -303.56}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &445245157
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 445245158}
-  - component: {fileID: 445245160}
-  - component: {fileID: 445245159}
-  m_Layer: 5
-  m_Name: ChargeUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &445245158
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445245157}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 612862781}
-  m_Father: {fileID: 2053411247}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -17.5}
-  m_SizeDelta: {x: 23, y: 2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &445245159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445245157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &445245160
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445245157}
-  m_CullTransparentMesh: 1
->>>>>>> Stashed changes
 --- !u!1 &448815905
 GameObject:
   m_ObjectHideFlags: 0
@@ -22961,10 +22641,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 342680}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (51)
@@ -23039,16 +22715,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 661489726}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23426,10 +23098,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1614636871}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (15)
@@ -23496,16 +23164,12 @@ PrefabInstance:
       objectReference: {fileID: 1250010827}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1250010827}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23824,10 +23488,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 490279512}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (58)
@@ -23902,16 +23562,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 235407330}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24112,10 +23768,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1538025437}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (62)
@@ -24190,16 +23842,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1220952039}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24222,10 +23870,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1050098123}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (64)
@@ -24300,16 +23944,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 695014967}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24709,7 +24349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -40.080017, y: 0.030029297}
+  m_AnchoredPosition: {x: -40.08, y: 0.02999878}
   m_SizeDelta: {x: 0.6, y: 40}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &499437470
@@ -27397,10 +27037,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1726673}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (66)
@@ -27475,16 +27111,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 189568210}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27507,10 +27139,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1904855832}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (68)
@@ -27585,16 +27213,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2114863378}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28086,10 +27710,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 175501487}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (73)
@@ -28164,16 +27784,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 830874629}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30427,10 +30043,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1823644913}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (13)
@@ -30497,16 +30109,12 @@ PrefabInstance:
       objectReference: {fileID: 2121455213}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2121455213}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30884,10 +30492,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 346372595}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (55)
@@ -30962,16 +30566,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 416376679}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34109,10 +33709,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1854209521}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (16)
@@ -34179,16 +33775,12 @@ PrefabInstance:
       objectReference: {fileID: 1757025376}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1757025376}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34211,10 +33803,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 838931352}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (60)
@@ -34289,16 +33877,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1288157227}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35934,10 +35518,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1747630743}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (20)
@@ -36004,16 +35584,12 @@ PrefabInstance:
       objectReference: {fileID: 1609605775}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1609605775}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36105,10 +35681,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1185979665}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (21)
@@ -36175,16 +35747,12 @@ PrefabInstance:
       objectReference: {fileID: 887302079}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 887302079}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36282,10 +35850,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1109143270}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (23)
@@ -36352,16 +35916,12 @@ PrefabInstance:
       objectReference: {fileID: 692308168}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 692308168}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37082,95 +36642,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &612862780
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 612862781}
-  - component: {fileID: 612862783}
-  - component: {fileID: 612862782}
-  - component: {fileID: 612862784}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &612862781
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612862780}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 445245158}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 0}
-  m_SizeDelta: {x: 8, y: 8}
-  m_Pivot: {x: 0, y: 0.5}
---- !u!114 &612862782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612862780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.53203976, b: 0.5763234, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 3
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 20
---- !u!222 &612862783
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612862780}
-  m_CullTransparentMesh: 1
---- !u!114 &612862784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612862780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccbe9e82e7bf26e4a8597e566cdc007e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThrowInputOverlay
-  inspectObject: {fileID: 0}
 --- !u!1 &616491748
 GameObject:
   m_ObjectHideFlags: 0
@@ -37538,10 +37009,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1141486825}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (78)
@@ -37616,16 +37083,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1674835214}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37762,10 +37225,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2122120194}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (27)
@@ -37832,16 +37291,12 @@ PrefabInstance:
       objectReference: {fileID: 424683993}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 424683993}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37864,10 +37319,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1084388708}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (81)
@@ -37942,16 +37393,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1868063300}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38508,10 +37955,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1854487889}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (88)
@@ -38586,16 +38029,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 346923548}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38623,10 +38062,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 156240948}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (32)
@@ -38693,16 +38128,12 @@ PrefabInstance:
       objectReference: {fileID: 1907664291}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1907664291}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38756,10 +38187,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2107667511}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (34)
@@ -38826,16 +38253,12 @@ PrefabInstance:
       objectReference: {fileID: 1061151501}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1061151501}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -53379,10 +52802,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1863010950}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (6)
@@ -53449,16 +52868,12 @@ PrefabInstance:
       objectReference: {fileID: 1401587428}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1401587428}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -56202,10 +55617,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1385594444}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (1)
@@ -56272,16 +55683,12 @@ PrefabInstance:
       objectReference: {fileID: 482661677}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 482661677}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -60837,10 +60244,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 579174310}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (5)
@@ -60907,16 +60310,12 @@ PrefabInstance:
       objectReference: {fileID: 1063471025}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1063471025}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -61117,10 +60516,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 171480751}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (8)
@@ -61187,16 +60582,12 @@ PrefabInstance:
       objectReference: {fileID: 460139346}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 460139346}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -61632,10 +61023,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 794833507}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (10)
@@ -61702,16 +61089,12 @@ PrefabInstance:
       objectReference: {fileID: 632579951}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 632579951}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62090,10 +61473,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1356321011}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (12)
@@ -62160,16 +61539,12 @@ PrefabInstance:
       objectReference: {fileID: 1370689401}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1370689401}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62370,10 +61745,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2023574152}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (54)
@@ -62448,16 +61819,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1965589041}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62640,10 +62007,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 997862757}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (56)
@@ -62718,16 +62081,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 791457070}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62750,10 +62109,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1437440363}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (57)
@@ -62828,16 +62183,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1279019528}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -66473,10 +65824,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1402049957}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (42)
@@ -66543,16 +65890,12 @@ PrefabInstance:
       objectReference: {fileID: 1988121845}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1988121845}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -77877,10 +77220,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 119593242}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (43)
@@ -77947,16 +77286,12 @@ PrefabInstance:
       objectReference: {fileID: 51658654}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 51658654}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89469,10 +88804,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1288039714}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (63)
@@ -89547,16 +88878,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1816960817}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90291,10 +89618,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1729923815}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (22)
@@ -90361,16 +89684,12 @@ PrefabInstance:
       objectReference: {fileID: 160793689}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 160793689}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90393,10 +89712,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1392786664}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (71)
@@ -90471,16 +89786,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1708029079}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -91086,10 +90397,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1029686028}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (75)
@@ -91164,16 +90471,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 24471246}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -91374,10 +90677,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1072113499}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (77)
@@ -91452,16 +90751,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1201984523}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -91484,10 +90779,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1069803683}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (26)
@@ -91554,16 +90845,12 @@ PrefabInstance:
       objectReference: {fileID: 78464657}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 78464657}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -92471,10 +91758,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1183685790848331654, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
-      propertyPath: m_Cookie
-      value: 
-      objectReference: {fileID: 2800000, guid: 8f0dfba10f0c62b4389976ba38550686, type: 3}
     - target: {fileID: 3017914170495878183, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.346
@@ -92560,32 +91843,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5133674846833202481, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
-      propertyPath: throwArc
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133674846833202481, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 522045000}
     - target: {fileID: 5133674846833202481, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
-      propertyPath: throwForce
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133674846833202481, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
       propertyPath: inspectBorder
       value: 
       objectReference: {fileID: 61950833}
-    - target: {fileID: 5203594575692395269, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
-      propertyPath: playerReach
-      value: 2.8
-      objectReference: {fileID: 0}
     - target: {fileID: 7708459483325384294, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
       propertyPath: near clip plane
       value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8819360961313344340, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -92600,9 +91871,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4162634696582902935, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1469523300}
-    - targetCorrespondingSourceObject: {fileID: 4162634696582902935, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1469523308}
   m_SourcePrefab: {fileID: 100100000, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
 --- !u!4 &1280399264 stripped
 Transform:
@@ -93407,10 +92675,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 87847425}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (35)
@@ -93477,16 +92741,12 @@ PrefabInstance:
       objectReference: {fileID: 732022696}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 732022696}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94321,10 +93581,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 853571502}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (40)
@@ -94391,16 +93647,12 @@ PrefabInstance:
       objectReference: {fileID: 1043711829}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1043711829}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94957,10 +94209,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 42816}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (41)
@@ -95027,16 +94275,12 @@ PrefabInstance:
       objectReference: {fileID: 158079188}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 158079188}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -95415,10 +94659,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1721237061}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (29)
@@ -95485,16 +94725,12 @@ PrefabInstance:
       objectReference: {fileID: 1233088860}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1233088860}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -95987,10 +95223,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 368296708}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (85)
@@ -96065,16 +95297,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1901987279}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -101481,10 +100709,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1331458954}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (45)
@@ -101551,16 +100775,12 @@ PrefabInstance:
       objectReference: {fileID: 440131065}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 440131065}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -101818,27 +101038,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BlacklightToggle
   blacklight: {fileID: 275878810}
   flashlight: {fileID: 1693700062}
---- !u!135 &1469523308
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696889433}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1472108167
 GameObject:
   m_ObjectHideFlags: 0
@@ -103641,10 +102840,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 807935960}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (2)
@@ -103711,16 +102906,12 @@ PrefabInstance:
       objectReference: {fileID: 1077034868}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1077034868}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -106770,10 +105961,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 395517686}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (49)
@@ -106840,16 +106027,12 @@ PrefabInstance:
       objectReference: {fileID: 262575514}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 262575514}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -107050,10 +106233,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1393432781}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (52)
@@ -107128,16 +106307,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 840348080}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -107338,10 +106513,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 689457602}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (14)
@@ -107408,16 +106579,12 @@ PrefabInstance:
       objectReference: {fileID: 68771225}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 68771225}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -109655,10 +108822,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1829817301}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (59)
@@ -109733,16 +108896,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1545783073}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -109765,10 +108924,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1657570499}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (61)
@@ -109843,16 +108998,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 536816557}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -110230,10 +109381,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 342620171}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (18)
@@ -110300,16 +109447,12 @@ PrefabInstance:
       objectReference: {fileID: 630886577}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 630886577}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -113202,10 +112345,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1215913084}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (67)
@@ -113280,16 +112419,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 77512785}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -113597,10 +112732,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1052507351}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (24)
@@ -113667,16 +112798,12 @@ PrefabInstance:
       objectReference: {fileID: 2013471914}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2013471914}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -114390,10 +113517,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2088822003}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (79)
@@ -114468,16 +113591,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 777776841}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -114678,10 +113797,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1741531275}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (28)
@@ -114748,16 +113863,12 @@ PrefabInstance:
       objectReference: {fileID: 898424691}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 898424691}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -117104,10 +116215,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 452798262}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (50)
@@ -117186,16 +116293,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 712640027}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -119551,10 +118654,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2018245499}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (53)
@@ -119629,16 +118728,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 845047613}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -124953,10 +124048,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 524799832}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (65)
@@ -125031,16 +124122,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1234481380}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -125596,10 +124683,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2085913988}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (69)
@@ -125674,16 +124757,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1349121208}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -126062,10 +125141,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1608467873}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (72)
@@ -126140,16 +125215,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2052882121}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -126490,10 +125561,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1945118850}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (76)
@@ -126568,16 +125635,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1376630417}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -131266,10 +130329,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2017855734}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (84)
@@ -131344,16 +130403,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1775527698}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -131554,10 +130609,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1296236092}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (87)
@@ -131632,16 +130683,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1494224799}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -132167,10 +131214,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1625300849}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (33)
@@ -132237,16 +131280,12 @@ PrefabInstance:
       objectReference: {fileID: 2050087384}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2050087384}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -134687,10 +133726,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 203617289}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (47)
@@ -134757,16 +133792,12 @@ PrefabInstance:
       objectReference: {fileID: 1098939428}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1098939428}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -134967,10 +133998,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1847707440}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (48)
@@ -135037,16 +134064,12 @@ PrefabInstance:
       objectReference: {fileID: 788773008}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 788773008}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -144444,10 +143467,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1147042744}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (3)
@@ -144514,16 +143533,12 @@ PrefabInstance:
       objectReference: {fileID: 1327643052}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1327643052}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -144724,10 +143739,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2048241050}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (4)
@@ -144794,16 +143805,12 @@ PrefabInstance:
       objectReference: {fileID: 1860805144}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1860805144}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -145204,7 +144211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.030029297}
+  m_AnchoredPosition: {x: 0, y: 0.02999878}
   m_SizeDelta: {x: 0.6, y: 40}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1858421435
@@ -156776,10 +155783,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 198911153}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (11)
@@ -156846,16 +155849,12 @@ PrefabInstance:
       objectReference: {fileID: 1230374941}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1230374941}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -159113,10 +158112,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 968367404}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (17)
@@ -159183,16 +158178,12 @@ PrefabInstance:
       objectReference: {fileID: 28093781}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 28093781}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -160041,10 +159032,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1221444336}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (37)
@@ -160111,16 +159098,12 @@ PrefabInstance:
       objectReference: {fileID: 1072124870}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1072124870}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -160882,7 +159865,6 @@ RectTransform:
   - {fileID: 2094134370}
   - {fileID: 2072724229}
   - {fileID: 522044999}
-  - {fileID: 445245158}
   - {fileID: 61950832}
   m_Father: {fileID: 1715997160}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -162662,10 +161644,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1780288686}
-    - target: {fileID: 812755028464590112, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 6505
-      objectReference: {fileID: 0}
     - target: {fileID: 3927189666750152766, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Name
       value: Lamp (46)
@@ -162732,16 +161710,12 @@ PrefabInstance:
       objectReference: {fileID: 1555238833}
     - target: {fileID: 7621181827448500636, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1555238833}
-    - target: {fileID: 8565791900091608561, guid: 48809e636638e7a43a2a1f46eeb2cc8d, type: 3}
-      propertyPath: m_VersionIndex
-      value: 1222
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
