@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8609435829592822775}
   - component: {fileID: 8450309504266741867}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Rune_Slot
-  m_TagString: RuneSlot
+  m_TagString: RuneSlot3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 56686bcda21cca346a9fb23a1b48bc2e, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 56686bcda21cca346a9fb23a1b48bc2e, type: 3}
       propertyPath: m_TagString

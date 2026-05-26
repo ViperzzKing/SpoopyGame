@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour
     
     public bool enemyStunned = false;
 
+    public float noiseDetectionVolume = 30;
     public float noiseVolume;
     public bool soundDetected;
     
@@ -81,7 +82,7 @@ public class EnemyAI : MonoBehaviour
                                     BasicMovement.playerController.currentPlayerState == BasicMovement.State.Crouch && 
                                     enemyState == EnemyStates.Chasing &&
                                     !playerDetected;
-        bool hearsNoise = noiseVolume >= 30;
+        bool hearsNoise = noiseVolume >= noiseDetectionVolume;
 
         if (playerDetected)
         {
@@ -228,7 +229,7 @@ public class EnemyAI : MonoBehaviour
 
     private Vector3 RandomPosition()
     {
-        return new Vector3(Random.Range(-150, 150), Random.Range(0, 50), Random.Range(-150, 150));
+        return new Vector3(Random.Range(-150, 150), Random.Range(0, 5), Random.Range(-150, 150));
     }
 
     private Vector3 RandomLocalPostion()

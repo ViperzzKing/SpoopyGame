@@ -18,7 +18,7 @@ public class AffectLights : MonoBehaviour
         int enemyLayer = LayerMask.NameToLayer("Enemy");
         if(other.gameObject.layer == enemyLayer)
         {
-            Debug.Log("triggered");
+            //Debug.Log("triggered");
             StartCoroutine(FadeLightOff());
         }
     }
@@ -28,7 +28,7 @@ public class AffectLights : MonoBehaviour
         int enemyLayer = LayerMask.NameToLayer("Enemy");
         if(other.gameObject.layer == enemyLayer)
         {
-            Debug.Log("exited");
+            //Debug.Log("exited");
             StartCoroutine(FadeLightOn());
         }
     }

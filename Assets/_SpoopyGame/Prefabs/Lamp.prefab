@@ -12495,7 +12495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bc9d1f5a150334a86d7b9d13078de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AffectLights
-  light: {fileID: 0}
+  light: {fileID: 7621181827448500636}
   fire: {fileID: 2046035937571393482}
 --- !u!135 &752862694552922202
 SphereCollider:
