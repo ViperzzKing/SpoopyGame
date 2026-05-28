@@ -64,6 +64,36 @@
             "globalId": "GlobalObjectId_V1-2-129a7ea009a8ad644bbfd3269d53acf3-4162634696582902935-564419043",
             "source": "builtin",
             "value": "d_NavMeshAgent Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-b99f17d21ef34794d9514255fb14ba1c-5878304407274739158-229971531",
+            "source": "builtin",
+            "value": "d_NavMeshAgent Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-b99f17d21ef34794d9514255fb14ba1c-1766119747-0",
+            "source": "builtin",
+            "value": "d_Terrain Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-b99f17d21ef34794d9514255fb14ba1c-1874918463-0",
+            "source": "builtin",
+            "value": "d_BoxCollider Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-b99f17d21ef34794d9514255fb14ba1c-1800826480-0",
+            "source": "builtin",
+            "value": "d_BoxCollider Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-b99f17d21ef34794d9514255fb14ba1c-808260175-0",
+            "source": "builtin",
+            "value": "d_BoxCollider2D Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-b99f17d21ef34794d9514255fb14ba1c-959114280-0",
+            "source": "builtin",
+            "value": "d_BoxCollider2D Icon"
         }
     ]
 }
