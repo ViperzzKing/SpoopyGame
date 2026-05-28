@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RuneCheckmarks : MonoBehaviour
 {
+    public GameObject tutorialRunes;
+    public GameObject gameRunes;
     public static RuneCheckmarks RuneManager;
+    public bool gameStarted = false;
 
     public int[] finishes = new int[4];
 
@@ -29,18 +33,40 @@ public class RuneCheckmarks : MonoBehaviour
     }
 
     [ContextMenu("Test Check")]
-    public void TestCheck()
+    public void EndingTrigger()
     {
-        Debug.Log(CheckRunes(0));
+        Debug.Log("Checking endings");
+        
+        
+        if (CheckRunes(0) == 5)
+        {
+            Debug.Log("Started Game");
+            gameStarted = true;
+            tutorialRunes.SetActive(false);
+            gameRunes.SetActive(true);
+            ChangeFinish(0, -5);
+        }
         
         if (CheckRunes(1) == 5)
-            Debug.Log("Finished Crypt Ending");
-        
+        {
+            Debug.Log("crypt ending");
+            // Ending
+            SceneManager.LoadScene(0);
+        }
+ 
         if (CheckRunes(2) == 5)
+        {
             Debug.Log("Finished Ritual Ending");
-        
+            // Ending
+            SceneManager.LoadScene(0);
+        }
+
         if (CheckRunes(3) == 5)
+        {
             Debug.Log("Finished Mansion Ending");
+            // Ending
+            SceneManager.LoadScene(0);
+        }
     }
 
     [ContextMenu("Change Finish")]

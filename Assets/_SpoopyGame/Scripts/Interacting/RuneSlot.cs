@@ -17,12 +17,20 @@ public class RuneSlot : MonoBehaviour
         if (other.gameObject.layer == 12)
         {
             isSlotted = true;
-            Debug.Log("Slotting Rune");
+            
+            Debug.Log("Slotting Rune", this);
             itemPosition.SaveItemPosition(other.transform);
             rb.isKinematic = true;
             itemPosition.ReturnItem(gameObject.transform);
+            
 
-            if (other.CompareTag("RuneSlot"))
+            
+            if (other.CompareTag("RuneSlot0"))
+            {
+                RuneCheckmarks.RuneManager.ChangeFinish(0, 1);
+                transform.parent = RuneCheckmarks.RuneManager.tutorialRunes.transform;
+            }
+            else if (other.CompareTag("RuneSlot"))
             {
                 RuneCheckmarks.RuneManager.ChangeFinish(1, 1);
             }
@@ -34,6 +42,7 @@ public class RuneSlot : MonoBehaviour
             {
                 RuneCheckmarks.RuneManager.ChangeFinish(3, 1);
             }
+            RuneCheckmarks.RuneManager.EndingTrigger();
         }
     }
 
@@ -43,6 +52,10 @@ public class RuneSlot : MonoBehaviour
         
         if (other.gameObject.layer == 12)
         {
+            if (other.CompareTag("RuneSlot0"))
+            {
+                RuneCheckmarks.RuneManager.ChangeFinish(0, -1);
+            }
             if (other.CompareTag("RuneSlot"))
             {
                 RuneCheckmarks.RuneManager.ChangeFinish(1, -1);

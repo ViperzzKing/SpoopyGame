@@ -12,6 +12,7 @@ TagManager:
   - RuneSlot
   - RuneSlot2
   - RuneSlot3
+  - RuneSlot0
   layers:
   - Default
   - TransparentFX

@@ -229,7 +229,7 @@ public class EnemyAI : MonoBehaviour
 
     private Vector3 RandomPosition()
     {
-        return new Vector3(Random.Range(-150, 150), Random.Range(0, 5), Random.Range(-150, 150));
+        return new Vector3(Random.Range(-250, 250), Random.Range(0, 5), Random.Range(-250, 250));
     }
 
     private Vector3 RandomLocalPostion()
