@@ -6,9 +6,9 @@ public class CamCorderPositions : MonoBehaviour
     public Vector3[] camPositions = new Vector3[3];
     public Vector3[] camRotations = new Vector3[3];
 
-    private bool noCameraKeybind;
-    private bool pauseCameraKeybind;
-    private bool screenCameraKeybind;
+    public bool noCameraKeybind;
+    public bool pauseCameraKeybind;
+    public bool screenCameraKeybind;
 
     public bool cameraOut;
     public bool pauseReady;
