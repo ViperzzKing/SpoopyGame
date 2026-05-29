@@ -17,14 +17,18 @@ public class BasicMovement : MonoBehaviour
 
     [Header("Movement")]
     private float currentSpeed;
+    private float currentVolume;
     [SerializeField] private float walkSpeed;
+    [SerializeField] private float walkVolume;
     [SerializeField] private float sprintSpeed;
+    [SerializeField] private float sprintVolume;
     [SerializeField] private float fallingGravity;
 
     Vector3 moveDirection;
 
     [Header("Crouching")]
     [SerializeField] private float crouchSpeed;
+    [SerializeField] private float crouchVolume;
     [SerializeField] private float crouchYScale;
 
     [Header("Slope Handling")]
@@ -34,7 +38,7 @@ public class BasicMovement : MonoBehaviour
     [Header("States")]
     public State currentPlayerState;
 
-
+    private Noise playerNoise;
 
     public enum State
     {
@@ -50,6 +54,7 @@ public class BasicMovement : MonoBehaviour
     private void Awake()
     {
         playerController = this;
+        playerNoise = new Noise();
     }
 
     private void Update()
@@ -85,10 +90,11 @@ public class BasicMovement : MonoBehaviour
     private void SwitchPlayerStates()
     {
         // Sprinting
-        if (IsGrounded() && Input.GetKey(KeyCode.R))
+        if (IsGrounded() && Input.GetKey(KeyCode.LeftShift))
         {
             currentPlayerState = State.Sprint;
             currentSpeed = sprintSpeed;
+            currentVolume = sprintVolume;
         }
 
         // Walking
@@ -96,6 +102,7 @@ public class BasicMovement : MonoBehaviour
         {
             currentPlayerState = State.Walk;
             currentSpeed = walkSpeed;
+            currentVolume = walkVolume;
         }
 
         // Falling
@@ -105,12 +112,14 @@ public class BasicMovement : MonoBehaviour
 
             currentPlayerState = State.Fall;
             currentSpeed = fallSpeed;
+            currentVolume = crouchSpeed;
         }
 
         if (Input.GetKey(KeyCode.C))
         {
             currentPlayerState = State.Crouch;
             currentSpeed = crouchSpeed;
+            currentVolume = crouchVolume;
         }
     }
 
@@ -179,7 +188,7 @@ public class BasicMovement : MonoBehaviour
     {
         Vector3 movementInput = MovementInputs();
         movementInput *= currentSpeed;
-
+        
         // Makes it so we dont build up falling speed
         movementInput.y = Mathf.Clamp(rb.linearVelocity.y - fallingGravity * Time.deltaTime, 0f, float.PositiveInfinity);
 
