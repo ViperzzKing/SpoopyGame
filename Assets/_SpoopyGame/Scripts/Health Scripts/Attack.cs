@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    // Whether damage is applied once or over time
     public enum Apply
     {
         Instant,
@@ -11,10 +12,10 @@ public class Attack : MonoBehaviour
 
     [SerializeField] private float damageAmount;
     [SerializeField] private Apply apply;
-    
+
+    // Deals damage to a victim if they have Health and aren't on the same layer
     private void DealDamage(GameObject victim)
     {
-        //Prevents attacking an object that is of the same type
         if(victim.GetComponent<Health>() && victim.layer != gameObject.layer)
         {
             victim.GetComponent<Health>().TakeDamage(damageAmount);
@@ -22,16 +23,19 @@ public class Attack : MonoBehaviour
         }
     }
 
+    // Handles trigger overlap
     private void OnTriggerEnter(Collider other)
     {
         DealDamage(other.gameObject);
     }
 
+    // Handles physical collision
     private void OnCollisionEnter(Collision collision)
     {
         DealDamage(collision.gameObject);
     }
 
+    // Handles particle system hits
     private void OnParticleCollision(GameObject other)
     {
         DealDamage(other);

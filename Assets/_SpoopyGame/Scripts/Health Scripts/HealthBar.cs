@@ -12,7 +12,7 @@ public class HealthBar : MonoBehaviour
         healthBar = GetComponent<Image>();
     }
 
-    // Update is called once per frame
+    // Every frame, update the image alpha to match how damaged the health component is
     void Update()
     {
         healthBar.color = new Color(healthBar.color.r, healthBar.color.b, healthBar.color.g, health.GetDamagePercent());

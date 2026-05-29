@@ -27,6 +27,8 @@ public class CamCorderPositions : MonoBehaviour
         pauseCameraKeybind = Input.GetKeyDown(KeyCode.Escape);
         screenCameraKeybind = !cameraOut && Input.GetMouseButtonDown(1) || pauseReady && Input.GetMouseButtonDown(0);
 
+        
+        // just the keybinds ^
         if (noCameraKeybind)
         {
             screenCamera = false;

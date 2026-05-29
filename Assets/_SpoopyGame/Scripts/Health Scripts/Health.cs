@@ -7,19 +7,19 @@ public class Health : MonoBehaviour
     [SerializeField] private float healthMax;
     [SerializeField] private float shieldMax;
 
+    // Event other scripts can hook into when health hits 0
     public UnityEvent onNoHealth;
 
     [SerializeField] private float healthCurrent;
     [SerializeField] private float shieldCurrent; // shield for later
-    
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Set current health to max at game start
     void Start()
     {
         healthCurrent = healthMax;    
     }
 
-    //Debug Loop, for texting UI
+    // Debug only - test damage and healing with keyboard
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
@@ -32,10 +32,9 @@ public class Health : MonoBehaviour
         }
     }
 
-
-    public void TakeDamage (float damage)
+    // Subtract damage from health, clamp to valid range, trigger death if at 0
+    public void TakeDamage(float damage)
     {
-        //Take the current health and subtract it by damage while making sure it doesn't exeed Max or Min health
         healthCurrent = Mathf.Clamp(healthCurrent - damage, 0, healthMax);
         if(healthCurrent <= 0)
         {
@@ -43,18 +42,20 @@ public class Health : MonoBehaviour
         }
     }
 
+    // Add health, clamp so it never exceeds max
     public void Heal(float amount)
     {
-        //Take the current health and subtract it by damage while making sure it doesn't exeed Max or Min health
-        healthCurrent = Mathf.Clamp(healthCurrent + amount , 0, healthMax);
+        healthCurrent = Mathf.Clamp(healthCurrent + amount, 0, healthMax);
     }
 
+    // Called when health hits 0 - fires the Unity event for other scripts
     private void NoHealth()
     {
         Debug.Log(name + " has met a cruel end.");
-        //Sets up an event in Unity that other scripts can use
         onNoHealth.Invoke();
     }
+
+    // Returns how damaged this object is as a 0-1 value (0 = full, 1 = dead)
     public float GetDamagePercent()
     {
         return 1 - (healthCurrent / healthMax);

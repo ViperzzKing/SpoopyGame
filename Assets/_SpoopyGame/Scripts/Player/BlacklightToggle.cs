@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class BlacklightToggle : MonoBehaviour
 {
+    // Made by oscar not me
+    //TODO -- oscar comment this
+    
     [SerializeField] private GameObject blacklight;
     [SerializeField] private GameObject flashlight;
 

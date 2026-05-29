@@ -54,6 +54,7 @@ public class EnemyAI : MonoBehaviour
         StateSwitcher();
     }
 
+    // Handles The States
     private void StateHandler()
     {
         switch (enemyState)
@@ -76,6 +77,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    // Detections for Switching States
     private void StateSwitcher()
     {
         bool playerHidesFromChase = HidePlayer.playerHider.playerIsHiding && enemyState == EnemyStates.Chasing || 
@@ -84,18 +86,22 @@ public class EnemyAI : MonoBehaviour
                                     !playerDetected;
         bool hearsNoise = noiseVolume >= noiseDetectionVolume;
 
+        // If Player Detected Player Becomes Chasing Target And Enemy Enters Chasing State
         if (playerDetected)
         {
             chasingTarget = BasicMovement.playerController.transform;
             enemyState = EnemyStates.Chasing;
         }
 
+        // When the player hides during a chase and is not seen enemy enters searching state
         if (playerHidesFromChase)
             enemyState = EnemyStates.Searching;
         
+        // If enemyStunned enter Stunned State
         if (enemyStunned)
             enemyState = EnemyStates.Stunned;
 
+        // uses Noise script And if noise is bigger than noise detection volume
         if (hearsNoise)
         {
             enemyState = EnemyStates.Chasing;
@@ -108,7 +114,8 @@ public class EnemyAI : MonoBehaviour
 
     //----------------- STATES -----------------\\
 
-
+    // when destination reached
+    // Get random postion on map, move the searcher there, set enemy navmesh there
     private void RoamingState(Transform target)
     {
         if (destinationReached)
@@ -126,6 +133,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
+            // reset once enemy reaches destination
             if (enemy.remainingDistance <= enemy.stoppingDistance && !enemy.pathPending)
             {
                 destinationReached = true;
@@ -145,24 +153,26 @@ public class EnemyAI : MonoBehaviour
 
         enemy.destination = target.transform.position;
         
-        
+        // When enemy reaches player go to attack state
         if (enemyReachedLocation && target.CompareTag("Player"))
         {
             enemyState = EnemyStates.Attacking;
         }
-        else if (enemyReachedLocation && soundDetected)
+        else if (enemyReachedLocation && soundDetected) // If it reached a sound instead
         {
             destinationReached = true;
             enemyState = EnemyStates.Searching; // Chased Sound
             soundDetected = false;
         }
         
+        // When player crouches while not being seen enter searching state
         if (!playerDetected && BasicMovement.playerController.currentPlayerState == BasicMovement.State.Crouch && enemyReachedLocation)
         {
             enemyState = EnemyStates.Searching;
         }
     }
 
+    // Same as Roaming but smaller radius and around the enemy
     private void SearchingState()
     {
         if (destinationReached)
@@ -188,12 +198,14 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    // starts attack Enumerator only when enemy is not already attacking
     private void AttackingState()
     {
         if(!enemyIsAttacking)
             StartCoroutine(AttackingTime(1f));
     }
     
+    // Stuns the enemy for StunTime
     private void StunnedState()
     {
         //TODO -- Set up code to make the enemy in a certain animation
@@ -205,14 +217,16 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator AttackingTime(float attackingTime)
     {
+        // True at start, false at end
         enemyIsAttacking = true;
         Debug.Log("Attacking");
-        yield return new WaitForSeconds(attackingTime);
+        yield return new WaitForSeconds(attackingTime); // Animation Time
         enemyState = EnemyStates.Chasing;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3); // Cooldown before can attack again
         enemyIsAttacking = false;
     }
     
+    // Time for Searching with how long to search for
     private IEnumerator SearchingTime(float searchTime)
     {
         yield return new WaitForSeconds(searchTime);
@@ -220,18 +234,20 @@ public class EnemyAI : MonoBehaviour
         enemyState = EnemyStates.Roaming;
     }
 
-
+    //Time for stun with how long stunned for
     private IEnumerator StunTime(float searchTime)
     {
         yield return new WaitForSeconds(searchTime);
         enemyStunned = false;
     }
 
-    private Vector3 RandomPosition()
+    // Random World Position Between -250 and 250 radius
+    private Vector3 RandomWorldPosition()
     {
         return new Vector3(Random.Range(-250, 250), Random.Range(0, 5), Random.Range(-250, 250));
     }
 
+    // Random local postion of the enemy
     private Vector3 RandomLocalPostion()
     {
         return new Vector3(transform.position.x + Random.Range(-20, 20), 
@@ -239,17 +255,18 @@ public class EnemyAI : MonoBehaviour
                             transform.position.z + Random.Range(-20, 20));
     }
 
+    // makes sure it's a valid position and not outside the map
     private Vector3 GetValidRandomPosition()
     {
         int maxTries = 1000;
         for (int i = 0; i < maxTries; i++)
         {
-            Vector3 pos = RandomPosition();
+            Vector3 pos = RandomWorldPosition();
             Vector3 localPos = RandomLocalPostion();
             //Debug.Log(RandomPosition());
             if (IsInsideValidArea(pos) && enemyState == EnemyStates.Roaming) return pos;
             if (IsInsideValidArea(localPos) && enemyState == EnemyStates.Searching) return localPos;
-
+            // checks bounds for pos and local to see if its valid
         }
         //Debug.Log("failed");
         return transform.position;
@@ -267,10 +284,12 @@ public class EnemyAI : MonoBehaviour
         {
             if (area.bounds.Contains(checkerPosition))
             {
+                // Random Position is inside bounds
                 return true;
             }
         }
 
+        // its not in bounds
         return false;
     }
 }

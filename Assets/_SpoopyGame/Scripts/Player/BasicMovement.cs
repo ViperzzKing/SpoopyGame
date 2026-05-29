@@ -120,7 +120,7 @@ public class BasicMovement : MonoBehaviour
 
     private void WalkState()
     {
-        MovingPlayer();
+        MovingPlayer(); // Run MovingPlayer
     }
     private void SprintState()
     {
@@ -141,7 +141,7 @@ public class BasicMovement : MonoBehaviour
         rb.linearVelocity = movementInput;
 
 
-        // Switch
+        // Switch to walk
         if (IsGrounded())
         {
             currentPlayerState = State.Walk;
@@ -156,9 +156,11 @@ public class BasicMovement : MonoBehaviour
     {                                                                 // ANSWER = 
         Vector2 input = new Vector2();
 
+        //WASD
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
 
+        // Normalize movement and get move direction
         moveDirection = new Vector3(input.x, 0, input.y).normalized;
 
         //// Rotates player to match camera
@@ -172,6 +174,7 @@ public class BasicMovement : MonoBehaviour
 
     private Vector3 GetSlopeMoveDirection()
     {
+        // changes normal direction so it matches the slop
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 
@@ -207,13 +210,13 @@ public class BasicMovement : MonoBehaviour
         // Start Crouching
         if (Input.GetKeyDown(KeyCode.C))
         {
-            transform.localScale = new Vector3(1, crouchYScale, 1);
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+            transform.localScale = new Vector3(1, crouchYScale, 1); // change our scale
+            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse); // go straight down
 
-            camControls.currentEyeOffset = camControls.crouchingEyeOffset;
+            camControls.currentEyeOffset = camControls.crouchingEyeOffset; // change eye offset
         }
 
-        if (Input.GetKeyUp(KeyCode.C))
+        if (Input.GetKeyUp(KeyCode.C)) // uncrouch player
         {
             // Scale Player
             transform.localScale = new Vector3(1, 1, 1);
@@ -229,11 +232,12 @@ public class BasicMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
+        //Overlap sphere check
         return Physics.OverlapSphere(groundCheck.position, 0.3f, groundLayer).Length > 0;
     }
 
     private bool OnSlope()
-    {                                                                                 // How far to check
+    {                                                                                                // How far to check
         bool onSlope = Physics.Raycast(transform.position, Vector3.down, out slopeHit, 2 * 0.5f + 0.3f);
 
         if (onSlope)

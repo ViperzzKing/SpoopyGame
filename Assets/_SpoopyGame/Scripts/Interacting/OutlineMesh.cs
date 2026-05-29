@@ -39,16 +39,18 @@ public class OutlineMesh : MonoBehaviour
     
     private IEnumerator AnimateOutlineScale(float start, float end, float duration)
     {
+        //gets the renderer
         var rend = GetComponentInChildren<Renderer>();
+        // put outline here
         Material outlineMat = materials[1];
         
         float elapsed = 0f;
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            float t = elapsed / duration;
-            outlineScale = Mathf.Lerp(start, end, t);
-            outlineMat.SetFloat(OutlineScaleID, outlineScale);
+            float time = elapsed / duration;
+            outlineScale = Mathf.Lerp(start, end, time); // lerp from start to end by time
+            outlineMat.SetFloat(OutlineScaleID, outlineScale); // sets float using shader graph
             yield return null;
         }
         outlineScale = end;

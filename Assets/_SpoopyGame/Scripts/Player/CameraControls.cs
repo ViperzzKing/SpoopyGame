@@ -25,7 +25,7 @@ public class CameraControls : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked; //lock cursor
         
         // Sets current rotation to starting rotation
         currentHorizontalRotation = transform.localEulerAngles.y;
@@ -48,12 +48,14 @@ public class CameraControls : MonoBehaviour
 
     private void HandleMouseMovements()
     {
+        // Gets Mouse Movements
         currentHorizontalRotation += Input.GetAxis("Mouse X") * sensitivity;
         currentVerticalRotation -= Input.GetAxis("Mouse Y") * sensitivity;
     }
 
     private void LockCameraRotation()
     {
+        // clamps camera rotation
         currentVerticalRotation = Mathf.Clamp(currentVerticalRotation, minRotation, maxRotation);
     }
 
@@ -65,6 +67,7 @@ public class CameraControls : MonoBehaviour
         newRotation.y = currentHorizontalRotation;
 
         transform.localEulerAngles = newRotation;
+        // Moves Camera
     }
 
     private void PositionCamera()

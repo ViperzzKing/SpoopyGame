@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class EyeOverlayImage : MonoBehaviour
 {
+    // Made by oscar not me
+    //TODO -- oscar comment this
+    
     [SerializeField] private EnemyAI enemyAI;
 
     private Image imageDetectionOverlay;

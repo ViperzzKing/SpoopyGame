@@ -33,17 +33,17 @@ public class PauseManager : MonoBehaviour
 
         if (camCorder.pauseReady && Input.GetMouseButtonDown(0))
         {
-            paused = !paused;
-            Time.timeScale = 0;
-            cameraControls.enabled = !paused;
-            Cursor.lockState = CursorLockMode.None;
+            paused = !paused; //pause is oppisate
+            Time.timeScale = 0; // freeze time
+            cameraControls.enabled = !paused; // when paused cam controls is off
+            Cursor.lockState = CursorLockMode.None; // bring back cursor
             Debug.Log("Pause");
         }
         else if (camCorder.noCameraKeybind && paused)
         {
             paused = !paused;
-            pauseMenu.SetActive(!pauseMenu.activeSelf);
-            Time.timeScale = 1;
+            pauseMenu.SetActive(!pauseMenu.activeSelf); // enable pause screen
+            Time.timeScale = 1; // resume time
             cameraControls.enabled = !paused;
             Cursor.lockState = CursorLockMode.Locked;
             Debug.Log("Unpause");
@@ -67,29 +67,33 @@ public class PauseManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0); // loads main menu
     }
 
     public void Options()
     {
+        // changes buttons
         optionButtons.SetActive(true);
         pauseButtons.SetActive(false);
     }
 
     public void Return()
     {
+        //brings pause buttons back
         optionButtons.SetActive(false);
         pauseButtons.SetActive(true);
     }
     
     public void SetMasterVolume(float sliderValue)
     {
+        //changes volume
         float db = Mathf.Log10(Mathf.Max(sliderValue, 0.0001f)) * 20f;
         masterMixer.SetFloat("MasterVolume", db);
     }
     
     public void FullScreenToggle()
     {
+        //switches to oppisate
         Screen.fullScreen = !Screen.fullScreen;
     }
 }

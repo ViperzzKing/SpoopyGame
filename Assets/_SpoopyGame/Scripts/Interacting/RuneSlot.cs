@@ -18,13 +18,14 @@ public class RuneSlot : MonoBehaviour
         {
             isSlotted = true;
             
+            // triggers twice???
             Debug.Log("Slotting Rune", this);
             itemPosition.SaveItemPosition(other.transform);
             rb.isKinematic = true;
             itemPosition.ReturnItem(gameObject.transform);
             
 
-            
+            // checks for ending tags and runs change finish
             if (other.CompareTag("RuneSlot0"))
             {
                 RuneCheckmarks.RuneManager.ChangeFinish(0, 1);
@@ -42,7 +43,7 @@ public class RuneSlot : MonoBehaviour
             {
                 RuneCheckmarks.RuneManager.ChangeFinish(3, 1);
             }
-            RuneCheckmarks.RuneManager.EndingTrigger();
+            RuneCheckmarks.RuneManager.EndingTrigger(); // runs ending trigger
         }
     }
 
@@ -52,6 +53,7 @@ public class RuneSlot : MonoBehaviour
         
         if (other.gameObject.layer == 12)
         {
+            // checks tags to change finish
             if (other.CompareTag("RuneSlot0"))
             {
                 RuneCheckmarks.RuneManager.ChangeFinish(0, -1);

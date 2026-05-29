@@ -4,13 +4,13 @@ using UnityEngine.Rendering.HighDefinition;
 public class Highlight : MonoBehaviour
 {
     [Header("Highlighted Object")]
-    public GameObject currentObject;
-    public bool interactable;
-    public OutlineMesh currentHighlight;
-    
+    public GameObject currentObject;    // The object currently being looked at
+    public bool interactable;           // Whether the current object can be interacted with
+    public OutlineMesh currentHighlight; // The outline component on the current object
+
     [Header("Player")]
-    [SerializeField] private float playerReach = 3f;
-    [SerializeField] private LayerMask interactableMask;
+    [SerializeField] private float playerReach = 3f;       // How far the player can interact
+    [SerializeField] private LayerMask interactableMask;   // Only raycast against these layers
 
     private Vector3 origin;
     private Vector3 lookDirection;
@@ -22,6 +22,7 @@ public class Highlight : MonoBehaviour
         HandleObjectHighlight();
     }
 
+    // Draws a red debug ray in the editor to visualise player reach
     private void DrawLineOfSight()
     {
         Debug.DrawRay(origin, lookDirection * playerReach, Color.red);
@@ -30,12 +31,14 @@ public class Highlight : MonoBehaviour
     private void HandleObjectHighlight()
     {
         RaycastHit hit;
+        // Raycast forward from camera, only hitting interactable layer objects
         bool playerLookingAtInteractable = Physics.Raycast(origin, lookDirection, out hit, playerReach, interactableMask);
 
         if (playerLookingAtInteractable)
         {
             GameObject objectHit = hit.collider.gameObject;
 
+            // Only switch if we're looking at a different object than before
             if (objectHit != currentObject)
             {
                 SwitchHighlight(objectHit);
@@ -43,13 +46,14 @@ public class Highlight : MonoBehaviour
         }
         else if (currentObject != null)
         {
+            // Nothing in reach - clear the highlight
             DisableHighlight();
         }
     }
 
     private void SwitchHighlight(GameObject newObject)
     {
-        // Disable previous objects highlight
+        // Turn off the previous object's outline before switching
         if (currentHighlight != null)
         {
             currentHighlight.enabled = false;
@@ -58,7 +62,7 @@ public class Highlight : MonoBehaviour
         currentObject = newObject;
         interactable = true;
 
-        // Grab the highlight from the new object
+        // Grab and enable the outline on the new object
         currentHighlight = newObject.GetComponent<OutlineMesh>();
 
         if (currentHighlight != null)
@@ -74,6 +78,7 @@ public class Highlight : MonoBehaviour
 
     private void DisableHighlight()
     {
+        // Toggle outline off before clearing the reference
         if (currentHighlight != null)
         {
             currentHighlight.ToggleOutline();
@@ -86,6 +91,7 @@ public class Highlight : MonoBehaviour
         Debug.Log("Disable highlight");
     }
 
+    // Update origin and direction to match the camera each frame
     private void SetToCameraPosition()
     {
         if (Camera.main == null) return;

@@ -1,21 +1,18 @@
-using System;
-using Unity.Mathematics;
-using UnityEditor.IMGUI.Controls;
+
 using UnityEngine;
-using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.UI;
 
 public class InspectObject : MonoBehaviour
 {
-    public Camera cam;
-    public Rigidbody runeRB;
-    public CameraControls camControls;
-    public BasicMovement movement;
-    public Highlight highlight;
-    public GameObject onTopVolume;
+    public Camera cam; // gets camera.main
+    public Rigidbody runeRB; // gets runes rigidbody
+    public CameraControls camControls; // camera controller
+    public BasicMovement movement; // player controller
+    public Highlight highlight; // highlight script
+    public GameObject onTopVolume; // Overlay Volume for when rune is in ground while inspecting
     public Image crosshair;
     public Image inspectBorder;
-    public RuneSlot runeSlot;
+    public RuneSlot runeSlot; // the script to manage the rune slots
 
     public bool playerIsInspecting;
     public bool playerHoldingSomething;
@@ -44,12 +41,14 @@ public class InspectObject : MonoBehaviour
         bool leftMouse = Input.GetMouseButtonDown(0);
         bool eButton = Input.GetKeyDown(dropKey);
         
+        // if left mouse key try toggle inspect function
         if (leftMouse)
             TryToggleInspect();
         
+        // if ebutton toggle pickup
         if (eButton)
             TogglePickup();
-        if (itemDropInput)
+        if (itemDropInput) // throw manager
             throwInputManagment();
     }
 
@@ -57,12 +56,14 @@ public class InspectObject : MonoBehaviour
     {
         bool canPickup = !playerHoldingSomething;
 
+        // only pickup when player is inspecting
         if (canPickup && playerIsInspecting)
             PickUpItem();
-        else if (playerHoldingSomething && !playerIsInspecting)
+        else if (playerHoldingSomething && !playerIsInspecting) // drop instead of pickup
             itemDropInput = true;
     }
 
+    //item throw manager
     private void throwInputManagment()
     {
         timePressingDropkey += Time.deltaTime;
@@ -98,33 +99,35 @@ public class InspectObject : MonoBehaviour
 
     private void PickUpItem()
     {
+        // set all WhenPlayInspects to false
         WhenPlayerInspects(false);
-        currentItemInspecting.parent = cam.transform;
-        currentItemInspecting.localPosition = new Vector3(-0.27f, -0.1f, 0.36f);
-        currentItemInspecting.localRotation = Quaternion.identity;
+        currentItemInspecting.parent = cam.transform; // change parant to camera
+        currentItemInspecting.localPosition = new Vector3(-0.27f, -0.1f, 0.36f); // change position
+        currentItemInspecting.localRotation = Quaternion.identity; // reset rotation
 
-        SaveItemPosition(currentItemInspecting);
-        ReturnItem(currentItemInspecting);
+        SaveItemPosition(currentItemInspecting); // save for stop inspection
+        ReturnItem(currentItemInspecting); // return for stop inspection
 
-        currentItemInspecting.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-        currentItemInspecting.GetComponent<BoxCollider>().isTrigger = true;
+        currentItemInspecting.localScale = new Vector3(0.2f, 0.2f, 0.2f); // change size
+        currentItemInspecting.GetComponent<BoxCollider>().isTrigger = true; // turn collider to trigger
 
-        currentItemHolding = currentItemInspecting;
-        runeRB.isKinematic = true;
+        currentItemHolding = currentItemInspecting; // set item holding to item inspecting
+        runeRB.isKinematic = true; // keep the rune in place
 
-        playerHoldingSomething = true;
+        playerHoldingSomething = true; // bool for checks
     }
 
     private void DropItem(bool isThrowing)
     {
+        // location used DropAtLocation()
         Vector3 location = DropLocation.dropLocation.DropAtLocation();
 
-        currentItemHolding.parent = null;
-        currentItemHolding.position = location;
-        currentItemHolding.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        currentItemHolding.GetComponent<BoxCollider>().isTrigger = false;
+        currentItemHolding.parent = null; // get rid of the parant
+        currentItemHolding.position = location; // drop where looking
+        currentItemHolding.localScale = new Vector3(0.5f, 0.5f, 0.5f); // change size
+        currentItemHolding.GetComponent<BoxCollider>().isTrigger = false; // turn off trigger
 
-        runeRB.isKinematic = false;
+        runeRB.isKinematic = false; // turn these off
         playerHoldingSomething = false;
         currentItemHolding = null;
 
@@ -139,38 +142,40 @@ public class InspectObject : MonoBehaviour
     {
         currentItemInspecting = GetItemToInspectFromHighlight();
         runeRB = currentItemInspecting.GetComponent<Rigidbody>();
-        SaveItemPosition(currentItemInspecting);
-        currentItemInspecting.localScale = new Vector3(0.85f, 0.85f, 0.85f);
-        currentItemInspecting.position = cam.transform.position + cam.transform.forward * 2;
-        currentItemInspecting.LookAt(Camera.main.transform);
+        
+        SaveItemPosition(currentItemInspecting); // save item position for stop inspecting
+        
+        currentItemInspecting.localScale = new Vector3(0.85f, 0.85f, 0.85f); // inspecting scale
+        currentItemInspecting.position = cam.transform.position + cam.transform.forward * 2; // position
+        currentItemInspecting.LookAt(Camera.main.transform); // looks the item at the player
 
             Debug.Log("Inspecting");
-            WhenPlayerInspects(inspecting: true);
+            WhenPlayerInspects(inspecting: true); 
         
     }
 
     private void StopInspecting()
     {
-        currentItemInspecting.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        currentItemInspecting.localScale = new Vector3(0.5f, 0.5f, 0.5f); // change scale
         Debug.Log("Stop Inspecting");
         WhenPlayerInspects(inspecting: false);
-        ReturnItem(currentItemInspecting);
+        ReturnItem(currentItemInspecting); // return item
     }
     
     private void WhenPlayerInspects(bool inspecting)
     {
-        runeRB.isKinematic = inspecting;
-        OutlineMesh highlightOutline = highlight.currentHighlight;
-        runeSlot = currentItemInspecting.GetComponent<RuneSlot>();
+        runeRB.isKinematic = inspecting; // Rune Rigidbody
+        OutlineMesh highlightOutline = highlight.currentHighlight; // Outline Mesh Scirpt
+        runeSlot = currentItemInspecting.GetComponent<RuneSlot>(); // rune slot script
         
-        highlightOutline.ToggleOutline();
-        onTopVolume.SetActive(inspecting);
-        camControls.enabled = !inspecting;
-        movement.enabled = !inspecting;
-        crosshair.gameObject.SetActive(!inspecting);
-        inspectBorder.gameObject.SetActive(inspecting);
-        playerIsInspecting = inspecting;
-        runeSlot.enabled = !inspecting;
+        highlightOutline.ToggleOutline(); // runs toggle outline
+        onTopVolume.SetActive(inspecting); // overlay
+        camControls.enabled = !inspecting; // cam controls
+        movement.enabled = !inspecting; // player movement
+        crosshair.gameObject.SetActive(!inspecting); // ui crosshair
+        inspectBorder.gameObject.SetActive(inspecting); // ui inspect border
+        playerIsInspecting = inspecting; // inspecting bool
+        runeSlot.enabled = !inspecting; // don't have rune slot on while inspecting
     }
     
     private Transform GetItemToInspectFromHighlight()
@@ -178,15 +183,17 @@ public class InspectObject : MonoBehaviour
         if (highlight.currentObject == null)
             return null;
 
-        return highlight.currentObject.transform;
+        return highlight.currentObject.transform; // object your looking at
     }
     
+    // saves positon and rotation
     public void SaveItemPosition(Transform item)
     {
         itemRotation = item.rotation;
         itemPosition = item.position;
     }
 
+    // puts back to where it was saved
     public void ReturnItem(Transform item)
     {
         Transform itemMesh = item.GetChild(0);
