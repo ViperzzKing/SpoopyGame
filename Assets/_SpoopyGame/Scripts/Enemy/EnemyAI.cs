@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,30 +5,33 @@ using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
 {
-    public static EnemyAI enemyAI;
+    public static EnemyAI Instance;
 
-    private bool enemyIsAttacking;
-    [SerializeField] private float searchingTime = 10;
-    [SerializeField] private float requiredDistance;
-    public float currentDistance;
-    public bool destinationReached = true;
-    public bool playerDetected = false;
+    [Header("Detection")]
+    [SerializeField] private float noiseDetectionVolume = 30;
+    [SerializeField] private float noiseVolume;
+    [SerializeField] private bool soundDetected;
+    public bool PlayerDetected { get; private set; }
     
-    public bool enemyStunned = false;
-
-    public float noiseDetectionVolume = 30;
-    public float noiseVolume;
-    public bool soundDetected;
-    
-    [Space] [SerializeField] private Collider[] validAreas;
-    public EnemyStates enemyState;
+    [Header("Navigation")]
+    [SerializeField] private Collider[] validAreas;
     [SerializeField] private NavMeshAgent enemy;
-    public Transform chasingTarget;
+    [SerializeField] Transform chasingTarget;
     [SerializeField] private Transform searcher;
-
-    [SerializeField] private bool audioCheck = true;
-
-    public enum EnemyStates
+    [SerializeField] private float requiredDistance;
+    public bool destinationReached = true;
+    
+    [Header("Timing")]
+    [SerializeField] private float searchingTime = 10;
+    
+    [Header("States")]
+    [SerializeField] private bool enemyIsAttacking;
+    [SerializeField] private bool enemyStunned = false;
+    [SerializeField] private EnemyState previousState;
+    public EnemyState CurrentState { get; private set; }
+    
+    
+    public enum EnemyState
     {
         Roaming, 
         Chasing,
@@ -40,7 +42,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Awake()
     {
-        enemyAI = this;
+        Instance = this;
     }
 
     private void Start()
@@ -51,60 +53,60 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         StateHandler();
-        StateSwitcher();
+        ChangeState();
     }
 
     // Handles The States
     private void StateHandler()
     {
-        switch (enemyState)
+        switch (CurrentState)
         {
-            case EnemyStates.Roaming:
-                RoamingState(searcher);
+            case EnemyState.Roaming:
+                Roam();
                 break;
-            case EnemyStates.Chasing:
-                ChasingState(chasingTarget);
+            case EnemyState.Chasing:
+                Chase(chasingTarget);
                 break;
-            case EnemyStates.Searching:
-                SearchingState();
+            case EnemyState.Searching:
+                Search();
                 break;
-            case EnemyStates.Attacking:
-                AttackingState();
+            case EnemyState.Attacking:
+                Attack();
                 break;
-            case EnemyStates.Stunned:
-                StunnedState();
+            case EnemyState.Stunned:
+                Stun();
                 break;
         }
     }
 
     // Detections for Switching States
-    private void StateSwitcher()
+    private void ChangeState()
     {
-        bool playerHidesFromChase = HidePlayer.playerHider.playerIsHiding && enemyState == EnemyStates.Chasing || 
-                                    BasicMovement.playerController.currentPlayerState == BasicMovement.State.Crouch && 
-                                    enemyState == EnemyStates.Chasing &&
-                                    !playerDetected;
+        bool playerHidesFromChase = HidePlayer.Instance.PlayerIsHiding && CurrentState == EnemyState.Chasing || 
+                                    BasicMovement.Instance.CurrentState == BasicMovement.PlayerState.Crouch && 
+                                    CurrentState == EnemyState.Chasing &&
+                                    !PlayerDetected;
         bool hearsNoise = noiseVolume >= noiseDetectionVolume;
 
         // If Player Detected Player Becomes Chasing Target And Enemy Enters Chasing State
-        if (playerDetected)
+        if (PlayerDetected)
         {
-            chasingTarget = BasicMovement.playerController.transform;
-            enemyState = EnemyStates.Chasing;
+            chasingTarget = BasicMovement.Instance.transform;
+            CurrentState = EnemyState.Chasing;
         }
 
         // When the player hides during a chase and is not seen enemy enters searching state
         if (playerHidesFromChase)
-            enemyState = EnemyStates.Searching;
+            CurrentState = EnemyState.Searching;
         
         // If enemyStunned enter Stunned State
         if (enemyStunned)
-            enemyState = EnemyStates.Stunned;
+            ApplyStun();
 
         // uses Noise script And if noise is bigger than noise detection volume
         if (hearsNoise)
         {
-            enemyState = EnemyStates.Chasing;
+            CurrentState = EnemyState.Chasing;
             Debug.Log("I HEARD THAT");
             noiseVolume = 0;
         }
@@ -116,33 +118,18 @@ public class EnemyAI : MonoBehaviour
 
     // when destination reached
     // Get random postion on map, move the searcher there, set enemy navmesh there
-    private void RoamingState(Transform target)
+    private void Roam()
     {
-        if (destinationReached)
-        {
-            Vector3 newPos = GetValidRandomPosition();
-            Debug.Log(newPos);
-            
-            searcher.position = newPos;
-            Debug.Log(searcher.position);
-            
-            enemy.SetDestination(newPos);
-            Debug.Log("set enemy destination");
-            
-            destinationReached = false;
-        }
-        else
-        {
-            // reset once enemy reaches destination
-            if (enemy.remainingDistance <= enemy.stoppingDistance && !enemy.pathPending)
-            {
-                destinationReached = true;
-            }
-        }
+        SetDestination(searching: false);
     }
     
 
-    private void ChasingState(Transform target)
+    private void Search()
+    {
+        SetDestination(searching: true);
+    }
+    
+    private void Chase(Transform target)
     {
         bool enemyCloseEnough = enemy.remainingDistance <= enemy.stoppingDistance + 5;
         bool pathReady = !enemy.pathPending;
@@ -156,60 +143,40 @@ public class EnemyAI : MonoBehaviour
         // When enemy reaches player go to attack state
         if (enemyReachedLocation && target.CompareTag("Player"))
         {
-            enemyState = EnemyStates.Attacking;
+            CurrentState = EnemyState.Attacking;
         }
         else if (enemyReachedLocation && soundDetected) // If it reached a sound instead
         {
             destinationReached = true;
-            enemyState = EnemyStates.Searching; // Chased Sound
+            CurrentState = EnemyState.Searching; // Chased Sound
             soundDetected = false;
         }
         
         // When player crouches while not being seen enter searching state
-        if (!playerDetected && BasicMovement.playerController.currentPlayerState == BasicMovement.State.Crouch && enemyReachedLocation)
+        if (!PlayerDetected && BasicMovement.Instance.CurrentState == BasicMovement.PlayerState.Crouch && enemyReachedLocation)
         {
-            enemyState = EnemyStates.Searching;
+            CurrentState = EnemyState.Searching;
         }
     }
 
     // Same as Roaming but smaller radius and around the enemy
-    private void SearchingState()
-    {
-        if (destinationReached)
-        {
-            Vector3 newPos = GetValidRandomPosition();
-            Debug.Log(newPos);
-            
-            searcher.position = newPos;
-            Debug.Log(searcher.position);
-            
-            enemy.SetDestination(newPos);
-            Debug.Log("set enemy searching destination");
-            
-            destinationReached = false;
-            StartCoroutine(SearchingTime(searchingTime));
-        }
-        else
-        {
-            if (enemy.remainingDistance <= enemy.stoppingDistance && !enemy.pathPending)
-            {
-                destinationReached = true;
-            }
-        }
-    }
 
     // starts attack Enumerator only when enemy is not already attacking
-    private void AttackingState()
+    private void Attack()
     {
         if(!enemyIsAttacking)
             StartCoroutine(AttackingTime(1f));
     }
     
     // Stuns the enemy for StunTime
-    private void StunnedState()
+    private void Stun()
     {
         //TODO -- Set up code to make the enemy in a certain animation
-        StartCoroutine(StunTime(10f)); // Replace 10f with the rune's stun time or add a variable
+        if (!enemyStunned)
+        {
+            
+            StartCoroutine(StunTime(10f)); // Replace 10f with the rune's stun time or add a variable
+        }
     }
 
 
@@ -221,7 +188,7 @@ public class EnemyAI : MonoBehaviour
         enemyIsAttacking = true;
         Debug.Log("Attacking");
         yield return new WaitForSeconds(attackingTime); // Animation Time
-        enemyState = EnemyStates.Chasing;
+        CurrentState = EnemyState.Chasing;
         yield return new WaitForSeconds(3); // Cooldown before can attack again
         enemyIsAttacking = false;
     }
@@ -231,13 +198,15 @@ public class EnemyAI : MonoBehaviour
     {
         yield return new WaitForSeconds(searchTime);
         Debug.Log("finished searching");
-        enemyState = EnemyStates.Roaming;
+        CurrentState = EnemyState.Roaming;
     }
 
     //Time for stun with how long stunned for
-    private IEnumerator StunTime(float searchTime)
+    private IEnumerator StunTime(float stunTime)
     {
-        yield return new WaitForSeconds(searchTime);
+        enemyStunned = true;
+        yield return new WaitForSeconds(stunTime);
+        CurrentState = previousState;
         enemyStunned = false;
     }
 
@@ -254,7 +223,7 @@ public class EnemyAI : MonoBehaviour
                             0,
                             transform.position.z + Random.Range(-20, 20));
     }
-
+    
     // makes sure it's a valid position and not outside the map
     private Vector3 GetValidRandomPosition()
     {
@@ -264,14 +233,40 @@ public class EnemyAI : MonoBehaviour
             Vector3 pos = RandomWorldPosition();
             Vector3 localPos = RandomLocalPostion();
             //Debug.Log(RandomPosition());
-            if (IsInsideValidArea(pos) && enemyState == EnemyStates.Roaming) return pos;
-            if (IsInsideValidArea(localPos) && enemyState == EnemyStates.Searching) return localPos;
+            if (IsInsideValidArea(pos) && CurrentState == EnemyState.Roaming) return pos;
+            if (IsInsideValidArea(localPos) && CurrentState == EnemyState.Searching) return localPos;
             // checks bounds for pos and local to see if its valid
         }
         //Debug.Log("failed");
         return transform.position;
     }
 
+    private void SetDestination(bool searching)
+    {
+        if (destinationReached)
+        {
+            Vector3 newPos = GetValidRandomPosition();
+            Debug.Log(newPos);
+            
+            searcher.position = newPos;
+            Debug.Log(searcher.position);
+            
+            enemy.SetDestination(newPos);
+            
+            destinationReached = false;
+            
+            if(searching)
+                StartCoroutine(SearchingTime(searchingTime));
+        }
+        else
+        {
+            if (enemy.remainingDistance <= enemy.stoppingDistance && !enemy.pathPending)
+            {
+                destinationReached = true;
+            }
+        }
+    }
+    
     [ContextMenu("test")]
     private void TestLocalPos()
     {
@@ -289,7 +284,34 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        // its not in bounds
+        // it's not in bounds
         return false;
+    }
+
+    public void HearSound(float newSoundVolume, Transform soundTarget)
+    {
+        if (CurrentState != EnemyState.Chasing)
+        {
+            if (CurrentState == EnemyState.Searching)
+            {
+                // while enemy is searching sound is increased
+                newSoundVolume = newSoundVolume * 1.5f;
+            }
+            
+            noiseVolume = newSoundVolume;
+            chasingTarget = soundTarget;
+            soundDetected = true;
+        }
+    }
+
+    public void SetPlayerDetected(bool detected)
+    {
+        PlayerDetected = detected;
+    }
+
+    public void ApplyStun()
+    {
+        previousState = CurrentState;
+        CurrentState = EnemyState.Stunned;
     }
 }

@@ -4,30 +4,44 @@ using UnityEngine;
 public class DropLocation : MonoBehaviour
 {
     // Singleton so any script can access drop location without a reference
-    public static DropLocation dropLocation;
+    public static DropLocation Instance;
+    private Camera mainCamera;
+
+    [Header("Drop Settings")] 
+    [SerializeField] private float dropHeight = 0.3f;
+    [SerializeField] private float dropDistance = 2f;
 
     private void Awake()
     {
-        dropLocation = this;
+        Instance = this;
+        mainCamera = Camera.main;
+        
+        if(mainCamera == null) Debug.LogWarning("No Main CameraFound");
     }
 
     // Editor test to print the current drop position
     [ContextMenu("Drop Item")]
     private void TestDrop()
     {
-        Debug.Log(DropAtLocation());
+        Debug.Log(GetDropPosition());
     }
 
     // How far in front of the camera an item can be dropped
-    public float dropDistance = 2f;
 
     private Vector3 origin;
     private Vector3 lookDirection;
 
-    public Vector3 DropAtLocation()
+    public Vector3 GetDropPosition()
     {
-        origin = Camera.main.transform.position;
-        lookDirection = Camera.main.transform.forward;
+        if (mainCamera == null)
+        {
+            Debug.LogWarning("No main camera found, dropping at own postion");
+            return transform.position + transform.forward * dropDistance;
+        }
+            
+        
+        origin = mainCamera.transform.position;
+        lookDirection = mainCamera.transform.forward;
 
         RaycastHit hit;
         // Cast a ray forward from the camera up to dropDistance
@@ -39,7 +53,7 @@ public class DropLocation : MonoBehaviour
             Debug.Log(locationHit);
 
             // Slightly above the hit surface so the item doesn't clip into it
-            return new Vector3(locationHit.x, locationHit.y + 0.3f, locationHit.z);
+            return new Vector3(locationHit.x, locationHit.y + dropHeight, locationHit.z);
         }
         else
         {

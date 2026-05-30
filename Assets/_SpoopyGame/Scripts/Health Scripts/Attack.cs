@@ -4,22 +4,21 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     // Whether damage is applied once or over time
-    public enum Apply
+    public enum DamageApplication
     {
         Instant,
         Overtime
     }
 
     [SerializeField] private float damageAmount;
-    [SerializeField] private Apply apply;
+    [SerializeField] private DamageApplication damageApplication;
 
     // Deals damage to a victim if they have Health and aren't on the same layer
     private void DealDamage(GameObject victim)
     {
-        if(victim.GetComponent<Health>() && victim.layer != gameObject.layer)
+        if(victim.TryGetComponent(out Health health) && victim.layer != gameObject.layer)
         {
-            victim.GetComponent<Health>().TakeDamage(damageAmount);
-            Debug.Log("Attacked with 1 damage");
+            health.TakeDamage(damageAmount);
         }
     }
 

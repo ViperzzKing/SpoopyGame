@@ -1,29 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
+[RequireComponent(typeof(Image))]
 public class EyeOverlayImage : MonoBehaviour
 {
-    // Made by oscar not me
-    //TODO -- oscar comment this
-    
     [SerializeField] private EnemyAI enemyAI;
 
     private Image imageDetectionOverlay;
 
-    public float alphaCurrent;
-    public float alphaMax;
+    [SerializeField] private float alphaCurrent;
+    [SerializeField] private float alphaMax;
 
-    public float fadeTime;
+    [SerializeField] private float fadeTime;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         imageDetectionOverlay = GetComponent<Image>();
-        enemyAI = FindFirstObjectByType<EnemyAI>();
+        
+        if(enemyAI == null)
+            enemyAI = EnemyAI.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isCrouching())
+        if (IsDetected())
         {
             alphaCurrent = Mathf.Lerp(alphaCurrent, alphaMax, fadeTime);
         }
@@ -34,9 +35,11 @@ public class EyeOverlayImage : MonoBehaviour
         imageDetectionOverlay.color = new Color(imageDetectionOverlay.color.r, imageDetectionOverlay.color.b, imageDetectionOverlay.color.g, alphaCurrent);
     }
 
-    public bool isCrouching()
+    public bool IsDetected()
     {
-        if (enemyAI.playerDetected || Input.GetKey(KeyCode.K))
+        bool debugKeybind = Input.GetKey(KeyCode.K);
+        
+        if (enemyAI.PlayerDetected || debugKeybind)
         {
             return true;
         }

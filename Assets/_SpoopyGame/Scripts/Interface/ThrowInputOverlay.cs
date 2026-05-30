@@ -1,38 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+[RequireComponent(typeof(Image))]
 public class ThrowInputOverlay : MonoBehaviour
 {
-    // Made by oscar not me
-    //TODO -- oscar comment this
-    
     [SerializeField] private InspectObject inspectObject;
 
     private Image sneakVingette;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        inspectObject = FindAnyObjectByType<InspectObject>();
+        if(inspectObject == null)
+            inspectObject = FindAnyObjectByType<InspectObject>();
+        
         sneakVingette = GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (throwProgress() > 1)
+        if (ThrowProgress() > 1)
         {
-            sneakVingette.fillAmount = 1;
-        }
-        else
-        {
-            sneakVingette.fillAmount = throwProgress();
+            sneakVingette.fillAmount = Mathf.Clamp01(ThrowProgress());
         }
     }
 
-    public float throwProgress()
+    public float ThrowProgress()
     {
-        return inspectObject.timePressingDropkey;
+        return inspectObject.TimePressingDropkey / inspectObject.HoldThrowTime;
     }
 
 }

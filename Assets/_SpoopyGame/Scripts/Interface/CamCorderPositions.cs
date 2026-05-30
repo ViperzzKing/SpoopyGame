@@ -3,54 +3,74 @@ using UnityEngine;
 
 public class CamCorderPositions : MonoBehaviour
 {
-    public Vector3[] camPositions = new Vector3[3];
-    public Vector3[] camRotations = new Vector3[3];
+    [SerializeField] private Vector3 hiddenPosition, hiddenRotation;
+    [SerializeField] private Vector3 pausePosition, pauseRotation;
+    [SerializeField] private Vector3 screenPosition, screenRotation;
 
-    public bool noCameraKeybind;
-    public bool pauseCameraKeybind;
-    public bool screenCameraKeybind;
+    public bool NoCameraKeybind { get; private set; }
+    public bool PauseCameraKeybind { get; private set; }
+    public bool ScreenCameraKeybind { get; private set; }
 
-    public bool cameraOut;
-    public bool pauseReady;
-    public bool screenCamera;
+    public bool PauseReady => CurrentState == CamCorderState.PauseReady;
+    public bool ScreenCamera => CurrentState == CamCorderState.ScreenCamera;
 
+    public bool CameraOut => CurrentState == CamCorderState.ScreenCamera || CurrentState == CamCorderState.PauseReady;
+
+    public enum CamCorderState
+    {
+        Hidden,
+        PauseReady,
+        ScreenCamera
+    }
+
+    public CamCorderState CurrentState { get; private set; }
+    
     private void Update()
     {
         PositionKeybinds();
     }
 
+    private void SetState(CamCorderState newState)
+    {
+        CurrentState = newState;
+        ApplyTransform();
+    }
+    
     private void PositionKeybinds()
     {
-        noCameraKeybind = cameraOut && Input.GetMouseButtonDown(1) || pauseReady && Input.GetMouseButtonDown(1) 
-                                                                   || pauseReady && Input.GetKeyDown(KeyCode.Escape)
-                                                                   || screenCamera && Input.GetKeyDown(KeyCode.Escape);
-        pauseCameraKeybind = Input.GetKeyDown(KeyCode.Escape);
-        screenCameraKeybind = !cameraOut && Input.GetMouseButtonDown(1) || pauseReady && Input.GetMouseButtonDown(0);
+        NoCameraKeybind = CameraOut && Input.GetMouseButtonDown(1) || PauseReady && Input.GetMouseButtonDown(1) 
+                                                                   || PauseReady && Input.GetKeyDown(KeyCode.Escape)
+                                                                   || ScreenCamera && Input.GetKeyDown(KeyCode.Escape);
+        PauseCameraKeybind = Input.GetKeyDown(KeyCode.Escape);
+        ScreenCameraKeybind = !CameraOut && Input.GetMouseButtonDown(1) || PauseReady && Input.GetMouseButtonDown(0);
 
         
         // just the keybinds ^
-        if (noCameraKeybind)
+        if (NoCameraKeybind)
+            SetState(CamCorderState.Hidden);
+        else if (PauseCameraKeybind)
+            SetState(CamCorderState.PauseReady);
+        else if (ScreenCameraKeybind)
+            SetState(CamCorderState.ScreenCamera);
+        
+    }
+
+    private void ApplyTransform()
+    {
+        switch (CurrentState)
         {
-            screenCamera = false;
-            pauseReady = false;
-            cameraOut = false;
-            transform.localPosition = camPositions[0];
-            transform.localRotation = Quaternion.Euler(camRotations[0]);
-        }
-        else if (pauseCameraKeybind)
-        {
-            screenCamera = false;
-            pauseReady = true;
-            transform.localPosition = camPositions[1];
-            transform.localRotation = Quaternion.Euler(camRotations[1]);
-        }
-        else if (screenCameraKeybind)
-        {
-            screenCamera = true;
-            pauseReady = false;
-            cameraOut = true;
-            transform.localPosition = camPositions[2];
-            transform.localRotation = Quaternion.Euler(camRotations[2]);
+            case CamCorderState.Hidden:
+                transform.localPosition = hiddenPosition;
+                transform.localRotation = Quaternion.Euler(hiddenRotation);
+                break;
+            case CamCorderState.PauseReady:
+                transform.localPosition = pausePosition;
+                transform.localRotation = Quaternion.Euler(pauseRotation);
+                break;
+            case CamCorderState.ScreenCamera:
+                transform.localPosition = screenPosition;
+                transform.localRotation = Quaternion.Euler(screenRotation);
+                break;
         }
     }
 }

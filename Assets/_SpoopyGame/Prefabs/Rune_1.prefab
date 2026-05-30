@@ -69,9 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d90dd25ed1b7b488825593093dc6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineMesh
-  materials:
-  - {fileID: 2100000, guid: ed3af5ac866f2d049b11cbabb9f35153, type: 2}
-  - {fileID: 2100000, guid: 796ae01d10d9d1b4c99837fdb024435c, type: 2}
+  baseMaterial: {fileID: 2100000, guid: ed3af5ac866f2d049b11cbabb9f35153, type: 2}
+  outlineMaterial: {fileID: 2100000, guid: 796ae01d10d9d1b4c99837fdb024435c, type: 2}
+  outlineEnabled: 0
   outlineScale: 35
 --- !u!54 &8390988966501773147
 Rigidbody:
@@ -112,9 +112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a6d964817397f498559684ccc210ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RuneSlot
-  runeSlot:
+  isSlotted: 0
+  acceptedRuneLayer:
     serializedVersion: 2
     m_Bits: 4096
+  endingType: 0
   itemPosition: {fileID: 0}
   rb: {fileID: 8390988966501773147}
 --- !u!1001 &3864572767406468888

@@ -1,29 +1,39 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+[RequireComponent(typeof(Image))]
 public class SneakImage : MonoBehaviour
 {
-    // Made by oscar not me
-    //TODO -- oscar comment this
-    
     [SerializeField] private BasicMovement basicMovement;
 
     private Image sneakVingette;
+    private Color vingetteColor;
 
-    public float alphaCurrent;
-    public float alphaMax;
+    [SerializeField] private float alphaCurrent;
+    [SerializeField] private float alphaMax;
 
-    public float fadeTime;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float fadeTime;
+
+    
+    void Awake()
     {
-        basicMovement = FindAnyObjectByType<BasicMovement>();
+        if(basicMovement == null) 
+            basicMovement = BasicMovement.Instance;
+        
         sneakVingette = GetComponent<Image>();
+    }
+
+    private void Start()
+    {
+        vingetteColor = sneakVingette.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isCrouching())
+        bool crouching = basicMovement.CurrentState == BasicMovement.PlayerState.Crouch;
+        
+        if (crouching)
         {
             alphaCurrent = Mathf.Lerp(alphaCurrent, alphaMax, fadeTime);
         }
@@ -31,17 +41,9 @@ public class SneakImage : MonoBehaviour
         {
             alphaCurrent = Mathf.Lerp(alphaCurrent, 0, fadeTime);
         }
-        sneakVingette.color = new Color(sneakVingette.color.r, sneakVingette.color.b, sneakVingette.color.g, alphaCurrent);
-    }
 
-    public bool isCrouching()
-    {
-        if (basicMovement.currentPlayerState == BasicMovement.State.Crouch)
-        {
-            return true;
-        }
-        return false;
+        vingetteColor.a = alphaCurrent;
+        sneakVingette.color = vingetteColor;
     }
-
 }
 

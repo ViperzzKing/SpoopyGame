@@ -124,6 +124,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4162634696582902935, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
   m_PrefabInstance: {fileID: 1280399263}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &293164733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8198378842999434583, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+  m_PrefabInstance: {fileID: 1280399263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &435678571
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,13 +173,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ad9dac8e0d47d458509d8950602656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
-  masterMixer: {fileID: 0}
-  cameraControls: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  camCorder: {fileID: 0}
-  pauseButtons: {fileID: 0}
-  optionButtons: {fileID: 0}
+  masterMixer: {fileID: 24100000, guid: cab1fc6af5400d04d870d31dd177a403, type: 2}
+  cameraControls: {fileID: 1775723828}
+  pauseMenu: {fileID: 1180033658}
+  camCorder: {fileID: 1451155537}
+  pauseButtons: {fileID: 293164733}
+  optionButtons: {fileID: 1441854907}
   paused: 0
+--- !u!1 &1180033658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1609035023371698797, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+  m_PrefabInstance: {fileID: 1280399263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1280399263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,6 +221,54 @@ PrefabInstance:
       propertyPath: m_ShadowRadius
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: pausePosition.x
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: pausePosition.y
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: pausePosition.z
+      value: 0.358
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: pauseRotation.x
+      value: 18.223295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: pauseRotation.y
+      value: 15.040251
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: pauseRotation.z
+      value: 4.803217
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: hiddenPosition.x
+      value: 0.384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: hiddenPosition.y
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: hiddenPosition.z
+      value: -1.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: screenPosition.x
+      value: 0.384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: screenPosition.y
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: screenPosition.z
+      value: 0.061
+      objectReference: {fileID: 0}
     - target: {fileID: 3043323755061374397, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -226,6 +284,14 @@ PrefabInstance:
     - target: {fileID: 3904835328068460183, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
       propertyPath: m_InnerSpotPercent
       value: 42.39341
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027776562279041630, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: transitionTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027776562279041630, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+      propertyPath: currentEyeOffset
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4162634696582902935, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
       propertyPath: m_Name
@@ -307,6 +373,22 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1469523305}
   m_SourcePrefab: {fileID: 100100000, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+--- !u!1 &1441854907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6609801093193249518, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+  m_PrefabInstance: {fileID: 1280399263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1451155537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2480172906385257151, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+  m_PrefabInstance: {fileID: 1280399263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00472bb227e17994fac139d07bb1f716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CamCorderPositions
 --- !u!114 &1469523305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +405,17 @@ MonoBehaviour:
   soundDistance: 0
   enemyDistanceMultipler: 0
   newSoundVolume: 0
+--- !u!114 &1775723828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4027776562279041630, guid: 2fbdb48bb95dd574081ab33e07a3ac9d, type: 3}
+  m_PrefabInstance: {fileID: 1280399263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bf5f22cfc847743985a89b4dab4fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

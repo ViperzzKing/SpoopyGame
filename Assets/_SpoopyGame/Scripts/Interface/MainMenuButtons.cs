@@ -2,13 +2,20 @@ using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public class MainMenuButtons : MonoBehaviour
 {
-    [SerializeField] private GameObject options;
+    [SerializeField] private GameObject optionsPanel;
     [SerializeField] private AudioMixer masterMixer;
-    
+
+    [SerializeField] private int gameScene;
+
+    private void Awake()
+    {
+        if (optionsPanel == null) Debug.LogWarning("Missing Options Panel");
+        if (masterMixer == null) Debug.LogWarning("Missing Master Mixer");
+    }
+
     //sets master volume
     public void SetMasterVolume(float sliderValue)
     {
@@ -19,12 +26,12 @@ public class MainMenuButtons : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(1); // Loads Game
+        SceneManager.LoadScene(gameScene); // Loads Game
     }
     
     public void Options()
     {
-        options.SetActive(!options.activeSelf); // toggles Options
+        optionsPanel.SetActive(!optionsPanel.activeSelf); // toggles Options
     }
 
     public void FullScreenToggle()

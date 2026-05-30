@@ -11,9 +11,11 @@ public class CameraControls : MonoBehaviour
     [SerializeField] private float minRotation;
     [SerializeField] private float maxRotation;
 
-    public float currentEyeOffset;
-    public float standingEyeOffset;
-    public float crouchingEyeOffset;
+    [Header("Offsets")] 
+    [SerializeField] private float transitionTime;
+    [SerializeField] private float currentEyeOffset;
+    public float StandingEyeOffset { get; private set; } = 1.8f;
+    public float CrouchingEyeOffset { get; private set; } = 0.7f;
 
 
     private float currentHorizontalRotation;
@@ -30,8 +32,8 @@ public class CameraControls : MonoBehaviour
         // Sets current rotation to starting rotation
         currentHorizontalRotation = transform.localEulerAngles.y;
         currentVerticalRotation = transform.localEulerAngles.x;
-
-        currentEyeOffset = standingEyeOffset;
+        
+        currentEyeOffset = StandingEyeOffset;
     }
 
     private void Update()
@@ -80,7 +82,12 @@ public class CameraControls : MonoBehaviour
         Vector3 newPos = transform.position;
 
         // Makes Crouching Smooth
-        newPos.y = Mathf.Lerp(transform.position.y, target.y, Time.deltaTime * 10f);
+        newPos.y = Mathf.Lerp(transform.position.y, target.y, Time.deltaTime * transitionTime);
         transform.position = newPos;
+    }
+
+    public void SetEyeOffSet(float offSetHeight)
+    {
+        currentEyeOffset = offSetHeight;
     }
 }

@@ -15,9 +15,15 @@ public class PauseManager : MonoBehaviour
     
     public bool paused;
 
-    private void Start()
+    private void Awake()
     {
         cameraControls = Camera.main.GetComponent<CameraControls>();
+        
+        if (cameraControls == null) Debug.LogWarning("Missing Camera Controls");
+        if (pauseMenu == null) Debug.LogWarning("Missing Pause Menu");
+        if (pauseButtons == null) Debug.LogWarning("Missing Pause Buttons");
+        if (optionButtons == null) Debug.LogWarning("Missing Options Buttons");
+        if (masterMixer == null) Debug.LogWarning("Missing Audio Mixer");
     }
 
     private void Update()
@@ -25,44 +31,39 @@ public class PauseManager : MonoBehaviour
         bool pauseCameraKeybind = Input.GetKeyDown(KeyCode.Escape);
         
         
-        if (pauseCameraKeybind && camCorder.cameraOut == false)
+        if (pauseCameraKeybind)
         {
             pauseMenu.SetActive(!pauseMenu.activeSelf);
             Debug.Log("Readying Pause");
         }
-
-        if (camCorder.pauseReady && Input.GetMouseButtonDown(0))
-        {
-            paused = !paused; //pause is oppisate
-            Time.timeScale = 0; // freeze time
-            cameraControls.enabled = !paused; // when paused cam controls is off
-            Cursor.lockState = CursorLockMode.None; // bring back cursor
-            Debug.Log("Pause");
-        }
-        else if (camCorder.noCameraKeybind && paused)
-        {
-            paused = !paused;
-            pauseMenu.SetActive(!pauseMenu.activeSelf); // enable pause screen
-            Time.timeScale = 1; // resume time
-            cameraControls.enabled = !paused;
-            Cursor.lockState = CursorLockMode.Locked;
-            Debug.Log("Unpause");
-        }
-
-        if (camCorder.pauseReady && Input.GetMouseButtonDown(1))
+        else if (camCorder.PauseReady && Input.GetMouseButtonDown(1) || camCorder.PauseReady && Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenu.SetActive(!pauseMenu.activeSelf);
         }
+
+        if (camCorder.PauseReady && Input.GetMouseButtonDown(0))
+        {
+            SetPaused(true);
+        }
+        else if (camCorder.NoCameraKeybind && paused)
+        {
+            SetPaused(false);
+        }
+
     }
 
+    private void SetPaused(bool isPaused)
+    {
+        paused = isPaused;
+        Time.timeScale = isPaused ? 0 : 1;
+        cameraControls.enabled = !isPaused;
+        Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
+        pauseMenu.SetActive(isPaused);
+    }
+    
     public void Resume()
     {
-        paused = !paused;
-        pauseMenu.SetActive(!pauseMenu.activeSelf);
-        Time.timeScale = 1;
-        cameraControls.enabled = !paused;
-        Cursor.lockState = CursorLockMode.Locked;
-
+        SetPaused(false);
     }
 
     public void MainMenu()

@@ -4,39 +4,30 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float healthMax;
-    [SerializeField] private float shieldMax;
-
+    [Header("Health Settings")]
+    [SerializeField]
+    public float HealthMax { get; private set; }
+    public float HealthCurrent { get; private set; }
+    [SerializeField] private bool hasShield; // Future System
+    [SerializeField] private bool isDead;
+    
     // Event other scripts can hook into when health hits 0
     public UnityEvent onNoHealth;
 
-    [SerializeField] private float healthCurrent;
-    [SerializeField] private float shieldCurrent; // shield for later
 
     // Set current health to max at game start
     void Start()
     {
-        healthCurrent = healthMax;    
+        HealthMax = 100;
+        HealthCurrent = HealthMax;    
     }
-
-    // Debug only - test damage and healing with keyboard
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            TakeDamage(50f);
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Heal(50f);
-        }
-    }
+    
 
     // Subtract damage from health, clamp to valid range, trigger death if at 0
     public void TakeDamage(float damage)
     {
-        healthCurrent = Mathf.Clamp(healthCurrent - damage, 0, healthMax);
-        if(healthCurrent <= 0)
+        HealthCurrent = Mathf.Clamp(HealthCurrent - damage, 0, HealthMax);
+        if(HealthCurrent <= 0)
         {
             NoHealth();
         }
@@ -45,19 +36,21 @@ public class Health : MonoBehaviour
     // Add health, clamp so it never exceeds max
     public void Heal(float amount)
     {
-        healthCurrent = Mathf.Clamp(healthCurrent + amount, 0, healthMax);
+        HealthCurrent = Mathf.Clamp(HealthCurrent + amount, 0, HealthMax);
     }
 
     // Called when health hits 0 - fires the Unity event for other scripts
     private void NoHealth()
     {
+        if (isDead) return;
         Debug.Log(name + " has met a cruel end.");
-        onNoHealth.Invoke();
+        isDead = true;
+        onNoHealth?.Invoke();
     }
 
     // Returns how damaged this object is as a 0-1 value (0 = full, 1 = dead)
     public float GetDamagePercent()
     {
-        return 1 - (healthCurrent / healthMax);
+        return 1 - (HealthCurrent / HealthMax);
     }
 }

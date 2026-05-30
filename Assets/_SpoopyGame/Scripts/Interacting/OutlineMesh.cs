@@ -1,48 +1,35 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
 public class OutlineMesh : MonoBehaviour
 {
-    public Material[] materials;
-    private bool outlineEnabled;
-    public float outlineScale;
+    [Header("Materials")]
+    [SerializeField] private Material baseMaterial;
+    [SerializeField] private Material outlineMaterial;
+    
+    [Header("Outline")]
+    [SerializeField] private bool outlineEnabled;
+    [SerializeField] private float outlineScale;
     private static readonly int OutlineScaleID = Shader.PropertyToID("_Outline_Scale");
-    
-    [ContextMenu("Toggle Outline")]
-    public bool ToggleOutline() 
+
+    private Renderer rend;
+
+    private void Awake()
     {
-        var rend = GetComponentInChildren<Renderer>();
-        outlineEnabled = !outlineEnabled;
-    
-        if (outlineEnabled)
-        {
-            // Restore 2 materials: [Base, Outline]
-            Material[] full = new Material[2];
-            full[0] = materials[0];  // Base
-            full[1] = materials[1];  // Outline
-            
-            // Set initial scale before animation
-            materials[1].SetFloat(OutlineScaleID, 20f);
-            rend.materials = full;
-            
-            // Animate 50 -> 5
-            StartCoroutine(AnimateOutlineScale(20f, 5f, 0.5f));
-        }
-        else
-        {
-            // Animate 5 -> 50 then remove outline
-            StartCoroutine(AnimateOutlineScale(5f, 20f, 0.5f));
-        }
-    
-        return outlineEnabled;
+        rend = GetComponentInChildren<Renderer>();
+    }
+
+    [ContextMenu("Toggle Outline")]
+    public void ToggleOutline() 
+    {
+        SetOutline(!outlineEnabled);
     }
     
     private IEnumerator AnimateOutlineScale(float start, float end, float duration)
     {
-        //gets the renderer
-        var rend = GetComponentInChildren<Renderer>();
         // put outline here
-        Material outlineMat = materials[1];
+        Material outlineMat = outlineMaterial;
         
         float elapsed = 0f;
         while (elapsed < duration)
@@ -58,8 +45,31 @@ public class OutlineMesh : MonoBehaviour
         // Remove outline material after animation
         if (!outlineEnabled)
         {
-            Material[] baseOnly = new Material[1] { materials[0] };
-            rend.materials = baseOnly;
+            rend.materials = new Material[] {baseMaterial};
         }
+    }
+    
+    public void SetOutline(bool toggled)
+    {
+        outlineEnabled = toggled;
+        if (outlineEnabled)
+        {
+            // Restore 2 materials: [Base, Outline]// Outline
+            
+            // Set initial scale before animation
+            outlineMaterial.SetFloat(OutlineScaleID, 20f);
+            rend.materials = new Material[] {baseMaterial, outlineMaterial};
+            
+            // Animate 50 -> 5
+            StopCoroutine(AnimateOutlineScale(20, 5, 0.5f));
+            StartCoroutine(AnimateOutlineScale(20f, 5f, 0.5f));
+        }
+        else
+        {
+            // Animate 5 -> 50 then remove outline
+            StopCoroutine(AnimateOutlineScale(5f, 20f, 0.5f));
+            StartCoroutine(AnimateOutlineScale(5f, 20f, 0.5f));
+        }
+
     }
 }

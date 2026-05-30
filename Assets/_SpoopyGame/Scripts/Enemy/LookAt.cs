@@ -1,11 +1,18 @@
+using System;
 using UnityEngine;
 
 public class LookAt : MonoBehaviour
 {
-    public Transform player;
+    [SerializeField] private Transform target;
     
-    void Update()
+    private void Update()
     {
-        transform.LookAt(player);
+        SetTarget(target);
+    }
+
+    public void SetTarget(Transform targetedObject)
+    {
+        if (targetedObject == null) return;
+        transform.LookAt(targetedObject);
     }
 }

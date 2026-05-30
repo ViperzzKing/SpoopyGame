@@ -4,67 +4,95 @@ using UnityEngine;
 
 public class AffectLights : MonoBehaviour
 {
-    
-    [SerializeField] private Light light;
-    
-    // Fire Particle
-    [SerializeField] public GameObject fire;
-    private bool lightActive = true;
+    [Header("Light Settings")] 
+    [SerializeField] private float normalIntensity = 397.887377182f; // 5000
+    [SerializeField] private float dimIntensity = 1;
+    [SerializeField] private float fadeTime = 600;
+    [SerializeField] private bool lightActive = true;
+
+    [Header("Refrences")] 
+    [SerializeField] public GameObject targetFirePrefab;
+    [SerializeField] private Light targetLight;
+    [SerializeField] private int enemyLayer;
 
     private void Awake()
     {
-        light = GetComponentInChildren<Light>();
+        enemyLayer = LayerMask.NameToLayer("Enemy");
+        targetLight = GetComponentInChildren<Light>();
+    }
+
+    private void Start()
+    {
+        if (targetLight == null)
+        {
+            Debug.LogError("Missing Reference To Light");
+        }
+
+        if (targetFirePrefab == null)
+        {
+            //Debug.LogError("Missing Reference To Fire");
+            //TODO -- even though its referenced it still throws error
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         // Light has a trigger sphere collider
         // when "Enemy" walks in it FadeLightOff()
-        int enemyLayer = LayerMask.NameToLayer("Enemy");
-        if(other.gameObject.layer == enemyLayer)
+        if (other.gameObject.layer == enemyLayer)
         {
             //Debug.Log("triggered");
-            StartCoroutine(FadeLightOff());
+            StartCoroutine(FadeLight(lightActive));
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         // when "Enemy" walks out of light FadeLightOn()
-        int enemyLayer = LayerMask.NameToLayer("Enemy");
-        if(other.gameObject.layer == enemyLayer)
+        if (other.gameObject.layer == enemyLayer)
         {
             //Debug.Log("exited");
-            StartCoroutine(FadeLightOn());
+            StopCoroutine(FadeLight(lightActive));
+            StartCoroutine(FadeLight(lightActive));
         }
     }
 
-    IEnumerator FadeLightOff()
+    IEnumerator FadeLight(bool activeLight)
     {
-        // Only does this when the light has intensity
-        while (light.intensity > 1f)
+        if (activeLight)
         {
-            light.intensity = Mathf.Clamp(Mathf.MoveTowards(light.intensity, 1f, 600f * Time.deltaTime), 0f, 5000f);
-            yield return null;
-        }
-        // when light reaches 1f set to 0f
-        light.intensity = 0f;
-        
-        // turn of fire particle
-        fire.SetActive(false);
-    }
+            // Only does this when the light has intensity
+            while (targetLight.intensity > dimIntensity)
+            {
+                targetLight.intensity =
+                    Mathf.Clamp(Mathf.MoveTowards(targetLight.intensity, 
+                            dimIntensity, fadeTime * Time.deltaTime), 0f, 5000f);
+                yield return null;
+            }
 
-    IEnumerator FadeLightOn()
-    {
-        // Only does this when the light has lower intensity then 395 or less
-        while (light.intensity < 395f)
-        {
-            light.intensity = Mathf.MoveTowards(light.intensity, 397, 600f * Time.deltaTime);
-            yield return null;
+            // when light reaches 1f set to 0f
+            targetLight.intensity = dimIntensity;
+
+            // turn of fire particle
+            targetFirePrefab.SetActive(false);
+            lightActive = false;
         }
-        
-        // very specific cause its weird in the inspector this is actually 5000
-        light.intensity = 397.887377182f;
-        fire.SetActive(true);
+
+        if (!activeLight)
+        {
+            // Only does this when the light has lower intensity then 395 or less
+            while (targetLight.intensity < normalIntensity)
+            {
+                targetLight.intensity =
+                    Mathf.MoveTowards(targetLight.intensity, 
+                        normalIntensity, fadeTime * Time.deltaTime);
+                yield return null;
+            }
+
+            // very specific cause its weird in the inspector this is actually 5000
+            targetLight.intensity = normalIntensity;
+            targetFirePrefab.SetActive(true);
+            lightActive = true;
+        }
     }
 }

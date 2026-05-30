@@ -155,18 +155,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.MotionBlur
-  active: 0
+  active: 1
   quality:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 3
   intensity:
     m_OverrideState: 1
     m_Value: 0
   maximumVelocity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 200
   minimumVelocity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 2
   cameraMotionBlur:
     m_OverrideState: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   m_SampleCount:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 2
 --- !u!114 &-4151792930034644520
 MonoBehaviour:
@@ -231,13 +231,13 @@ MonoBehaviour:
     m_Value: 1000
   baseHeight:
     m_OverrideState: 1
-    m_Value: 55
+    m_Value: 89.45
   maximumHeight:
     m_OverrideState: 1
     m_Value: 165
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 8.2
+    m_Value: 100
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
@@ -249,7 +249,7 @@ MonoBehaviour:
     m_Value: 0.162
   depthExtent:
     m_OverrideState: 0
-    m_Value: 64
+    m_Value: 838.7
   denoisingMode:
     m_OverrideState: 0
     m_Value: 2
@@ -485,7 +485,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 0
   meteringMode:
     m_OverrideState: 0
     m_Value: 2
@@ -493,8 +493,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   fixedExposure:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 3
   compensation:
     m_OverrideState: 0
     m_Value: 0

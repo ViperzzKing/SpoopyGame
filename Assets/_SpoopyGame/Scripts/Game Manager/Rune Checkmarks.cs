@@ -3,23 +3,29 @@ using UnityEngine.SceneManagement;
 
 public class RuneCheckmarks : MonoBehaviour
 {
-    // GameObjects holding the runes for tutorial and main game
+    public static RuneCheckmarks Instance;
+    
+    [Header("References")]
     public GameObject tutorialRunes;
     public GameObject gameRunes;
 
-    // Static manager
-    public static RuneCheckmarks RuneManager;
-
-    // Tracks whether the main game has started
-    public bool gameStarted = false;
-
-    // Stores rune counts for each ending: [0]=start, [1]=crypt, [2]=ritual, [3]=mansion
-    public int[] finishes = new int[4];
-
+    [Header("Ending Settings")]
+    [SerializeField] private int[] finishes = new int[4];
+    [SerializeField] private float maxRunes = 5;
+    [SerializeField] private bool gameStarted;
+    
+    public enum RuneEnding
+    {
+        Tutorial,
+        Crypt,
+        Ritual,
+        Mansion
+    }
+    
     // only one RuneCheckmarks can exist
     private void Awake()
     {
-        if (RuneManager == null) RuneManager = this;
+        if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
@@ -28,7 +34,9 @@ public class RuneCheckmarks : MonoBehaviour
     // Adds runeAmount to a specific finish slot, but caps at 5
     public void ChangeFinish(int specificFinish, int runeAmount)
     {
-        if (finishes[1] + finishes[2] + finishes[3] >= 5 && runeAmount >= 1) return;
+        int runesCombined = finishes[(int)RuneEnding.Crypt] + finishes[(int)RuneEnding.Mansion] + finishes[(int)RuneEnding.Ritual];
+        
+        if (runesCombined >= maxRunes && runeAmount >= 1) return;
         finishes[specificFinish] += runeAmount;
     }
 
@@ -45,14 +53,26 @@ public class RuneCheckmarks : MonoBehaviour
     {
         Debug.Log("Checking endings");
 
+        CheckEndingTriggers();
+    }
+    
+    private void TutorialCompletion()
+    {
+        Debug.Log("Started Game");
+        gameStarted = true;
+        tutorialRunes.SetActive(false);
+        gameRunes.SetActive(true);
+        ChangeFinish(0, -5); // Reset tutorial rune count
+    }
+
+    private void CheckEndingTriggers()
+    {
+        Debug.Log("Checking endings");
+
         // 5 tutorial runes collected - switch to main game runes
         if (CheckRunes(0) == 5)
         {
-            Debug.Log("Started Game");
-            gameStarted = true;
-            tutorialRunes.SetActive(false);
-            gameRunes.SetActive(true);
-            ChangeFinish(0, -5); // Reset tutorial rune count
+            TutorialCompletion();
         }
 
         // Crypt ending triggered
@@ -75,11 +95,5 @@ public class RuneCheckmarks : MonoBehaviour
             Debug.Log("Finished Mansion Ending");
             SceneManager.LoadScene(0);
         }
-    }
-    
-    [ContextMenu("Change Finish")]
-    public void TestChange()
-    {
-        ChangeFinish(1, 1);
     }
 }

@@ -7,11 +7,11 @@ public class RotateObject : MonoBehaviour
     void Update()
     { 
         // Do nothing when not inspecting
-        while (!inspect.playerIsInspecting) return;
+        while (!inspect.PlayerIsInspecting) return;
 
 
 
-        Transform item = inspect.currentItemInspecting;
+        Transform item = inspect.CurrentItemInspecting;
         Transform itemMesh = item.GetChild(0);
         
         // WASD Inputs

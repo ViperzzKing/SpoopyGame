@@ -1,11 +1,9 @@
-using System;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
+using System.Threading;
 using UnityEngine;
 
 public class BasicMovement : MonoBehaviour
 {
-    public static BasicMovement playerController;
+    public static BasicMovement Instance;
     
     [Header("References")]
     [SerializeField] private CameraControls camControls;
@@ -13,34 +11,41 @@ public class BasicMovement : MonoBehaviour
     [SerializeField] private Transform cam;
     [SerializeField] private CapsuleCollider capsuleCollider;
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
-
-    [Header("Movement")]
-    private float currentSpeed;
-    private float currentVolume;
-    [SerializeField] private float walkSpeed;
-    [SerializeField] private float walkVolume;
-    [SerializeField] private float sprintSpeed;
-    [SerializeField] private float sprintVolume;
-    [SerializeField] private float fallingGravity;
-
-    Vector3 moveDirection;
-
-    [Header("Crouching")]
-    [SerializeField] private float crouchSpeed;
-    [SerializeField] private float crouchVolume;
-    [SerializeField] private float crouchYScale;
-
-    [Header("Slope Handling")]
-    [SerializeField] private float maxSlopeAngle;
-    private RaycastHit slopeHit;
-
-    [Header("States")]
-    public State currentPlayerState;
-
     private Noise playerNoise;
 
-    public enum State
+    [Header("Movement Settings")]
+    [SerializeField] private float currentSpeed;
+    [SerializeField] private float crouchSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float sprintSpeed;
+    Vector3 moveDirection;
+
+
+    [Header("Sounds")]
+    [SerializeField] private float walkVolume;
+    [SerializeField] private float crouchVolume;
+    [SerializeField] private float sprintVolume;
+    [SerializeField] private float currentVolume;
+    
+    
+    [Header("Crouching")]
+    [SerializeField] private float crouchYScale;
+
+    [Header("Physics")]
+    [SerializeField] private float maxSlopeAngle;
+    [SerializeField] private float fallingGravity;
+    [SerializeField] private LayerMask groundLayer;
+    private RaycastHit slopeHit;
+
+    [Header("Keybinds")] 
+    [SerializeField] private KeyCode crouchKeybind = KeyCode.C;
+    [SerializeField] private KeyCode sprintKeybind = KeyCode.LeftShift;
+
+    [Header("States")]
+    public PlayerState CurrentState { get; private set; }
+
+
+    public enum PlayerState
     {
         Walk,
         Sprint,
@@ -53,8 +58,8 @@ public class BasicMovement : MonoBehaviour
 
     private void Awake()
     {
-        playerController = this;
-        playerNoise = new Noise();
+        Instance = this;
+        playerNoise = GetComponent<Noise>();
     }
 
     private void Update()
@@ -70,18 +75,18 @@ public class BasicMovement : MonoBehaviour
 
     private void ManagePlayerStates()
     {
-        switch (currentPlayerState)
+        switch (CurrentState)
         {
-            case State.Walk:
+            case PlayerState.Walk:
                 WalkState();
                 break;
-            case State.Sprint:
+            case PlayerState.Sprint:
                 SprintState();
                 break;
-            case State.Crouch:
+            case PlayerState.Crouch:
                 CrouchState();
                 break;
-            case State.Fall:
+            case PlayerState.Fall:
                 FallState();
                 break;
         }   
@@ -89,10 +94,13 @@ public class BasicMovement : MonoBehaviour
 
     private void SwitchPlayerStates()
     {
+        bool sprintKeybindHeld = Input.GetKey(sprintKeybind);
+        bool crouchKeybindHeld = Input.GetKeyDown(crouchKeybind);
+        
         // Sprinting
-        if (IsGrounded() && Input.GetKey(KeyCode.LeftShift))
+        if (IsGrounded() && sprintKeybindHeld)
         {
-            currentPlayerState = State.Sprint;
+            CurrentState = PlayerState.Sprint;
             currentSpeed = sprintSpeed;
             currentVolume = sprintVolume;
         }
@@ -100,7 +108,7 @@ public class BasicMovement : MonoBehaviour
         // Walking
         else if (IsGrounded())
         {
-            currentPlayerState = State.Walk;
+            CurrentState = PlayerState.Walk;
             currentSpeed = walkSpeed;
             currentVolume = walkVolume;
         }
@@ -110,14 +118,14 @@ public class BasicMovement : MonoBehaviour
         {
             float fallSpeed = crouchSpeed;
 
-            currentPlayerState = State.Fall;
+            CurrentState = PlayerState.Fall;
             currentSpeed = fallSpeed;
             currentVolume = crouchSpeed;
         }
 
-        if (Input.GetKey(KeyCode.C))
+        if (crouchKeybindHeld)
         {
-            currentPlayerState = State.Crouch;
+            CurrentState = PlayerState.Crouch;
             currentSpeed = crouchSpeed;
             currentVolume = crouchVolume;
         }
@@ -129,6 +137,7 @@ public class BasicMovement : MonoBehaviour
 
     private void WalkState()
     {
+        
         MovingPlayer(); // Run MovingPlayer
     }
     private void SprintState()
@@ -153,7 +162,7 @@ public class BasicMovement : MonoBehaviour
         // Switch to walk
         if (IsGrounded())
         {
-            currentPlayerState = State.Walk;
+            CurrentState = PlayerState.Walk;
         }
     }
 
@@ -191,11 +200,11 @@ public class BasicMovement : MonoBehaviour
     {
         Vector3 movementInput = MovementInputs();
         movementInput *= currentSpeed;
-        
-        // Makes it so we dont build up falling speed
-        movementInput.y = Mathf.Clamp(rb.linearVelocity.y - fallingGravity * Time.deltaTime, 0f, float.PositiveInfinity);
 
-        if (OnSlope())
+        if (CurrentState == PlayerState.Walk)
+            movementInput.y = 0;
+
+        if (IfOnSlope())
         {
             // Move along the slope direction instead of directly forward
             Vector3 slopeDirection = GetSlopeMoveDirection() * currentSpeed;
@@ -209,29 +218,28 @@ public class BasicMovement : MonoBehaviour
 
 
     }
-
-
+    
     //------------------- INPUT HANDLER --------------------\\
 
 
     private void InputManager()
     {
         // Start Crouching
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(crouchKeybind))
         {
             transform.localScale = new Vector3(1, crouchYScale, 1); // change our scale
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse); // go straight down
 
-            camControls.currentEyeOffset = camControls.crouchingEyeOffset; // change eye offset
+            camControls.SetEyeOffSet(camControls.CrouchingEyeOffset); // change eye offset
         }
 
-        if (Input.GetKeyUp(KeyCode.C)) // uncrouch player
+        if (Input.GetKeyUp(crouchKeybind)) // uncrouch player
         {
             // Scale Player
             transform.localScale = new Vector3(1, 1, 1);
 
             // Position Camera
-            camControls.currentEyeOffset = camControls.standingEyeOffset;
+            camControls.SetEyeOffSet(camControls.StandingEyeOffset);
         }
     }
 
@@ -245,7 +253,7 @@ public class BasicMovement : MonoBehaviour
         return Physics.OverlapSphere(groundCheck.position, 0.3f, groundLayer).Length > 0;
     }
 
-    private bool OnSlope()
+    private bool IfOnSlope()
     {                                                                                                // How far to check
         bool onSlope = Physics.Raycast(transform.position, Vector3.down, out slopeHit, 2 * 0.5f + 0.3f);
 
@@ -256,6 +264,6 @@ public class BasicMovement : MonoBehaviour
             return angle < maxSlopeAngle && angle != 0;
         }
 
-        return false;
+        return false; // not on slope
     }
 }
