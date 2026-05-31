@@ -5,7 +5,6 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [Header("Health Settings")]
-    [SerializeField]
     public float HealthMax { get; private set; }
     public float HealthCurrent { get; private set; }
     [SerializeField] private bool hasShield; // Future System

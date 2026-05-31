@@ -30,15 +30,18 @@ public class HealthOverlay : MonoBehaviour
     {
         if (health.HealthCurrent <= health.HealthMax / 2)
         {
-            if (overlayOn) return;
-            overlayOn = true;
-            healthOverlay.enabled = true;
+            ToggleOverlay(true);
         }
         else
         {
-            if(!overlayOn) return;
-            overlayOn = false;
-            healthOverlay.enabled = false;
+            ToggleOverlay(false);
         }
+    }
+
+    private void ToggleOverlay(bool overlay)
+    {
+        if (overlayOn == overlay) return;
+        overlayOn = overlay;
+        healthOverlay.enabled = overlay;
     }
 }

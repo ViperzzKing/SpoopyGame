@@ -1,11 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathTrigger : MonoBehaviour
 {
-    public void PlayerDeath()
+    public void PlayerDeath(int sceneIndex)
     {
         Debug.Log("Triggering Death Script");
-        
-        // Send Player to death screen or main menu
+        SceneManager.LoadScene(sceneIndex);
     }
 }

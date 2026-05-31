@@ -30,6 +30,13 @@ public class InspectObject : MonoBehaviour
     
     [Header("Inputs")]
     [SerializeField] private KeyCode releaseObjectKey = KeyCode.E;
+
+    public KeyCode ReleaseObjectKey
+    {
+        get => releaseObjectKey;
+        private set => releaseObjectKey = value;
+    }
+
     public bool ItemDropInput { get; private set; }
     public float TimePressingDropkey { get; private set; }
     
@@ -70,20 +77,20 @@ public class InspectObject : MonoBehaviour
             if (TimePressingDropkey < HoldThrowTime)
             {
                 DropItem(false);
+
             }
             else
             {
                 DropItem(true);
-                TimePressingDropkey = 0;
-                
             }
+            TimePressingDropkey = 0;
             ItemDropInput = false;
         }
     }
     private void TryToggleInspect()
     {
         // Check if its a interactable
-        bool canInspect = highlight.Interactable && highlight.CurrentObject.CompareTag("Inspectable");
+        bool canInspect = highlight.Interactable && highlight.CurrentObject.TryGetComponent<RuneSlot>(out RuneSlot isRune);
 
         if (canInspect)
             ToggleInspect();

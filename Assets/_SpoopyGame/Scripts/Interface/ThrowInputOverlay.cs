@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ThrowInputOverlay : MonoBehaviour
 {
     [SerializeField] private InspectObject inspectObject;
-
+    public float debugTime;
     private Image throwOverlay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,12 +19,13 @@ public class ThrowInputOverlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        debugTime = inspectObject.TimePressingDropkey;
         if (ThrowProgress() > 0)
         {
-            throwOverlay.fillAmount = Mathf.Clamp01(ThrowProgress());
+            throwOverlay.fillAmount = Mathf.Clamp(inspectObject.TimePressingDropkey, 0, 1);
         }
 
-        if (inspectObject.TimePressingDropkey < inspectObject.HoldThrowTime)
+        if (Input.GetKeyUp(inspectObject.ReleaseObjectKey))
         {
             throwOverlay.fillAmount = 0;
         }
@@ -34,5 +35,5 @@ public class ThrowInputOverlay : MonoBehaviour
     {
         return inspectObject.TimePressingDropkey / inspectObject.HoldThrowTime;
     }
-
+    
 }

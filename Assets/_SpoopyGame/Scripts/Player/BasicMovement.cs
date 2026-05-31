@@ -11,6 +11,7 @@ public class BasicMovement : MonoBehaviour
     [SerializeField] private Transform cam;
     [SerializeField] private CapsuleCollider capsuleCollider;
     [SerializeField] private Transform groundCheck;
+    [SerializeField] private PlayerSounds playerSounds;
     private Noise playerNoise;
 
     [Header("Movement Settings")]
@@ -43,6 +44,7 @@ public class BasicMovement : MonoBehaviour
 
     [Header("States")]
     public PlayerState CurrentState { get; private set; }
+    public PlayerState PreviousState { get; private set; }
 
 
     public enum PlayerState
@@ -100,8 +102,9 @@ public class BasicMovement : MonoBehaviour
         // Sprinting
         if (IsGrounded() && sprintKeybindHeld && !crouchKeybindHeld)
         {
-            Debug.Log("Sprinting");
+            PreviousState = CurrentState;
             CurrentState = PlayerState.Sprint;
+            
             currentSpeed = sprintSpeed;
             currentVolume = sprintVolume;
         }
@@ -109,13 +112,17 @@ public class BasicMovement : MonoBehaviour
         // Walking
         else if (IsGrounded())
         {
+            PreviousState = CurrentState;
             CurrentState = PlayerState.Walk;
+            
             currentSpeed = walkSpeed;
             currentVolume = walkVolume;
         }
         else if (crouchKeybindHeld)
         {
+            PreviousState = CurrentState;
             CurrentState = PlayerState.Crouch;
+            
             currentSpeed = crouchSpeed;
             currentVolume = crouchVolume;
         }
@@ -124,11 +131,29 @@ public class BasicMovement : MonoBehaviour
         {
             float fallSpeed = crouchSpeed;
 
+            PreviousState = CurrentState;
             CurrentState = PlayerState.Fall;
             currentSpeed = fallSpeed;
             currentVolume = crouchSpeed;
         }
 
+        
+        if (PreviousState != CurrentState && CurrentState != PlayerState.Fall)
+        {
+            playerSounds.ChangeAudioSource();
+        }
+        
+        Debug.Log("Velocity magnitude: " + rb.linearVelocity.magnitude);
+        
+        if (rb.linearVelocity.magnitude < 0.05f || CurrentState == PlayerState.Fall)
+        {
+            Debug.Log("Stopped moving");
+            playerSounds.StopAudio(playerSounds.GetCurrentAudioSource());
+        }
+        else
+        {
+            playerSounds.PlayAudio(playerSounds.GetCurrentAudioSource());
+        }
     }
 
 

@@ -76,7 +76,7 @@ public class RuneCheckmarks : MonoBehaviour
         }
 
         // Crypt ending triggered
-        if (CheckRunes(1) == 5)
+        if (CheckRunes(1) == 5 && gameStarted)
         {
             Debug.Log("crypt ending");
             SceneManager.LoadScene(0);
