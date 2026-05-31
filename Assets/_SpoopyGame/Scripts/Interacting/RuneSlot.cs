@@ -7,20 +7,30 @@ public class RuneSlot : MonoBehaviour
     [SerializeField] private LayerMask acceptedRuneLayer;
     private RuneCheckmarks.RuneEnding endingType;
 
-    private Collider slottedRune;
+    private String slottedRune;
     
     [Header("References")]
     public InspectObject itemPosition;
     public Rigidbody rb;
+    private RuneHolder runeHolder;
 
     private void OnTriggerEnter(Collider other)
     {
         if (isSlotted) return;
-        
-        if (IsAcceptedRuneLayer(other.gameObject))
+
+        runeHolder = other.gameObject.GetComponent<RuneHolder>();
+
+        if (runeHolder == null)
+        {
+            Debug.Log("No Runeholder component!");
+            return;
+        }
+        if (IsAcceptedRuneLayer(other.gameObject) && !runeHolder.hasObject)
         {
             isSlotted = true;
-            slottedRune = other.GetComponent<Collider>();
+            runeHolder.hasObject = true;
+            Debug.Log(other.gameObject.name);
+            slottedRune = other.gameObject.name;
             transform.parent = other.transform;
             
             Debug.Log("Slotting Rune", this);
@@ -40,8 +50,21 @@ public class RuneSlot : MonoBehaviour
     {
         if (IsAcceptedRuneLayer(other.gameObject))
         {
-            if (other == slottedRune) isSlotted = false;
-            
+            Debug.Log("Exiting Colision with Slot", this);
+
+            runeHolder = other.gameObject.GetComponent<RuneHolder>();
+
+            if (runeHolder == null)
+            {
+                Debug.Log("No Runeholder component!");
+                return;
+            }
+
+            if (other.gameObject.name == slottedRune)
+            {
+                isSlotted = false;
+                runeHolder.hasObject = false;
+            }
             // checks tags to change finish
             if (other.CompareTag("RuneSlot0"))
             {

@@ -21,12 +21,15 @@ public class BlacklightToggle : MonoBehaviour
     void Update()
     {
         bool usingCamera = camCorder.CurrentState == CamCorderPositions.CamCorderState.ScreenCamera;
-        
-        if(Input.GetKeyDown(blackLightKeybind) && usingCamera)
+
+        if (Input.GetKeyDown(blackLightKeybind) && usingCamera)
             ToggleBlacklight();
         
         if(Input.GetKeyDown(flashLightKeybind) && usingCamera)
            ToggleFlashlight();
+
+        if(!usingCamera)
+            ClearLights();
     }
 
     private void ToggleBlacklight()
@@ -46,5 +49,13 @@ public class BlacklightToggle : MonoBehaviour
         flashLightToggle = !flashLightToggle;
         flashlight.SetActive(flashLightToggle);
         
+    }
+
+    private void ClearLights()
+    {
+        flashLightToggle = false;
+        blackLightToggle = false;
+        flashlight.SetActive(flashLightToggle);
+        blacklight.SetActive(blackLightToggle);
     }
 }
