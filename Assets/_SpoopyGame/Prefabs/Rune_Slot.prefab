@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8609435829592822775}
   - component: {fileID: 8450309504266741867}
+  - component: {fileID: 3397211605666010283}
   m_Layer: 12
   m_Name: Rune_Slot
   m_TagString: RuneSlot3
@@ -54,6 +55,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.66001743, y: 1.0031743, z: 0.18481295}
   m_Center: {x: 0.0044076443, y: -0.10689545, z: 3.395596e-11}
+--- !u!114 &3397211605666010283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4350274125388136292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a72cec8838f033478bb7b9200839882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RuneHolder
+  hasObject: 0
 --- !u!1001 &5301848069430674229
 PrefabInstance:
   m_ObjectHideFlags: 0
