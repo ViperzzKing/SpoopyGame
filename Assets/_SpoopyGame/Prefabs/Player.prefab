@@ -1788,9 +1788,10 @@ GameObject:
   - component: {fileID: 1917833368541206596}
   - component: {fileID: 9030229935665357659}
   - component: {fileID: 3779546305828615989}
+  - component: {fileID: 1746222927710923314}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1831,16 +1832,22 @@ MonoBehaviour:
   cam: {fileID: 8711289964328356916}
   capsuleCollider: {fileID: 7794133288251438042}
   groundCheck: {fileID: 3484958912705586619}
+  currentSpeed: 0
+  crouchSpeed: 2.3
+  walkSpeed: 4.5
+  sprintSpeed: 9.2
+  walkVolume: 0
+  crouchVolume: 0
+  sprintVolume: 0
+  currentVolume: 0
+  crouchYScale: 0.5
+  maxSlopeAngle: 60
+  fallingGravity: 55
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  walkSpeed: 5
-  sprintSpeed: 10
-  fallingGravity: 80
-  crouchSpeed: 2
-  crouchYScale: 0.5
-  maxSlopeAngle: 60
-  currentPlayerState: 0
+  crouchKeybind: 99
+  sprintKeybind: 304
 --- !u!54 &8642240489346426217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1880,9 +1887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f633913814a83241a78a6795ec4ab25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Highlight
-  currentObject: {fileID: 0}
-  interactable: 0
   currentHighlight: {fileID: 0}
+  debugRay: 0
   playerReach: 2
   interactableMask:
     serializedVersion: 2
@@ -1903,7 +1909,6 @@ MonoBehaviour:
   highlight: {fileID: 5203594575692395269}
   movement: {fileID: 9152668111781520092}
   rb: {fileID: 8642240489346426217}
-  playerIsHiding: 0
   caughtHiding: 0
 --- !u!114 &5133674846833202481
 MonoBehaviour:
@@ -1918,23 +1923,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InspectObject
   cam: {fileID: 7708459483325384294}
-  runeRB: {fileID: 0}
   camControls: {fileID: 4027776562279041630}
   movement: {fileID: 9152668111781520092}
   highlight: {fileID: 5203594575692395269}
   onTopVolume: {fileID: 7593990169498179860}
   crosshair: {fileID: 821777696983308633}
   inspectBorder: {fileID: 9011383350389420048}
+  runeRB: {fileID: 0}
   runeSlot: {fileID: 0}
-  playerIsInspecting: 0
   playerHoldingSomething: 0
-  currentItemInspecting: {fileID: 0}
-  currentItemHolding: {fileID: 0}
-  dropKey: 101
-  inputThrowTime: 1
-  timePressingDropkey: 0
-  throwForce: 12
-  throwArc: 2
+  thrownForceMultiplier: 12
+  throwHeight: 2
+  releaseObjectKey: 101
+  itemDropInput: 0
 --- !u!114 &1917833368541206596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1960,6 +1961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc4c9c44b21e7c45a8e11bfdfd6d4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropLocation
+  dropHeight: 0.3
   dropDistance: 2
 --- !u!114 &3779546305828615989
 MonoBehaviour:
@@ -1973,8 +1975,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae7473f00e944045b785b1a491d2c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlacklightToggle
+  camCorder: {fileID: 2480172906385257151}
   blacklight: {fileID: 4531223376663076120}
   flashlight: {fileID: 8819360961313344340}
+  blackLightVision: {fileID: 0}
+  blackLightToggle: 0
+  flashLightToggle: 0
+  blackLightKeybind: 98
+  flashLightKeybind: 102
+--- !u!114 &1746222927710923314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4162634696582902935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c20acbc46fb564db37901564f7b72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Noise
+  objectVolume: 20
+  soundDistance: 0
+  enemyDistanceMultipler: 0
+  newSoundVolume: 0
 --- !u!1 &4375844027825581841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2361,9 +2385,8 @@ MonoBehaviour:
   sensitivity: 5
   minRotation: -30
   maxRotation: 75
-  currentEyeOffset: 0
-  standingEyeOffset: 1.6
-  crouchingEyeOffset: 0.8
+  transitionTime: 5
+  currentEyeOffset: 0.8
 --- !u!114 &3850636493071254638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2402,13 +2425,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4531223376663076120}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00044525217, y: -0.11405997, z: -0.0024643224, w: 0.9934707}
+  m_LocalRotation: {x: -0.023251252, y: -0.049956463, z: -0.0029129628, w: 0.9984765}
   m_LocalPosition: {x: 0.401, y: -0, z: 0.412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8711289964328356916}
-  m_LocalEulerAnglesHint: {x: -0.083, y: -13.099, z: -0.275}
+  m_LocalEulerAnglesHint: {x: -2.678, y: -5.724, z: -0.2}
 --- !u!108 &2383128104128053573
 Light:
   m_ObjectHideFlags: 0
@@ -2420,9 +2443,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.24842751, g: 0.31997886, b: 1, a: 1}
-  m_Intensity: 4194304
-  m_Range: 10
-  m_SpotAngle: 80
+  m_Intensity: 15653692
+  m_Range: 25.9
+  m_SpotAngle: 53.593407
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -2469,7 +2492,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0.01
+  m_ShadowRadius: 10
   m_ShadowAngle: 0
   m_LightUnit: 4
   m_LuxAtDistance: 1
@@ -2493,10 +2516,10 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 56.25
+  m_InnerSpotPercent: 1.8659011
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
-  m_VolumetricDimmer: 1
+  m_VolumetricDimmer: 2
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -2505,7 +2528,7 @@ MonoBehaviour:
   m_ShapeWidth: 1
   m_ShapeHeight: 1
   m_AspectRatio: 1
-  m_ShapeRadius: 0.01
+  m_ShapeRadius: 10
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
   m_CustomSpotLightShadowCone: 30
@@ -3317,7 +3340,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -3524,7 +3547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &661609023678767907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4561,6 +4584,7 @@ GameObject:
   - component: {fileID: 5398172486620249719}
   - component: {fileID: 2325128743671166275}
   - component: {fileID: 7794133288251438042}
+  - component: {fileID: 461005264313139622}
   m_Layer: 11
   m_Name: PlayerObj
   m_TagString: Untagged
@@ -4662,6 +4686,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0.4}
+--- !u!114 &461005264313139622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7697573733332294214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d425353be1ba30458050827cdfb1af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  hasShield: 0
+  isDead: 0
+  onNoHealth:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7757011259310752148
 GameObject:
   m_ObjectHideFlags: 0
@@ -5446,13 +5487,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8819360961313344340}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.094156675, z: -4.6566118e-10, w: 0.99555737}
+  m_LocalRotation: {x: 0.0032274816, y: -0.029438261, z: 0.000095052295, w: 0.9995614}
   m_LocalPosition: {x: 0.346, y: 0.016, z: 0.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8711289964328356916}
-  m_LocalEulerAnglesHint: {x: 0, y: -10.806, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.37, y: -3.374, z: 0}
 --- !u!108 &1183685790848331654
 Light:
   m_ObjectHideFlags: 0
@@ -5464,10 +5505,10 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 11406.89
-  m_Range: 57.99
-  m_SpotAngle: 58.971428
-  m_InnerSpotAngle: 21.80208
+  m_Intensity: 3818.4727
+  m_Range: 40
+  m_SpotAngle: 75.32967
+  m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -5513,7 +5554,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0.025
+  m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 0
   m_LuxAtDistance: 1
@@ -5537,7 +5578,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 1.6957364
+  m_InnerSpotPercent: 1.3274983
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -5549,7 +5590,7 @@ MonoBehaviour:
   m_ShapeWidth: 0.5
   m_ShapeHeight: 0.5
   m_AspectRatio: 1
-  m_ShapeRadius: 0.025
+  m_ShapeRadius: 0
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
   m_CustomSpotLightShadowCone: 30
@@ -5749,15 +5790,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 120820d61cfcbae4696ca7a65f4fb6d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.22
+      value: 0.384
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 120820d61cfcbae4696ca7a65f4fb6d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.135
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 120820d61cfcbae4696ca7a65f4fb6d5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.094
+      value: -1.154
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 120820d61cfcbae4696ca7a65f4fb6d5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5823,20 +5864,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00472bb227e17994fac139d07bb1f716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CamCorderPositions
-  camPositions:
-  - {x: 0.384, y: -0.09, z: -1.16}
-  - {x: 0.56, y: -0.18, z: 0.358}
-  - {x: 0.384, y: -0.09, z: 0.061}
-  camRotations:
-  - {x: 0, y: 0, z: 0}
-  - {x: 18.223295, y: 15.040251, z: 4.803217}
-  - {x: 0, y: 0, z: 0}
-  noCameraKeybind: 0
-  pauseCameraKeybind: 0
-  screenCameraKeybind: 0
-  cameraOut: 0
-  pauseReady: 0
-  screenCamera: 0
+  hiddenPosition: {x: 0.384, y: -0.09, z: -1.16}
+  hiddenRotation: {x: 0, y: 0, z: 0}
+  pausePosition: {x: 0.56, y: -0.18, z: 0.358}
+  pauseRotation: {x: 18.223295, y: 15.040251, z: 4.803217}
+  screenPosition: {x: 0.384, y: -0.09, z: 0.061}
+  screenRotation: {x: 0, y: 0, z: 0}
 --- !u!4 &1735409532332181136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 120820d61cfcbae4696ca7a65f4fb6d5, type: 3}

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HealthOverlay : MonoBehaviour
 {
     [SerializeField] private Health health;
-    [SerializeField] private Color healthColor;
+    private bool overlayOn;
 
     private Image healthOverlay;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,15 +25,20 @@ public class HealthOverlay : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        healthColor = healthOverlay.color;
-    }
-
     // Every frame, update the image alpha to match how damaged the health component is
     void Update()
     {
-        healthColor.a = health.GetDamagePercent();
-        healthOverlay.color = healthColor;
+        if (health.HealthCurrent <= health.HealthMax / 2)
+        {
+            if (overlayOn) return;
+            overlayOn = true;
+            healthOverlay.enabled = true;
+        }
+        else
+        {
+            if(!overlayOn) return;
+            overlayOn = false;
+            healthOverlay.enabled = false;
+        }
     }
 }

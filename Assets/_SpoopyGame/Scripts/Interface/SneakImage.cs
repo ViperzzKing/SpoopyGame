@@ -35,11 +35,11 @@ public class SneakImage : MonoBehaviour
         
         if (crouching)
         {
-            alphaCurrent = Mathf.Lerp(alphaCurrent, alphaMax, fadeTime);
+            alphaCurrent = Mathf.MoveTowards(alphaCurrent, alphaMax, fadeTime * Time.deltaTime);
         }
         else
         {
-            alphaCurrent = Mathf.Lerp(alphaCurrent, 0, fadeTime);
+            alphaCurrent = Mathf.MoveTowards(alphaCurrent, 0, fadeTime * Time.deltaTime);
         }
 
         vingetteColor.a = alphaCurrent;

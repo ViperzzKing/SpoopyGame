@@ -95,11 +95,12 @@ public class BasicMovement : MonoBehaviour
     private void SwitchPlayerStates()
     {
         bool sprintKeybindHeld = Input.GetKey(sprintKeybind);
-        bool crouchKeybindHeld = Input.GetKeyDown(crouchKeybind);
+        bool crouchKeybindHeld = Input.GetKey(crouchKeybind);
         
         // Sprinting
-        if (IsGrounded() && sprintKeybindHeld)
+        if (IsGrounded() && sprintKeybindHeld && !crouchKeybindHeld)
         {
+            Debug.Log("Sprinting");
             CurrentState = PlayerState.Sprint;
             currentSpeed = sprintSpeed;
             currentVolume = sprintVolume;
@@ -112,7 +113,12 @@ public class BasicMovement : MonoBehaviour
             currentSpeed = walkSpeed;
             currentVolume = walkVolume;
         }
-
+        else if (crouchKeybindHeld)
+        {
+            CurrentState = PlayerState.Crouch;
+            currentSpeed = crouchSpeed;
+            currentVolume = crouchVolume;
+        }
         // Falling
         else
         {
@@ -123,12 +129,6 @@ public class BasicMovement : MonoBehaviour
             currentVolume = crouchSpeed;
         }
 
-        if (crouchKeybindHeld)
-        {
-            CurrentState = PlayerState.Crouch;
-            currentSpeed = crouchSpeed;
-            currentVolume = crouchVolume;
-        }
     }
 
 

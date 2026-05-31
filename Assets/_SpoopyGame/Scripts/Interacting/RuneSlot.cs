@@ -41,7 +41,6 @@ public class RuneSlot : MonoBehaviour
         if (IsAcceptedRuneLayer(other.gameObject))
         {
             if (other == slottedRune) isSlotted = false;
-            transform.parent = null;
             
             // checks tags to change finish
             if (other.CompareTag("RuneSlot0"))

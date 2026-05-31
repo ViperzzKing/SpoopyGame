@@ -22,7 +22,9 @@ public class EnemyFOV : MonoBehaviour
         // Returns if player is crouching or stunned
 
         if (other.transform.CompareTag("Player"))
+        {
             enemyAI.SetPlayerDetected(true);
+        }
         else
             enemyAI.SetPlayerDetected(false);
     }

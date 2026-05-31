@@ -30,7 +30,7 @@ public class InspectObject : MonoBehaviour
     
     [Header("Inputs")]
     [SerializeField] private KeyCode releaseObjectKey = KeyCode.E;
-    [SerializeField] private bool itemDropInput;
+    public bool ItemDropInput { get; private set; }
     public float TimePressingDropkey { get; private set; }
     
 
@@ -46,7 +46,7 @@ public class InspectObject : MonoBehaviour
         // if ebutton toggle pickup
         if (eButton)
             TogglePickup();
-        if (itemDropInput) // throw manager
+        if (ItemDropInput) // throw manager
             HandleThrowCharge();
     }
 
@@ -58,7 +58,7 @@ public class InspectObject : MonoBehaviour
         if (canPickup && PlayerIsInspecting)
             PickUpItem();
         else if (playerHoldingSomething && !PlayerIsInspecting) // drop instead of pickup
-            itemDropInput = true;
+            ItemDropInput = true;
     }
 
     //item throw manager
@@ -67,12 +67,17 @@ public class InspectObject : MonoBehaviour
         TimePressingDropkey += Time.deltaTime;
         if (Input.GetKeyUp(releaseObjectKey))
         {
-            if(TimePressingDropkey < HoldThrowTime)
+            if (TimePressingDropkey < HoldThrowTime)
+            {
                 DropItem(false);
+            }
             else
+            {
                 DropItem(true);
-            itemDropInput = false;
-            TimePressingDropkey = 0;
+                TimePressingDropkey = 0;
+                
+            }
+            ItemDropInput = false;
         }
     }
     private void TryToggleInspect()
@@ -99,9 +104,9 @@ public class InspectObject : MonoBehaviour
     {
         // set all WhenPlayInspects to false
         CurrentItemInspecting.parent = cam.transform; // change parant to camera
-        SetInspectionState(false);
         CurrentItemInspecting.localPosition = new Vector3(-0.27f, -0.1f, 0.36f); // change position
         CurrentItemInspecting.localRotation = Quaternion.identity; // reset rotation
+        SetInspectionState(false);
 
         SaveItemPosition(CurrentItemInspecting); // save for stop inspection
         ReturnItem(CurrentItemInspecting); // return for stop inspection
@@ -139,6 +144,7 @@ public class InspectObject : MonoBehaviour
     private void StartInspecting()
     {
         CurrentItemInspecting = GetItemToInspectFromHighlight();
+        CurrentItemInspecting.parent = null;
         runeRB = CurrentItemInspecting.GetComponent<Rigidbody>();
         
         SaveItemPosition(CurrentItemInspecting); // save item position for stop inspecting

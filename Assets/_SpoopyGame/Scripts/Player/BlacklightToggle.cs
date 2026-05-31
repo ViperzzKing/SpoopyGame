@@ -3,7 +3,8 @@ using UnityEngine.UIElements;
 
 public class BlacklightToggle : MonoBehaviour
 {
-    [Header("References")]
+    [Header("References")] 
+    [SerializeField] private CamCorderPositions camCorder;
     [SerializeField] private GameObject blacklight;
     [SerializeField] private GameObject flashlight;
     [SerializeField] private GameObject blackLightVision;
@@ -19,10 +20,12 @@ public class BlacklightToggle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(blackLightKeybind))
+        bool usingCamera = camCorder.CurrentState == CamCorderPositions.CamCorderState.ScreenCamera;
+        
+        if(Input.GetKeyDown(blackLightKeybind) && usingCamera)
             ToggleBlacklight();
         
-        if(Input.GetKeyDown(flashLightKeybind))
+        if(Input.GetKeyDown(flashLightKeybind) && usingCamera)
            ToggleFlashlight();
     }
 

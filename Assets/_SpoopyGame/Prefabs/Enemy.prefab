@@ -44,7 +44,7 @@ Light:
   serializedVersion: 11
   m_Type: 3
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 356.46637
+  m_Intensity: 287.75214
   m_Range: 3.74
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -290,7 +290,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4122232634573877346}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   damageAmount: 50
-  apply: 0
+  damageApplication: 0
 --- !u!1 &5878304407274739158
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,23 +415,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5a55cb4858fbb47b79f085c1f1d66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchingTime: 10
-  requiredDistance: 25
-  currentDistance: 0
-  destinationReached: 1
-  playerDetected: 0
-  enemyStunned: 0
   noiseDetectionVolume: 30
   noiseVolume: 0
   soundDetected: 0
   validAreas:
   - {fileID: 0}
-  - {fileID: 0}
-  enemyState: 0
   enemy: {fileID: 2304459819661864317}
   chasingTarget: {fileID: 0}
   searcher: {fileID: 0}
-  audioCheck: 1
+  requiredDistance: 25
+  destinationReached: 1
+  searchingTime: 10
+  enemyIsAttacking: 0
+  enemyStunned: 0
+  previousState: 0
 --- !u!195 &2304459819661864317
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -442,7 +439,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6.8
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 300
@@ -749,6 +746,10 @@ PrefabInstance:
       propertyPath: ai
       value: 
       objectReference: {fileID: 2491633881304037809}
+    - target: {fileID: 7827291428723071905, guid: 6cc314f8209368040b3ff69f94c1830c, type: 3}
+      propertyPath: enemyAI
+      value: 
+      objectReference: {fileID: 2491633881304037809}
     - target: {fileID: 8621907309657257743, guid: 6cc314f8209368040b3ff69f94c1830c, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 3
@@ -758,8 +759,24 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8621907309657257743, guid: 6cc314f8209368040b3ff69f94c1830c, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621907309657257743, guid: 6cc314f8209368040b3ff69f94c1830c, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621907309657257743, guid: 6cc314f8209368040b3ff69f94c1830c, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621907309657257743, guid: 6cc314f8209368040b3ff69f94c1830c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621907309657257743, guid: 6cc314f8209368040b3ff69f94c1830c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

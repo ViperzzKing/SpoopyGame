@@ -27,6 +27,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
         HealthCurrent = Mathf.Clamp(HealthCurrent - damage, 0, HealthMax);
+        Debug.Log(HealthCurrent + " " + gameObject);
         if(HealthCurrent <= 0)
         {
             NoHealth();

@@ -5,7 +5,7 @@ public class ThrowInputOverlay : MonoBehaviour
 {
     [SerializeField] private InspectObject inspectObject;
 
-    private Image sneakVingette;
+    private Image throwOverlay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -13,15 +13,20 @@ public class ThrowInputOverlay : MonoBehaviour
         if(inspectObject == null)
             inspectObject = FindAnyObjectByType<InspectObject>();
         
-        sneakVingette = GetComponent<Image>();
+        throwOverlay = GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ThrowProgress() > 1)
+        if (ThrowProgress() > 0)
         {
-            sneakVingette.fillAmount = Mathf.Clamp01(ThrowProgress());
+            throwOverlay.fillAmount = Mathf.Clamp01(ThrowProgress());
+        }
+
+        if (inspectObject.TimePressingDropkey < inspectObject.HoldThrowTime)
+        {
+            throwOverlay.fillAmount = 0;
         }
     }
 
