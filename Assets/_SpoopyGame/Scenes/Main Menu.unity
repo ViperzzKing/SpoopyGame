@@ -1183,7 +1183,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2930
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1226,7 +1226,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 0.4
-  m_ColorTemperature: 7075
+  m_ColorTemperature: 6530
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -1362,7 +1362,7 @@ GameObject:
   - component: {fileID: 670132353}
   - component: {fileID: 670132352}
   m_Layer: 5
-  m_Name: Options
+  m_Name: OptionsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3918,9 +3918,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8864f0509dfd9418d646962cfb30f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuButtons
-  optionsPanel: {fileID: 0}
+  optionsPanel: {fileID: 670132350}
   masterMixer: {fileID: 24100000, guid: cab1fc6af5400d04d870d31dd177a403, type: 2}
-  gameScene: 0
+  gameScene: 1
 --- !u!114 &1872575907
 MonoBehaviour:
   m_ObjectHideFlags: 0

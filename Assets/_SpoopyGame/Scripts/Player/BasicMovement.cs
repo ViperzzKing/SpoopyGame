@@ -143,11 +143,8 @@ public class BasicMovement : MonoBehaviour
             playerSounds.ChangeAudioSource();
         }
         
-        Debug.Log("Velocity magnitude: " + rb.linearVelocity.magnitude);
-        
         if (rb.linearVelocity.magnitude < 0.05f || CurrentState == PlayerState.Fall)
         {
-            Debug.Log("Stopped moving");
             playerSounds.StopAudio(playerSounds.GetCurrentAudioSource());
         }
         else
