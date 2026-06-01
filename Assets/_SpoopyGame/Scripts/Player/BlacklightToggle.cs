@@ -13,9 +13,17 @@ public class BlacklightToggle : MonoBehaviour
     [SerializeField] private bool blackLightToggle;
     [SerializeField] private bool flashLightToggle;
 
+    private PlayerSounds playerSounds;
+   
     [Header("Keybinds")] 
     [SerializeField] private KeyCode blackLightKeybind = KeyCode.B;
     [SerializeField] private KeyCode flashLightKeybind = KeyCode.F;
+
+    //means that we dont have to link it in unity, keeps the unity scene clean.
+    private void Awake()
+    {
+        playerSounds = FindAnyObjectByType<PlayerSounds>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -28,7 +36,7 @@ public class BlacklightToggle : MonoBehaviour
         if(Input.GetKeyDown(flashLightKeybind) && usingCamera)
            ToggleFlashlight();
 
-        if(!usingCamera)
+        if(!usingCamera && (flashLightToggle||blackLightToggle))
             ClearLights();
     }
 
@@ -37,6 +45,8 @@ public class BlacklightToggle : MonoBehaviour
         if (blacklight == null) { Debug.LogError("Missing Blacklight"); return; }
   
         blackLightToggle = !blackLightToggle;
+        playerSounds.StopAudio(playerSounds.flashlightSound);
+        playerSounds.PlayAudio(playerSounds.flashlightSound);
         blacklight.SetActive(blackLightToggle);
         blackLightVision.SetActive(blackLightToggle);
         
@@ -47,6 +57,8 @@ public class BlacklightToggle : MonoBehaviour
         if (flashlight == null) { Debug.LogError("Missing Flashlight"); return; }
 
         flashLightToggle = !flashLightToggle;
+        playerSounds.StopAudio(playerSounds.flashlightSound);
+        playerSounds.PlayAudio(playerSounds.flashlightSound);
         flashlight.SetActive(flashLightToggle);
         
     }
@@ -55,6 +67,8 @@ public class BlacklightToggle : MonoBehaviour
     {
         flashLightToggle = false;
         blackLightToggle = false;
+        playerSounds.StopAudio(playerSounds.flashlightSound);
+        playerSounds.PlayAudio(playerSounds.flashlightSound);
         flashlight.SetActive(flashLightToggle);
         blacklight.SetActive(blackLightToggle);
     }

@@ -5,6 +5,7 @@ public class PlayerSounds : MonoBehaviour
 {
     [SerializeField] private AudioSource sprintSteps;
     [SerializeField] private AudioSource walkSteps;
+    [SerializeField] public AudioSource flashlightSound;
     
     public void PlayAudio(AudioSource currentAudio)
     {
