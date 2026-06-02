@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5918802748388836644}
   - component: {fileID: 7746550522970887826}
-  - component: {fileID: 1214182451021572123}
   - component: {fileID: 8390988966501773147}
+  - component: {fileID: 1214182451021572123}
   - component: {fileID: 3111741769258525289}
+  - component: {fileID: 2287840096180105410}
   m_Layer: 9
   m_Name: Rune_1
-  m_TagString: Inspectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,22 +58,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.66001743, y: 1.0031743, z: 0.18481295}
   m_Center: {x: 0.0044076443, y: -0.10689545, z: 3.395596e-11}
---- !u!114 &1214182451021572123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2480085223216001066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d90dd25ed1b7b488825593093dc6db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OutlineMesh
-  baseMaterial: {fileID: 2100000, guid: ed3af5ac866f2d049b11cbabb9f35153, type: 2}
-  outlineMaterial: {fileID: 2100000, guid: 796ae01d10d9d1b4c99837fdb024435c, type: 2}
-  outlineEnabled: 0
-  outlineScale: 35
 --- !u!54 &8390988966501773147
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -100,6 +85,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1214182451021572123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2480085223216001066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d90dd25ed1b7b488825593093dc6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineMesh
+  baseMaterial: {fileID: 2100000, guid: ed3af5ac866f2d049b11cbabb9f35153, type: 2}
+  outlineMaterial: {fileID: 2100000, guid: 796ae01d10d9d1b4c99837fdb024435c, type: 2}
+  outlineEnabled: 0
+  outlineScale: 35
 --- !u!114 &3111741769258525289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,9 +117,21 @@ MonoBehaviour:
   acceptedRuneLayer:
     serializedVersion: 2
     m_Bits: 4096
-  endingType: 0
   itemPosition: {fileID: 0}
   rb: {fileID: 8390988966501773147}
+--- !u!114 &2287840096180105410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2480085223216001066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb870076f06c9424b86a4783296d8042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RuneManager
+  <CurrenType>k__BackingField: 0
 --- !u!1001 &3864572767406468888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -202,10 +215,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 56686bcda21cca346a9fb23a1b48bc2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2609624602941787788}
   m_SourcePrefab: {fileID: 100100000, guid: 56686bcda21cca346a9fb23a1b48bc2e, type: 3}
 --- !u!4 &3614984266734389491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 56686bcda21cca346a9fb23a1b48bc2e, type: 3}
   m_PrefabInstance: {fileID: 3864572767406468888}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4134534964624757321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 56686bcda21cca346a9fb23a1b48bc2e, type: 3}
+  m_PrefabInstance: {fileID: 3864572767406468888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2609624602941787788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4134534964624757321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb870076f06c9424b86a4783296d8042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RuneManager
+  <CurrenType>k__BackingField: 0

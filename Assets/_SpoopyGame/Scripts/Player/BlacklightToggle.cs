@@ -71,5 +71,6 @@ public class BlacklightToggle : MonoBehaviour
         playerSounds.PlayAudio(playerSounds.flashlightSound);
         flashlight.SetActive(flashLightToggle);
         blacklight.SetActive(blackLightToggle);
+        blackLightVision.SetActive(false);
     }
 }
