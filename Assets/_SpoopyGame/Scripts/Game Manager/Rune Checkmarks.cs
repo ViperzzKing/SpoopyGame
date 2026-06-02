@@ -51,13 +51,15 @@ public class RuneCheckmarks : MonoBehaviour
     [ContextMenu("Test Check")]
     public void EndingTrigger()
     {
-        Debug.Log("Checking endings");
-
         CheckEndingTriggers();
     }
     
     private void TutorialCompletion()
     {
+        if (FindFirstObjectByType<Highlight>() != null)
+        {
+            FindFirstObjectByType<Highlight>().ForceClearHighlight();
+        }
         Debug.Log("Started Game");
         gameStarted = true;
         tutorialRunes.SetActive(false);
@@ -67,8 +69,6 @@ public class RuneCheckmarks : MonoBehaviour
 
     private void CheckEndingTriggers()
     {
-        Debug.Log("Checking endings");
-
         // 5 tutorial runes collected - switch to main game runes
         if (CheckRunes(0) == 5)
         {

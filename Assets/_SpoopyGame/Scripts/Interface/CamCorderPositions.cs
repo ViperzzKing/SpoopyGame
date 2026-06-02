@@ -30,26 +30,24 @@ public class CamCorderPositions : MonoBehaviour
         PositionKeybinds();
     }
 
-    private void SetState(CamCorderState newState)
+    public void SetState(CamCorderState newState)
     {
         CurrentState = newState;
         ApplyTransform();
     }
-    
+
     private void PositionKeybinds()
     {
-        NoCameraKeybind = CameraOut && Input.GetMouseButtonDown(1) || PauseReady && Input.GetMouseButtonDown(1) 
-                                                                   || PauseReady && Input.GetKeyDown(KeyCode.Escape)
-                                                                   || ScreenCamera && Input.GetKeyDown(KeyCode.Escape);
-        PauseCameraKeybind = Input.GetKeyDown(KeyCode.Escape);
+        NoCameraKeybind = CameraOut && Input.GetMouseButtonDown(1) || PauseReady && Input.GetMouseButtonDown(1)
+                                                                   || ScreenCamera && Input.GetKeyDown(KeyCode.Escape)
+                                                                   || ScreenCamera && Input.GetMouseButtonDown(1);
+        
         ScreenCameraKeybind = !CameraOut && Input.GetMouseButtonDown(1) || PauseReady && Input.GetMouseButtonDown(0);
 
         
         // just the keybinds ^
         if (NoCameraKeybind)
             SetState(CamCorderState.Hidden);
-        else if (PauseCameraKeybind)
-            SetState(CamCorderState.PauseReady);
         else if (ScreenCameraKeybind)
             SetState(CamCorderState.ScreenCamera);
         

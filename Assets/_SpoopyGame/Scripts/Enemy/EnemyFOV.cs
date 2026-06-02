@@ -26,6 +26,15 @@ public class EnemyFOV : MonoBehaviour
             enemyAI.SetPlayerDetected(true);
         }
         else
-            enemyAI.SetPlayerDetected(false);
+        {
+            float timeLost = +Time.deltaTime;
+            
+            if (timeLost >= 5 && player.CurrentState != BasicMovement.PlayerState.Crouch)
+            {
+                enemyAI.SetPlayerDetected(false);
+            }
+            
+        }
+            
     }
 }

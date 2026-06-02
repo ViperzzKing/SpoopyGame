@@ -272,7 +272,7 @@ public class BasicMovement : MonoBehaviour
     private bool IsGrounded()
     {
         //Overlap sphere check
-        return Physics.OverlapSphere(groundCheck.position, 0.3f, groundLayer).Length > 0;
+        return Physics.OverlapSphere(groundCheck.position, 0.5f, groundLayer).Length > 0;
     }
 
     private bool IfOnSlope()

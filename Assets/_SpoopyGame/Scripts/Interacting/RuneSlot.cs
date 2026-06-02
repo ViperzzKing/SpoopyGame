@@ -17,23 +17,23 @@ public class RuneSlot : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (isSlotted) return;
-
-        runeHolder = other.gameObject.GetComponent<RuneHolder>();
-
-        if (runeHolder == null)
+        
+        if (IsAcceptedRuneLayer(other.gameObject))
         {
-            Debug.Log("No Runeholder component!");
-            return;
-        }
-        if (IsAcceptedRuneLayer(other.gameObject) && !runeHolder.hasObject)
-        {
+            runeHolder = other.gameObject.GetComponent<RuneHolder>();
+            if (runeHolder == null)
+            {
+                Debug.Log("RUNE ENTER: No Runeholder component!");
+                return;
+            }
+            if (runeHolder.HasObject) return;
+            
             isSlotted = true;
-            runeHolder.hasObject = true;
+            runeHolder.ToggleRuneHolding(true);
             Debug.Log(other.gameObject.name);
             slottedRune = other.gameObject.name;
             transform.parent = other.transform;
             
-            Debug.Log("Slotting Rune", this);
             itemPosition.SaveItemPosition(other.transform);
             rb.isKinematic = true;
             itemPosition.ReturnItem(gameObject.transform);
@@ -50,20 +50,19 @@ public class RuneSlot : MonoBehaviour
     {
         if (IsAcceptedRuneLayer(other.gameObject))
         {
-            Debug.Log("Exiting Colision with Slot", this);
 
             runeHolder = other.gameObject.GetComponent<RuneHolder>();
 
             if (runeHolder == null)
             {
-                Debug.Log("No Runeholder component!");
+                Debug.Log("RUNE EXIT: No Runeholder component!");
                 return;
             }
 
             if (other.gameObject.name == slottedRune)
             {
                 isSlotted = false;
-                runeHolder.hasObject = false;
+                runeHolder.ToggleRuneHolding(false);
             }
             // checks tags to change finish
             if (other.CompareTag("RuneSlot0"))

@@ -102,7 +102,6 @@ public class InspectObject : MonoBehaviour
             StopInspecting();
         else
         {
-            Debug.Log("Inspect");
             StartInspecting();
         }
     }
@@ -159,16 +158,14 @@ public class InspectObject : MonoBehaviour
         CurrentItemInspecting.localScale = new Vector3(0.85f, 0.85f, 0.85f); // inspecting scale
         CurrentItemInspecting.position = cam.transform.position + cam.transform.forward * 2; // position
         CurrentItemInspecting.LookAt(Camera.main.transform); // looks the item at the player
-
-            Debug.Log("Inspecting");
-            SetInspectionState(inspecting: true); 
+        
+        SetInspectionState(inspecting: true); 
         
     }
 
     private void StopInspecting()
     {
         CurrentItemInspecting.localScale = new Vector3(0.5f, 0.5f, 0.5f); // change scale
-        Debug.Log("Stop Inspecting");
         SetInspectionState(inspecting: false);
         ReturnItem(CurrentItemInspecting); // return item
     }

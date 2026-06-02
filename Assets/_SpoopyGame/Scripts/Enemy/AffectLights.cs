@@ -9,6 +9,7 @@ public class AffectLights : MonoBehaviour
     [SerializeField] private float dimIntensity = 1;
     [SerializeField] private float fadeTime = 600;
     [SerializeField] private bool lightActive = true;
+    private int enemyCollidersInside;
 
     [Header("Refrences")] 
     [SerializeField] public GameObject targetFirePrefab;
@@ -25,13 +26,12 @@ public class AffectLights : MonoBehaviour
     {
         if (targetLight == null)
         {
-            Debug.LogError("Missing Reference To Light");
+            Debug.LogError(gameObject.name + ": Missing reference to Light");
         }
 
         if (targetFirePrefab == null)
         {
-            //Debug.LogError("Missing Reference To Fire");
-            //TODO -- even though its referenced it still throws error
+            Debug.LogError(gameObject.name + ": Missing reference to Fire");
         }
     }
 
@@ -39,22 +39,27 @@ public class AffectLights : MonoBehaviour
     {
         // Light has a trigger sphere collider
         // when "Enemy" walks in it FadeLightOff()
-        if (other.gameObject.layer == enemyLayer)
-        {
-            //Debug.Log("triggered");
-            StartCoroutine(FadeLight(lightActive));
-        }
+        if (other.gameObject.layer != enemyLayer) return;
+
+        //Debug.Log("triggered");
+        enemyCollidersInside++;
+        StartCoroutine(FadeLight(lightActive));
+
     }
 
     private void OnTriggerExit(Collider other)
     {
         // when "Enemy" walks out of light FadeLightOn()
-        if (other.gameObject.layer == enemyLayer)
+        if (other.gameObject.layer != enemyLayer) return;
+
+        enemyCollidersInside = Mathf.Max(0, enemyCollidersInside - 1);
+
+        if (enemyCollidersInside == 0)
         {
-            //Debug.Log("exited");
             StopCoroutine(FadeLight(lightActive));
             StartCoroutine(FadeLight(lightActive));
         }
+        
     }
 
     IEnumerator FadeLight(bool activeLight)

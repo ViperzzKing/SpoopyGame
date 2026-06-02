@@ -78,7 +78,6 @@ public class Highlight : MonoBehaviour
         if (currentHighlight != null)
         {
             currentHighlight.ToggleOutline();
-            Debug.Log("Enable highlight on " + newObject.name);
         }
         else
         {
@@ -97,8 +96,6 @@ public class Highlight : MonoBehaviour
         CurrentObject = null;
         currentHighlight = null;
         Interactable = false;
-
-        Debug.Log("Disable highlight");
     }
 
     // Update origin and direction to match the camera each frame
@@ -108,5 +105,10 @@ public class Highlight : MonoBehaviour
 
         origin = mainCamera.transform.position;
         lookDirection = mainCamera.transform.forward;
+    }
+    
+    public void ForceClearHighlight()
+    {
+        ClearHighlight();
     }
 }

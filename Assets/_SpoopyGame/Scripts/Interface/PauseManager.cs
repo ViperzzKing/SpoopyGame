@@ -28,16 +28,33 @@ public class PauseManager : MonoBehaviour
 
     private void Update()
     {
-        bool pauseCameraKeybind = Input.GetKeyDown(KeyCode.Escape);
+        bool pauseCameraKeybind = Input.GetKeyDown(KeyCode.Escape) && camCorder.CurrentState == CamCorderPositions.CamCorderState.Hidden;
         
         
         if (pauseCameraKeybind)
         {
-            pauseMenu.SetActive(!pauseMenu.activeSelf);
-            Debug.Log("Readying Pause");
+            //Debug.Log("PM: Switching Pause");
+            if (camCorder.CurrentState == CamCorderPositions.CamCorderState.Hidden)
+                pauseMenu.SetActive(!pauseMenu.activeSelf);
+            if (paused)
+            {
+                Resume();
+                return;
+            }
+            
+            if (camCorder.CurrentState == CamCorderPositions.CamCorderState.PauseReady)
+            {
+                camCorder.SetState(CamCorderPositions.CamCorderState.Hidden);
+                pauseMenu.SetActive(false);
+            }
+            else
+            {
+                camCorder.SetState(CamCorderPositions.CamCorderState.PauseReady);
+            }
         }
-        else if (camCorder.PauseReady && Input.GetMouseButtonDown(1) || camCorder.PauseReady && Input.GetKeyDown(KeyCode.Escape))
-        {
+        else if (camCorder.PauseReady && Input.GetMouseButtonDown(1) 
+                 || camCorder.PauseReady && Input.GetKeyDown(KeyCode.Escape))
+        {//Debug.Log("PM: Switching Pause");
             pauseMenu.SetActive(!pauseMenu.activeSelf);
         }
 
@@ -58,11 +75,13 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = isPaused ? 0 : 1;
         cameraControls.enabled = !isPaused;
         Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = isPaused;
         pauseMenu.SetActive(isPaused);
     }
     
     public void Resume()
     {
+        camCorder.SetState(CamCorderPositions.CamCorderState.Hidden);
         SetPaused(false);
     }
 
