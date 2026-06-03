@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,13 +8,13 @@ public class BlacklightToggle : MonoBehaviour
     [SerializeField] private CamCorderPositions camCorder;
     [SerializeField] private GameObject blacklight;
     [SerializeField] private GameObject flashlight;
-    [SerializeField] private GameObject blackLightVision;
 
     [Header("LightToggles")]
     [SerializeField] private bool blackLightToggle;
     [SerializeField] private bool flashLightToggle;
 
     private PlayerSounds playerSounds;
+    private GameObject[] blackLightVison;
    
     [Header("Keybinds")] 
     [SerializeField] private KeyCode blackLightKeybind = KeyCode.B;
@@ -23,6 +24,12 @@ public class BlacklightToggle : MonoBehaviour
     private void Awake()
     {
         playerSounds = FindAnyObjectByType<PlayerSounds>();
+        blackLightVison = GameObject.FindGameObjectsWithTag("Blacklight");
+
+        foreach (var obj in blackLightVison)
+        {
+            obj.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -48,7 +55,7 @@ public class BlacklightToggle : MonoBehaviour
         playerSounds.StopAudio(playerSounds.flashlightSound);
         playerSounds.PlayAudio(playerSounds.flashlightSound);
         blacklight.SetActive(blackLightToggle);
-        blackLightVision.SetActive(blackLightToggle);
+        ToggleBlackLightUI();
         
     }
     
@@ -71,6 +78,14 @@ public class BlacklightToggle : MonoBehaviour
         playerSounds.PlayAudio(playerSounds.flashlightSound);
         flashlight.SetActive(flashLightToggle);
         blacklight.SetActive(blackLightToggle);
-        blackLightVision.SetActive(false);
+        ToggleBlackLightUI();
+    }
+
+    private void ToggleBlackLightUI()
+    {
+        foreach (var obj in blackLightVison)
+        {
+            obj.SetActive(!obj.activeSelf);
+        }
     }
 }
