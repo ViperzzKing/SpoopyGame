@@ -94,6 +94,11 @@
             "globalId": "GlobalObjectId_V1-2-b99f17d21ef34794d9514255fb14ba1c-959114280-0",
             "source": "builtin",
             "value": "d_BoxCollider2D Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-b24e0bc70d4228c45b0e847a3f38bcea-5707799546471842843-1526187150",
+            "source": "builtin",
+            "value": "d_Transform Icon"
         }
     ]
 }
