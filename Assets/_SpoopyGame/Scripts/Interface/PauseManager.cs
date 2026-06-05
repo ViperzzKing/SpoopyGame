@@ -17,6 +17,7 @@ public class PauseManager : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
         cameraControls = Camera.main.GetComponent<CameraControls>();
         
         if (cameraControls == null) Debug.LogWarning("Missing Camera Controls");

@@ -3130,7 +3130,7 @@ GameObject:
   - component: {fileID: 1608689196}
   - component: {fileID: 1608689197}
   m_Layer: 0
-  m_Name: UnlockMouse
+  m_Name: MenuManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

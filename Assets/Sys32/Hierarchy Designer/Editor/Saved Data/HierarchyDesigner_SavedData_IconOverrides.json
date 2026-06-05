@@ -99,6 +99,11 @@
             "globalId": "GlobalObjectId_V1-2-b24e0bc70d4228c45b0e847a3f38bcea-5707799546471842843-1526187150",
             "source": "builtin",
             "value": "d_Transform Icon"
+        },
+        {
+            "globalId": "GlobalObjectId_V1-2-9165122c94b7a1d4c8508b74eaee11b8-5707799546471842843-0",
+            "source": "builtin",
+            "value": "d_Animation Icon"
         }
     ]
 }

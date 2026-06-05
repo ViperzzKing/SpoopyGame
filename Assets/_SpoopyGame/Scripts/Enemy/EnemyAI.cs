@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float noiseDetectionVolume = 30;
     [SerializeField] private float noiseVolume;
     [SerializeField] private bool soundDetected;
-    public bool PlayerDetected { get; private set; }
+    [field: SerializeField] public bool PlayerDetected { get; private set; }
     
     [Header("Navigation")]
     [SerializeField] private Collider[] validAreas;
@@ -28,7 +28,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private bool enemyIsAttacking;
     [SerializeField] private bool enemyStunned = false;
     [SerializeField] private EnemyState previousState;
-    public EnemyState CurrentState { get; private set; }
+    [field: SerializeField] public EnemyState CurrentState { get; private set; }
     
     
     public enum EnemyState
@@ -89,7 +89,7 @@ public class EnemyAI : MonoBehaviour
         bool hearsNoise = noiseVolume >= noiseDetectionVolume;
 
         // If Player Detected Player Becomes Chasing Target And Enemy Enters Chasing State
-        if (PlayerDetected)
+        if (PlayerDetected && CurrentState != EnemyState.Chasing)
         {
             chasingTarget = BasicMovement.Instance.transform;
             CurrentState = EnemyState.Chasing;
@@ -97,7 +97,10 @@ public class EnemyAI : MonoBehaviour
 
         // When the player hides during a chase and is not seen enemy enters searching state
         if (playerHidesFromChase)
+        {
+            Debug.Log("Hid from chase");
             CurrentState = EnemyState.Searching;
+        }
         
         // If enemyStunned enter Stunned State
         if (enemyStunned)
@@ -153,10 +156,10 @@ public class EnemyAI : MonoBehaviour
         }
         
         // When player crouches while not being seen enter searching state
-        if (!PlayerDetected && BasicMovement.Instance.CurrentState == BasicMovement.PlayerState.Crouch && enemyReachedLocation)
+        /*if (!PlayerDetected && BasicMovement.Instance.CurrentState == BasicMovement.PlayerState.Crouch)
         {
             CurrentState = EnemyState.Searching;
-        }
+        }*/
     }
 
     // Same as Roaming but smaller radius and around the enemy

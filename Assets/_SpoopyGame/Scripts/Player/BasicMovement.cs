@@ -43,7 +43,7 @@ public class BasicMovement : MonoBehaviour
     [SerializeField] private KeyCode sprintKeybind = KeyCode.LeftShift;
 
     [Header("States")]
-    public PlayerState CurrentState { get; private set; }
+    [field: SerializeField] public PlayerState CurrentState { get; private set; }
     public PlayerState PreviousState { get; private set; }
 
 
@@ -108,7 +108,15 @@ public class BasicMovement : MonoBehaviour
             currentSpeed = sprintSpeed;
             currentVolume = sprintVolume;
         }
-
+        else if (crouchKeybindHeld && IsGrounded())
+        {
+            Debug.Log("Crouching");
+            PreviousState = CurrentState;
+            CurrentState = PlayerState.Crouch;
+            
+            currentSpeed = crouchSpeed;
+            currentVolume = crouchVolume;
+        }
         // Walking
         else if (IsGrounded())
         {
@@ -117,14 +125,6 @@ public class BasicMovement : MonoBehaviour
             
             currentSpeed = walkSpeed;
             currentVolume = walkVolume;
-        }
-        else if (crouchKeybindHeld)
-        {
-            PreviousState = CurrentState;
-            CurrentState = PlayerState.Crouch;
-            
-            currentSpeed = crouchSpeed;
-            currentVolume = crouchVolume;
         }
         // Falling
         else

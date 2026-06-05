@@ -50,7 +50,7 @@ public class RuneManager : MonoBehaviour
 
     private void Heal()
     {
-        if (Input.GetKeyDown(triggerRuneKey))
+        if (Input.GetKeyDown(triggerRuneKey) && InspectObject.Instance.CurrentItemHolding == transform)
         {
             playerHealth = FindFirstObjectByType<Health>();
             playerHealth.Heal(healAmount);

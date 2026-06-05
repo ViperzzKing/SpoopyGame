@@ -14,7 +14,7 @@ public class HidePlayer : MonoBehaviour
     private Camera mainCamera;
 
     [Header("Hiding")]
-    public bool PlayerIsHiding { get; private set; }
+    [field: SerializeField] public bool PlayerIsHiding { get; private set; }
     public bool caughtHiding;
     private Vector3 outsidePosition;       // Where the player was before hiding
     private Transform currentHidingSpot;   // The spot the player is currently inside

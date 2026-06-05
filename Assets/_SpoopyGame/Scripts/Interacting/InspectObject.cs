@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class InspectObject : MonoBehaviour
 {
+    public static InspectObject Instance;
+    
     [Header("References")]
     [SerializeField] private Camera cam; // gets camera.main
     [SerializeField] private CameraControls camControls; // camera controller

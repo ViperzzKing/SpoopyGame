@@ -27,7 +27,7 @@ public class RuneSlot : MonoBehaviour
                 return;
             }
             if (runeHolder.HasObject) return;
-            
+
             isSlotted = true;
             runeHolder.ToggleRuneHolding(true);
             Debug.Log(other.gameObject.name);

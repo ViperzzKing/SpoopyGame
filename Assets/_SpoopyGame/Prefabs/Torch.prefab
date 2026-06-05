@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6198555196992430580}
+  - component: {fileID: 6606203849684397957}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -29,10 +30,30 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8041376402241806511}
   - {fileID: 9215385562217932501}
   - {fileID: 4957337198655652563}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6606203849684397957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5707799546471842843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4bc9d1f5a150334a86d7b9d13078de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AffectLights
+  normalIntensity: 397.8874
+  dimIntensity: 1
+  fadeTime: 600
+  lightActive: 1
+  targetFirePrefab: {fileID: 3704618311858350312}
+  targetLight: {fileID: 739675669937637462}
+  enemyLayer: 10
 --- !u!1 &9182203032903012669
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,12 +80,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9182203032903012669}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.06975647, w: 0.9975641}
-  m_LocalPosition: {x: -0.15, y: 0.3, z: 0}
-  m_LocalScale: {x: 29.859034, y: 29.859034, z: 29.85903}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2847162, y: 1.4762039, z: 1.0000225}
+  m_LocalScale: {x: 29.859035, y: 29.859034, z: 29.859034}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 9215385562217932501}
+  m_Father: {fileID: 6198555196992430580}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &739675669937637462
 Light:
@@ -327,12 +348,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4547314298715569195, guid: 8ce443a9c0d53e2459b4185eb919bcda, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8041376402241806511}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ce443a9c0d53e2459b4185eb919bcda, type: 3}
+--- !u!1 &3704618311858350312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8327609460914975254, guid: 8ce443a9c0d53e2459b4185eb919bcda, type: 3}
+  m_PrefabInstance: {fileID: 4681753586223127294}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9215385562217932501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4547314298715569195, guid: 8ce443a9c0d53e2459b4185eb919bcda, type: 3}

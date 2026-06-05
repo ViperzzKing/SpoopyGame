@@ -5,6 +5,7 @@ public class EnemyFOV : MonoBehaviour
 {
     [SerializeField] private BasicMovement player;
     [SerializeField] private EnemyAI enemyAI;
+    private float timeLost;
 
     private void Awake()
     {
@@ -23,14 +24,16 @@ public class EnemyFOV : MonoBehaviour
 
         if (other.transform.CompareTag("Player"))
         {
+            timeLost = 0;
             enemyAI.SetPlayerDetected(true);
         }
         else
         {
-            float timeLost = +Time.deltaTime;
+            timeLost += Time.deltaTime;
             
             if (timeLost >= 5 && player.CurrentState != BasicMovement.PlayerState.Crouch)
             {
+                timeLost = 0;
                 enemyAI.SetPlayerDetected(false);
             }
             

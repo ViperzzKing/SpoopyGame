@@ -418,6 +418,7 @@ MonoBehaviour:
   noiseDetectionVolume: 30
   noiseVolume: 0
   soundDetected: 0
+  <PlayerDetected>k__BackingField: 0
   validAreas:
   - {fileID: 0}
   enemy: {fileID: 2304459819661864317}
@@ -429,6 +430,7 @@ MonoBehaviour:
   enemyIsAttacking: 0
   enemyStunned: 0
   previousState: 0
+  <CurrentState>k__BackingField: 0
 --- !u!195 &2304459819661864317
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -439,7 +441,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 6.8
+  m_Speed: 4.5
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 300
