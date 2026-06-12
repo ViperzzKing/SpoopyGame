@@ -40,6 +40,7 @@ public class RuneSlot : MonoBehaviour
             
 
             // checks for ending tags and runs change finish
+            endingType = runeHolder.endingType;
             RuneCheckmarks.Instance?.ChangeFinish((int)endingType, 1);
             
             RuneCheckmarks.Instance?.EndingTrigger(); // runs ending trigger
@@ -50,7 +51,7 @@ public class RuneSlot : MonoBehaviour
     {
         if (IsAcceptedRuneLayer(other.gameObject))
         {
-
+            
             runeHolder = other.gameObject.GetComponent<RuneHolder>();
 
             if (runeHolder == null)
@@ -58,29 +59,16 @@ public class RuneSlot : MonoBehaviour
                 Debug.Log("RUNE EXIT: No Runeholder component!");
                 return;
             }
-
-            if (other.gameObject.name == slottedRune)
-            {
-                isSlotted = false;
-                runeHolder.ToggleRuneHolding(false);
-            }
+            
+            if (other.gameObject.name != slottedRune) return;
+            
+            isSlotted = false;
+            runeHolder.ToggleRuneHolding(false);
+            slottedRune = null;
+            
             // checks tags to change finish
-            if (other.CompareTag("RuneSlot0"))
-            {
-                RuneCheckmarks.Instance.ChangeFinish(0, -1);
-            }
-            if (other.CompareTag("RuneSlot"))
-            {
-                RuneCheckmarks.Instance.ChangeFinish(1, -1);
-            }
-            else if (other.CompareTag("RuneSlot2"))
-            {
-                RuneCheckmarks.Instance.ChangeFinish(2, -1);
-            }
-            else if (other.CompareTag("RuneSlot3"))
-            {
-                RuneCheckmarks.Instance.ChangeFinish(3, -1);
-            }
+            endingType = runeHolder.endingType;
+            RuneCheckmarks.Instance?.ChangeFinish((int)endingType, -1);
         }
     }
 
