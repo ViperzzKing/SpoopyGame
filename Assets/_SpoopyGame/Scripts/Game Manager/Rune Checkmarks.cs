@@ -13,7 +13,12 @@ public class RuneCheckmarks : MonoBehaviour
     [SerializeField] private int[] finishes = new int[4];
     [SerializeField] private float maxRunes = 5;
     [SerializeField] private bool gameStarted;
-    
+
+    [Header("Ending Scene ")]
+    [SerializeField] private int endingCryptScene;
+    [SerializeField] private int endingRitualScene;
+    [SerializeField] private int endingMansionScene;
+
     public enum RuneEnding
     {
         Tutorial,
@@ -79,21 +84,21 @@ public class RuneCheckmarks : MonoBehaviour
         if (CheckRunes(1) == 5 && gameStarted)
         {
             Debug.Log("crypt ending");
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(endingCryptScene);
         }
 
         // Ritual ending triggered
         if (CheckRunes(2) == 5)
         {
             Debug.Log("Finished Ritual Ending");
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(endingRitualScene);
         }
 
         // Mansion ending triggered
         if (CheckRunes(3) == 5)
         {
             Debug.Log("Finished Mansion Ending");
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(endingMansionScene);
         }
     }
 }

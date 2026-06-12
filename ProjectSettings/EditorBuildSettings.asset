@@ -14,6 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_SpoopyGame/Scenes/Map.unity
     guid: 129a7ea009a8ad644bbfd3269d53acf3
+  - enabled: 1
+    path: Assets/_SpoopyGame/Scenes/EndingScenes/CryptEnding.unity
+    guid: 34e8fb962d1f325488f6aa7d610c66c8
+  - enabled: 1
+    path: Assets/_SpoopyGame/Scenes/EndingScenes/RitualEnding.unity
+    guid: 7b2553a76ed6e5d4aab0b1469338527e
+  - enabled: 1
+    path: Assets/_SpoopyGame/Scenes/EndingScenes/MansionEnding.unity
+    guid: f8a10d835d89d8e4890e721ae02b0906
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
   m_UseUCBPForAssetBundles: 0

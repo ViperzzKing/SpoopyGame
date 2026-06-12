@@ -34,6 +34,11 @@ public class MainMenuButtons : MonoBehaviour
         optionsPanel.SetActive(!optionsPanel.activeSelf); // toggles Options
     }
 
+    public void SpecificSceneLoad(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
+
     public void FullScreenToggle()
     {
         Screen.fullScreen = !Screen.fullScreen; // Toggles fullscreen to opisate
